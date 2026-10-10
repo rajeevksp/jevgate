@@ -1,0 +1,501 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Jev Evidence Governor</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one scrolling findings report. KPI strip, animated query flow, evidence charts, 1M-token calculator, adoption steps. */
+:root{
+  --bg:#EDF1F3; --surface:#FFFFFF; --ink:#12202B; --ink2:#46586A; --muted:#738594; --line:#D3DDE3; --soft:#F5F8F9;
+  --gov:#0B7C86; --base:#CC6A22; --jev:#6A58DB;
+  --good:#1D8548; --warn:#A9701A; --bad:#BE3A2E;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1418; --surface:#122026; --ink:#E7EFF3; --ink2:#A8BAC5; --muted:#7B8F9B; --line:#233840; --soft:#0F1B20;
+  --gov:#3DC4CE; --base:#F0A15B; --jev:#A99CFF; --good:#4DC681; --warn:#E3B24F; --bad:#F27C6E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1418; --surface:#122026; --ink:#E7EFF3; --ink2:#A8BAC5; --muted:#7B8F9B; --line:#233840; --soft:#0F1B20;
+  --gov:#3DC4CE; --base:#F0A15B; --jev:#A99CFF; --good:#4DC681; --warn:#E3B24F; --bad:#F27C6E; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--f-body);padding-inline:clamp(16px,4vw,48px);padding-block:32px 64px}
+.wrap{max-width:1180px;margin-inline:auto;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(30px,5vw,52px);line-height:1.05;font-weight:700}
+h2{font-size:clamp(22px,3vw,30px);line-height:1.15}
+h3{font-size:17px}
+p{margin:0;max-width:68ch}
+.eyebrow{font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hero{display:flex;flex-direction:column;gap:16px}
+.hero p{color:var(--ink2);font-size:17px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 12px var(--f-mono);padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink2)}
+section{display:flex;flex-direction:column;gap:16px;min-width:0}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.sec-head p{color:var(--ink2)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;min-width:0}
+.grid{display:grid;gap:16px;min-width:0}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+/* KPIs */
+.kpis{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.kpi .v{font:700 clamp(30px,4vw,40px)/1 var(--f-display);font-variant-numeric:tabular-nums}
+.kpi .l{font-size:13px;color:var(--ink2)}
+.kpi .s{font:400 11.5px var(--f-mono);color:var(--muted)}
+.kpi.hot{background:var(--gov);border-color:var(--gov)}
+.kpi.hot .v,.kpi.hot .l,.kpi.hot .s{color:#fff}
+:root[data-theme="dark"] .kpi.hot .v,:root[data-theme="dark"] .kpi.hot .l,:root[data-theme="dark"] .kpi.hot .s{color:#06191C}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .kpi.hot .v,:root:not([data-theme="light"]) .kpi.hot .l,:root:not([data-theme="light"]) .kpi.hot .s{color:#06191C}}
+.up{color:var(--good)} .down{color:var(--bad)}
+.tag{display:inline-block;font:500 11px var(--f-mono);padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink2)}
+/* flow */
+.flowbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,select,input{font:inherit;color:var(--ink)}
+.btn{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 14px;cursor:pointer;font:500 13px var(--f-body)}
+.btn:hover{border-color:var(--gov)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--gov);outline-offset:2px}
+.scroller{overflow-x:auto}
+#flow{display:block;width:100%;min-width:1000px;height:auto}
+#flow text{font-family:var(--f-body);fill:var(--ink2)}
+.lane-t{font:700 15px var(--f-display)!important;fill:var(--ink)!important}
+.stg{font:500 11px var(--f-mono)!important;letter-spacing:.06em;fill:var(--muted)!important;text-transform:uppercase;transition:fill .3s}
+.stg.on{fill:var(--gov)!important;font-weight:600}
+.lane-a .stg.on{fill:var(--base)!important}
+.ck{transition:transform .9s cubic-bezier(.5,0,.2,1),opacity .6s}
+.ck rect{stroke-width:1.5;fill:var(--soft)}
+.ck .tx{font:500 11.5px var(--f-body);fill:var(--ink)!important}
+.ck .tg{font:500 9.5px var(--f-mono);fill:var(--muted)!important}
+.t-gold rect{stroke:var(--good)} .t-conf rect{stroke:var(--warn)} .t-decoy rect{stroke:var(--bad)} .t-junk rect{stroke:var(--muted);stroke-dasharray:3 3}
+.ctx{fill:none;stroke:var(--line);stroke-width:1.5}
+.pipe{stroke:var(--line);stroke-width:2;stroke-dasharray:4 5;fill:none}
+.ans{fill:var(--soft);stroke:var(--line);transition:opacity .6s}
+.ans-t{font:400 11.5px var(--f-body)!important}
+.ans-h{font:600 10px var(--f-mono)!important;letter-spacing:.08em}
+.meterbg{fill:var(--line)} .metera{fill:var(--base);transition:width 1s} .meterb{fill:var(--gov);transition:width 1s}
+#cap{min-height:3.2em;color:var(--ink);font-size:15px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--ink2)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:1.5px solid}
+/* bar rows */
+.rows{display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:minmax(80px,130px) 1fr;gap:12px;align-items:center}
+.row .nm{font-size:13px;color:var(--ink2)}
+.bars{display:flex;flex-direction:column;gap:3px;min-width:0}
+.bw{display:flex;align-items:center;gap:8px}
+.b{height:10px;border-radius:0 4px 4px 0;min-width:2px;transition:width .8s}
+.b.base{background:var(--base)} .b.gov{background:var(--gov)} .b.jev{background:var(--jev)}
+.bw span{font:400 11.5px var(--f-mono);color:var(--ink2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.key{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2)}
+.key i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+.stack{display:flex;height:28px;gap:2px;border-radius:6px;overflow:hidden}
+.stack div{display:flex;align-items:center;justify-content:center;font:500 12px var(--f-mono);color:#fff;min-width:0;overflow:hidden}
+.stack .gov{background:var(--gov)} .stack .base{background:var(--base)} .stack .tie{background:var(--muted)} .stack .jev{background:var(--jev)}
+:root[data-theme="dark"] .stack div{color:#08161A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .stack div{color:#08161A}}
+.srow{display:grid;grid-template-columns:70px 1fr;gap:12px;align-items:center}
+.srow .nm{font:500 13px var(--f-mono);color:var(--ink2)}
+.stackcol{display:flex;flex-direction:column;gap:14px}
+#tip{position:fixed;z-index:9;pointer-events:none;background:var(--ink);color:var(--bg);font:12px var(--f-mono);padding:6px 9px;border-radius:6px;max-width:260px;display:none}
+[data-tip]{cursor:default}
+/* calculator */
+.calc{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.fields{display:flex;flex-direction:column;gap:12px}
+label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--ink2)}
+select,input[type=number]{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.math{display:flex;flex-direction:column;font:400 13.5px var(--f-mono);font-variant-numeric:tabular-nums}
+.math div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.math div span:first-child{color:var(--ink2);font-family:var(--f-body)}
+.math .tot{border-bottom:0;padding-top:12px;font-size:18px;font-weight:500}
+.math .tot span:first-child{color:var(--ink);font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td.pos{color:var(--good);font-weight:600} td.neg{color:var(--bad);font-weight:600}
+.tbl{overflow-x:auto}
+/* steps */
+.step{display:flex;flex-direction:column;gap:10px;min-width:0}
+.step .n{font:500 11px var(--f-mono);letter-spacing:.1em;color:var(--gov)}
+pre{margin:0;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto;font:400 12.5px/1.55 var(--f-mono);color:var(--ink)}
+.note{font-size:13.5px;color:var(--ink2)}
+.lose li,.win li{margin-bottom:6px}
+ul{margin:0;padding-left:20px;color:var(--ink2);font-size:14px}
+svg text{font-family:var(--f-body)}
+.lc text{fill:var(--ink2);font-size:11px}
+.lc .ax{stroke:var(--line)} .lc .zero{stroke:var(--muted);stroke-dasharray:4 4}
+.mod{fill:var(--surface);stroke:var(--line);stroke-width:1.5;transition:stroke .4s}
+.mod.on{stroke:var(--gov);stroke-width:2.5}
+.sub{font:400 9.5px var(--f-mono)!important;fill:var(--muted)!important}
+.log{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font:400 12.5px/1.6 var(--f-mono);height:250px;overflow-y:auto;color:var(--ink2)}
+.log .ln{display:block;white-space:pre-wrap;word-break:break-word}
+.log .h{color:var(--gov);font-weight:500;margin-top:6px}
+.log .h:first-child{margin-top:0}
+.log .k{color:var(--jev)} .log .ok{color:var(--good)} .log .no{color:var(--bad)} .log .cf{color:var(--warn)}
+.logh{display:flex;justify-content:space-between;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.topics{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.topic{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.topic b{font:600 15px var(--f-display);display:flex;justify-content:space-between;gap:8px}
+.topic b span{font:500 12px var(--f-mono);color:var(--gov)}
+.topic q{font-size:12.5px;color:var(--ink2);quotes:none}
+@media (prefers-reduced-motion:reduce){.ck,.b,.metera,.meterb,.ans,.mod{transition:none}}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Evidence Governor · test findings</div>
+  <h1>Send the model half the context. Answer quality holds level.</h1>
+  <p>Jev scores every retrieved passage before your LLM sees it. Across 101 questions, 7 knowledge bases and 2 answer models, the governed prompt carried 53% fewer evidence tokens with answer quality statistically level with the baseline.</p>
+  <div class="chips"><span class="chip">101 questions</span><span class="chip">7 knowledge bases</span><span class="chip">Claude Haiku + Gemini generators</span><span class="chip">baseline vs governed, same retrieval</span></div>
+</header>
+
+<section>
+  <div class="kpis">
+    <div class="kpi hot"><div class="eyebrow" style="color:inherit;opacity:.8">Evidence tokens</div><div class="v">−53%</div><div class="l">2,879 → 1,367 per query</div><div class="s">measured, 101 runs</div></div>
+    <div class="kpi"><div class="eyebrow">Generator tokens</div><div class="v up">−44%</div><div class="l">Haiku 3,964 → 2,200 per query</div><div class="s">Gemini −42% (4,415 → 2,573)</div></div>
+    <div class="kpi"><div class="eyebrow">Generator cost</div><div class="v up">−36%</div><div class="l">Haiku $0.503 → $0.324 per 101</div><div class="s">Gemini −28% ($0.563 → $0.406)</div></div>
+    <div class="kpi"><div class="eyebrow">Net cost incl. Jev fee</div><div class="v up">−18%</div><div class="l">Haiku $0.503 → $0.412 per 101</div><div class="s">Gemini −12% ($0.563 → $0.494)</div></div>
+    <div class="kpi"><div class="eyebrow">Answer correctness (0–2)</div><div class="v">1.68</div><div class="l">vs 1.63 baseline (Haiku)</div><div class="s">Gemini 1.42 vs 1.44. Both within noise (see below)</div></div>
+    <div class="kpi"><div class="eyebrow">Unanswerable questions</div><div class="v up">−87%</div><div class="l">evidence 2,858 → 360 tokens</div><div class="s">correctness stays 2.0 / 2.0</div></div>
+    <div class="kpi"><div class="eyebrow">Jev cost per query</div><div class="v">$0.0009</div><div class="l">20 Jev requests, ≈22.5k tokens</div><div class="s">fixed per query: one request per retrieved chunk</div></div>
+    <div class="kpi"><div class="eyebrow">Latency</div><div class="v down">+15–30%</div><div class="l">Haiku 5.1 s → 6.6 s</div><div class="s">Gemini 8.7 s → 10.0 s</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">What the questions covered</div><h2>Seven knowledge bases, seven question types</h2>
+  <p>Topics are for context only. The questions were written against real public documents: statutes, standards, papers and annual reports. Each knowledge base was run through the same pipeline, in both baseline and governed mode.</p></div>
+  <div class="topics" id="topics"></div>
+  <div class="panel"><h3>Question types, 101 in total</h3><p class="note">Each type stresses a different failure of plain RAG. Example wording is taken from the test set.</p><br><div class="tbl"><table id="qtypes"></table></div></div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">How a query travels</div><h2>Same retrieved passages, two very different prompts</h2>
+  <p>Top lane: a plain RAG pipeline fills a 3,000-token evidence budget with chunks in retrieval order. Bottom lane: the governor validates, sends each passage to Jev for four typed scores, routes each chunk with policy thresholds, then reranks and budgets what is left. In the tests every query retrieved 20 chunks of about 400 tokens; the demo shows 5 so it stays readable. The log narrates each stage using the governor's real rules. Illustrative query: <em>"Within how many hours must a notifiable cyber incident be reported to CERT-In, and how?"</em></p></div>
+  <div class="panel">
+    <div class="flowbar">
+      <button class="btn" id="play" type="button">Pause</button>
+      <button class="btn" id="replay" type="button">Replay</button>
+      <span class="note" id="stepno"></span>
+    </div>
+    <div class="scroller"><svg id="flow" viewBox="0 0 1420 800" role="img" aria-label="Animated flow comparing a plain RAG prompt with the Jev governed prompt"></svg></div>
+    <p id="cap" aria-live="polite"></p>
+    <div class="logh"><span>Governor log · illustrative query</span><span id="logstep"></span></div>
+    <div class="log" id="log" tabindex="0" aria-label="Technical log of the governor pipeline"></div>
+    <div class="legend">
+      <span><i style="border-color:var(--good)"></i>relevant evidence</span>
+      <span><i style="border-color:var(--warn)"></i>conflicting source</span>
+      <span><i style="border-color:var(--bad)"></i>near-miss decoy</span>
+      <span><i style="border-color:var(--muted);border-style:dashed"></i>junk / empty</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">Tokens and money</div><h2>Where the savings come from</h2>
+  <p>Every bar is the mean of 101 paired runs. Baseline and governed use the same retrieved candidates, so the gap is the governor's filtering alone.</p></div>
+  <div class="grid g2">
+    <div class="panel"><h3>Tokens per query</h3><p class="note">Evidence in the prompt, and total tokens the generator consumed.</p><br>
+      <div class="rows" id="tokRows"></div><br><div class="key"><span><i style="background:var(--base)"></i>Baseline</span><span><i style="background:var(--gov)"></i>Governed</span></div></div>
+    <div class="panel"><h3>Cost per 101 queries (USD)</h3><p class="note">Governed bars include the Jev fee on top of the generator.</p><br>
+      <div class="stackcol" id="costRows"></div><br><div class="key"><span><i style="background:var(--base)"></i>Baseline generator</span><span><i style="background:var(--gov)"></i>Governed generator</span><span><i style="background:var(--jev)"></i>Jev fee</span></div></div>
+    <div class="panel"><h3>Evidence tokens by question type</h3><p class="note">The governor cuts hardest where the right move is to say less.</p><br>
+      <div class="rows" id="catEt"></div><br><div class="key"><span><i style="background:var(--base)"></i>Baseline</span><span><i style="background:var(--gov)"></i>Governed</span></div></div>
+    <div class="panel"><h3>Head-to-head, graded by a judge</h3><p class="note">Per question: which prompt produced the better answer.</p><br>
+      <div class="stackcol" id="wtl"></div><br><div class="key"><span><i style="background:var(--gov)"></i>Governed better</span><span><i style="background:var(--muted)"></i>Tie</span><span><i style="background:var(--base)"></i>Baseline better</span></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">Answer quality</div><h2>Fewer tokens, same answers</h2>
+  <p>Correctness graded 0 (wrong) to 2 (fully correct). Haiku scored slightly higher and Gemini slightly lower, but neither difference is statistically meaningful (see the notes at the end). Individual categories hold only 10 to 21 questions, so treat category gaps as hints.</p></div>
+  <div class="grid g2">
+    <div class="panel"><h3>Correctness by category · Haiku</h3><br><div class="rows" id="cH"></div></div>
+    <div class="panel"><h3>Correctness by category · Gemini</h3><br><div class="rows" id="cG"></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">Illustrative math</div><h2>What a production chatbot saves</h2>
+  <p>One million tokens is only about 350 queries, which is too small to feel. A production RAG support or knowledge chatbot typically answers 1,000 to 100,000 questions a day, so the calculator starts at 10,000. The inputs come from the tests. Each query retrieved 20 chunks of about 400 tokens. The baseline filled a 3,000-token evidence budget in rank order (2,879 tokens on average) and the governed prompt averaged 1,367. Jev scored all 20 chunks with one request each, about $0.000872 per query. Prices are example list prices, not quotes; verify current ones.</p></div>
+  <div class="panel calc">
+    <div class="fields">
+      <label for="scn">Deployment size<select id="scn"></select></label>
+      <label for="qpd">Queries per day<input id="qpd" type="number" min="1" step="100"></label>
+      <label for="ept">Baseline evidence tokens per query<input id="ept" type="number" min="100" step="100" value="2879"></label>
+      <label for="ncand">Chunks scored by Jev per query<input id="ncand" type="number" min="1" max="100" step="1" value="20"></label>
+      <label for="model">Generator model<select id="model"></select></label>
+      <label for="price">Input price, $ per 1M tokens<input id="price" type="number" min="0" step="0.05"></label>
+      <p class="note">Counts input tokens only. Answer length barely changes (about −3% in characters, −1% outside unanswerable questions), so no output savings are assumed. The Jev fee depends on how many chunks you score, not on prompt size: about $0.0000436 per chunk.</p>
+    </div>
+    <div class="math" id="math"></div>
+  </div>
+  <div class="grid g2">
+    <div class="panel"><h3>Unit economics per 1M baseline tokens</h3><p class="note">Above the dashed line you save money after paying Jev. Break-even is the input price where saved tokens cover the Jev fee. Cheaper models sit below it.</p>
+      <svg id="lc" class="lc" viewBox="0 0 640 300" width="100%" role="img" aria-label="Net saving per million tokens against model input price"></svg></div>
+    <div class="panel"><h3>Net monthly saving by deployment size</h3><p class="note">30 days, 2,879 baseline evidence tokens and 20 scored chunks per query, after the Jev fee. Red cells lose money.</p><div class="tbl"><table id="tbl"></table></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">Plugging it in</div><h2>Three steps, no migration</h2>
+  <p>The <code>evidence-governor</code> package is a library and CLI with no web framework, database or specific retriever (it depends on pydantic, httpx and tiktoken only). It reads a list of passages and returns a ranked, token-budgeted bundle with provenance. The package is not on PyPI yet, so install it from a checkout.</p></div>
+  <div class="grid g3">
+    <div class="panel step"><span class="n">STEP 1</span><h3>Install</h3><pre># from the repo root
+pip install -e ./governor
+# from the library's own checkout
+pip install -e .</pre><p class="note">You need an OpenRouter API key with access to the Jev model.</p></div>
+    <div class="panel step"><span class="n">STEP 2</span><h3>Call between retrieval and LLM</h3><pre>import asyncio, httpx
+from governor.contracts import Candidate, GovernorRequest
+from governor.evaluate import EvaluationConfig, evaluate
+from governor.jev.client import JevClient
+from governor.policy import DEFAULT_POLICY
+
+chunks = [Candidate(id=c.id, text=c.text,
+          original_rank=i + 1)
+          for i, c in enumerate(hits)]
+request = GovernorRequest(
+    query=q, candidates=chunks,
+    token_budget=2000,
+    allow_external_transmission=True)
+config = EvaluationConfig(
+    max_passage_chars=24000,
+    allow_truncation=True,
+    conflict_budget_share=0.25,
+    dedup_similarity_threshold=0.9)
+
+async def run():
+    async with httpx.AsyncClient() as http:
+        jev = JevClient(http, api_key=KEY,
+              model_id="typesafe/jev-1.13")
+        return await evaluate(
+            request, jev, DEFAULT_POLICY, config)
+bundle = asyncio.run(run())</pre><p class="note"><code>hits</code> is whatever your retriever returns, <code>q</code> the user question and <code>KEY</code> your OpenRouter key. A CLI is included: <code>evidence-governor evaluate --input request.json --output bundle.json</code>.</p></div>
+    <div class="panel step"><span class="n">STEP 3</span><h3>Prompt from the bundle</h3><pre>items = (bundle.accepted_evidence
+        + bundle.conflicting_evidence)
+context = "\n\n".join(i.text for i in items)
+# each item: id, text, scores,
+# original_rank, final_rank, token_count
+# bundle.status may be
+# "insufficient_evidence": abstain</pre><p class="note">Text comes back verbatim with provenance. A shadow mode (serve the baseline, log the governed bundle) exists in the separate reference chatbot app, not in the library.</p></div>
+  </div>
+  <div class="grid g3">
+    <div class="panel step"><h3>Four typed questions per passage</h3><ul><li>is_relevant</li><li>contains_answer_evidence</li><li>contradicts_query_premise</li><li>contains_prompt_injection</li></ul></div>
+    <div class="panel step"><h3>Rules stay in your code</h3><p class="note">Jev answers narrow facts. Thresholds and routing live in a named, versioned policy, so you can re-route a past run under a new policy with zero new Jev calls.</p></div>
+    <div class="panel step"><h3>Every decision is traceable</h3><p class="note">Each chunk keeps its route, rule fired and scores in <code>decision_trace</code>. The separate reference chatbot app (a FastAPI demo in the same repo, not part of the package) adds trace pages, analytics and a JSON API.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">Read this before you quote the numbers</div><h2>What the tests show, and what they don't</h2></div>
+  <div class="grid g2">
+    <div class="panel"><h3>What held up</h3><ul class="win">
+      <li>Token and cost cuts held on every question type and both generators.</li>
+      <li>Unanswerable questions: 87% less context and unchanged correctness (2.0 vs 2.0). Model answers there were about 22% shorter, the only place output length moved noticeably.</li>
+      <li>Haiku correctness 1.68 vs 1.63: 8 questions scored higher, 7 lower, 86 unchanged. A paired sign test gives p = 1.0, so this is parity, not a win.</li>
+      <li>Gemini correctness 1.42 vs 1.44: 13 higher, 16 lower, 72 unchanged (p = 0.71). Also parity.</li>
+      <li>A separate holistic grade picked governed in 10 and baseline in 15 of Haiku's questions (17 and 21 for Gemini), 76 and 63 ties. Fewer wins than losses in both models.</li>
+    </ul></div>
+    <div class="panel"><h3>Where it cost something</h3><ul class="lose">
+      <li>Latency rose 15–30% because Jev scoring runs before generation.</li>
+      <li>Haiku's small average gain came from ordinary (+4 points in total) and synthesis (+2) questions and was partly offset by conflicting-source (−2) and false-premise (−1) questions. Dropping a chunk can lose a detail a multi-source answer needs.</li>
+      <li>Haiku conflicting-source correctness fell (1.5 → 1.3); decoy answers went from 2 to 4 of 101; 2 over-refusals.</li>
+      <li>Gemini hit its output cap in 41 baseline and 40 governed answers, which depresses scores for both.</li>
+      <li>Jev's fee is a real cost. Below about $0.58 per 1M input tokens it outweighs the savings (GPT-4o mini, Gemini Flash class). On those models use the governor only for what it checks, not to save money, and note that these tests did not measure a quality gain from it.</li>
+      <li>The savings are measured against a 3,000-token budget baseline, not against sending all 20 retrieved chunks (about 8,000 tokens).</li>
+    </ul></div>
+  </div>
+  <p class="note">One run per question, a single judge model for grading, 101 questions. Token and cost reductions are large and consistent. Quality differences are not distinguishable from noise. The injection-withholding and conflict-flagging features are built into the policy but were not what this benchmark measured. Source: <span style="font-family:var(--f-mono)">results/*_baseline_vs_governed_graded.csv</span>.</p>
+</section>
+</div>
+<div id="tip"></div>
+
+<script>
+const $=s=>document.querySelector(s), NS="http://www.w3.org/2000/svg";
+const fmt=n=>n.toLocaleString("en-US",{maximumFractionDigits:0});
+const usd=(n,d=2)=>(n<0?"−":"")+"$"+Math.abs(n).toFixed(d);
+const tip=$("#tip");
+document.addEventListener("mousemove",e=>{const t=e.target.closest("[data-tip]");if(!t){tip.style.display="none";return}
+  tip.textContent=t.dataset.tip;tip.style.display="block";tip.style.left=Math.min(e.clientX+14,innerWidth-270)+"px";tip.style.top=(e.clientY+14)+"px"});
+function barRows(el,rows,max,unit,dec){
+  el.innerHTML=rows.map(r=>`<div class="row"><div class="nm">${r.n}</div><div class="bars">${r.v.map(([cls,val,lab])=>
+   `<div class="bw" data-tip="${r.n} · ${lab}: ${val.toFixed(dec)}${unit}"><div class="b ${cls}" style="width:${val/max*80}%"></div><span>${val.toFixed(dec)}${unit}</span></div>`).join("")}</div></div>`).join("");
+}
+barRows($("#tokRows"),[
+ {n:"Evidence in prompt",v:[["base",2879,"Baseline"],["gov",1364,"Governed"]]},
+ {n:"Generator tokens · Haiku",v:[["base",3964,"Baseline"],["gov",2200,"Governed"]]},
+ {n:"Generator tokens · Gemini",v:[["base",4415,"Baseline"],["gov",2573,"Governed"]]}],4415," tok",0);
+const cats=["ordinary","exact-identifier","near-miss","false-premise","conflicting-sources","unanswerable","synthesis"];
+const et=[[2867,1710],[2882,1177],[2899,1392],[2880,984],[2866,1952],[2858,360],[2906,2034]];
+barRows($("#catEt"),cats.map((c,i)=>({n:c,v:[["base",et[i][0],"Baseline"],["gov",et[i][1],"Governed"]]})),2906," tok",0);
+const cH=[[1.76,1.95],[1.5,1.56],[1.47,1.53],[1.73,1.64],[1.5,1.3],[2,2],[1.42,1.58]];
+const cG=[[1.62,1.43],[1.33,1.44],[1.27,1.53],[1.55,1.18],[1.0,1.2],[2,2],[1.08,.92]];
+[["#cH",cH],["#cG",cG]].forEach(([id,d])=>barRows($(id),cats.map((c,i)=>({n:c,v:[["base",d[i][0],"Baseline"],["gov",d[i][1],"Governed"]]})),2," / 2",2));
+(function(){const rows=[["Haiku",.5034,.3244,.0881],["Gemini",.5628,.4056,.0881]],mx=.57;
+ $("#costRows").innerHTML=rows.map(([n,b,g,j])=>`<div class="srow"><div class="nm">${n}</div><div class="stackcol" style="gap:6px">
+  <div class="stack" style="width:${b/mx*100}%" data-tip="${n} baseline: ${usd(b,3)}"><div class="base" style="flex:${b}">${usd(b,3)}</div></div>
+  <div class="stack" style="width:${(g+j)/mx*100}%" data-tip="${n} governed: ${usd(g,3)} generator + ${usd(j,3)} Jev = ${usd(g+j,3)}"><div class="gov" style="flex:${g}">${usd(g,3)}</div><div class="jev" style="flex:${j}">${usd(j,2)}</div></div>
+  <span class="note" style="font:12px var(--f-mono)">net ${usd(g+j-b,3)} (${((g+j)/b*100-100).toFixed(0)}%)</span></div></div>`).join("");
+ const w=[["Haiku",10,76,15],["Gemini",17,63,21]];
+ $("#wtl").innerHTML=w.map(([n,g,t,b])=>`<div class="srow"><div class="nm">${n}</div><div class="stack"><div class="gov" style="flex:${g}" data-tip="Governed better: ${g}">${g}</div><div class="tie" style="flex:${t}" data-tip="Tie: ${t}">${t}</div><div class="base" style="flex:${b}" data-tip="Baseline better: ${b}">${b}</div></div></div>`).join("");
+})();
+
+/* topics */
+const KB=[["Cybersecurity IR",18,"CERT-In directions, NIST CSF 2.0 and SP 800-61, EU and SEC incident rules","In a ransomware incident, what should a victim organisation do first to contain spread?"],
+["Procurement",18,"General Financial Rules, GeM, MSE procurement policy","What limits does the GFR place on advance payments to suppliers?"],
+["Indian Law",18,"RTI Act, Bharatiya Nyaya and Nagarik Suraksha Sanhitas","How many days does a Public Information Officer have to respond to an RTI request?"],
+["Climate Migration",17,"IOM definitions, Global Compact, Teitiota v. New Zealand","Is the Global Compact for Migration legally binding?"],
+["Quantum",15,"Shor, Grover, Preskill's NISQ paper, ML-KEM standard","What speedup does Grover's algorithm give for unstructured search?"],
+["Psychology",10,"Loneliness and isolation, global mental health, EAST behavioural report","What is the difference between social isolation and loneliness?"],
+["Corporate Reports",5,"Unilever annual report, Infosys and Apple guidance","What was Unilever's underlying sales growth in 2025?"]];
+$("#topics").innerHTML=KB.map(([n,c,d,q])=>`<div class="topic"><b>${n}<span>${c} Q</span></b><div class="note">${d}</div><q>"${q}"</q></div>`).join("");
+const QT=[["ordinary",21,"Direct lookup of a stated fact","Within how many hours must a notifiable cyber incident be reported to CERT-In?"],
+["exact-identifier",18,"Clause, table or box number named in the question","In NIST CSF 2.0, what does subcategory RS.MA-05 say?"],
+["near-miss",15,"Right document, but an adjacent wrong clause is tempting","What availability criteria make an incident significant for a TLD name registry?"],
+["unanswerable",14,"Answer is not in the corpus; the model should say so","Within how many hours must a data fiduciary notify India's Data Protection Board?"],
+["synthesis",12,"Needs several passages combined","How did NIST's incident response life cycle change between SP 800-61 Rev 2 and Rev 3?"],
+["false-premise",11,"Question states something the sources contradict","CERT-In gives 72 hours to report ransomware. How do we submit that report?"],
+["conflicting-sources",10,"Sources disagree and the answer must say how","What are the incident-reporting deadlines under CERT-In, NIS2 and the SEC rule?"]];
+$("#qtypes").innerHTML=`<tr><th>Type</th><th>Count</th><th style="text-align:left">What it tests</th><th style="text-align:left">Example</th></tr>`+QT.map(([a,b,c,d])=>`<tr><td>${a}</td><td>${b}</td><td style="text-align:left;white-space:normal">${c}</td><td style="text-align:left;white-space:normal;color:var(--ink2)">${d}</td></tr>`).join("");
+
+/* calculator */
+const MODELS=[["GPT-4o mini",.15],["Claude Haiku 4.5",1],["Gemini 2.5 Pro",1.25],["GPT-4o",2.5],["Claude Sonnet 4.5",3],["Claude Opus 4.5",5],["Gemini 2.5 Flash",.3]];
+const CUT=.525, FEEC=.000872/20, EV0=2879, JT0=22463, FEEQ=FEEC*20, FEEM=FEEQ/EV0*1e6, DAYS=30;
+const SCN=[["Pilot · 1,000 queries/day",1000],["Team support bot · 10,000 queries/day",10000],["Enterprise · 100,000 queries/day",100000]];
+const sel=$("#model"),scn=$("#scn");
+sel.innerHTML=MODELS.map((m,i)=>`<option value="${i}">${m[0]} · $${m[1]}/M</option>`).join("")+`<option value="x">Custom price</option>`;
+scn.innerHTML=SCN.map((m,i)=>`<option value="${i}">${m[0]}</option>`).join("")+`<option value="x">Custom volume</option>`;
+scn.value=1;$("#qpd").value=10000;$("#price").value=3;sel.value=3;
+const money=n=>usd(n,Math.abs(n)>=100?0:2).replace(/\B(?=(\d{3})+(?!\d))/g,",");
+function calc(){const q=+$("#qpd").value||0,e=+$("#ept").value||EV0,nc=+$("#ncand").value||20,p=+$("#price").value||0,m=q*DAYS,base=m*e,rem=base*CUT,
+  gross=rem/1e6*p,fee=m*FEEC*nc,net=gross-fee;
+ $("#math").innerHTML=`<div><span>Queries per month</span><span>${fmt(m)}</span></div>
+ <div><span>Baseline evidence tokens per month</span><span>${fmt(base)}</span></div>
+ <div><span>Governed evidence tokens (−52.5%)</span><span>${fmt(base-rem)}</span></div>
+ <div><span>Tokens removed from prompts</span><span>${fmt(rem)}</span></div>
+ <div><span>Generator input saved @ $${p}/M</span><span>${money(gross)}</span></div>
+ <div><span>Jev fee (${fmt(m*nc)} chunk scores)</span><span>−${money(fee)}</span></div>
+ <div class="tot"><span>Net saving per month</span><span style="color:var(--${net>=0?"good":"bad"})">${money(net)}</span></div>
+ <div><span>Per year</span><span style="color:var(--${net>=0?"good":"bad"})">${money(net*12)}</span></div>
+ <div><span>Net per 1,000 queries</span><span>${usd((e*CUT/1e6*p-FEEC*nc)*1000)}</span></div>`}
+scn.onchange=()=>{if(scn.value!=="x")$("#qpd").value=SCN[scn.value][1];calc()};
+sel.onchange=()=>{if(sel.value!=="x")$("#price").value=MODELS[sel.value][1];calc()};
+$("#qpd").oninput=()=>{scn.value="x";calc()};$("#price").oninput=()=>{sel.value="x";calc()};$("#ept").oninput=calc;$("#ncand").oninput=calc;calc();
+$("#tbl").innerHTML=`<tr><th>Model</th><th>$/M in</th>${SCN.map(s=>`<th>${fmt(s[1]/1000)}k/day</th>`).join("")}</tr>`+[...MODELS].sort((a,b)=>a[1]-b[1]).map(([n,p])=>{
+ const pq=EV0*CUT/1e6*p-FEEQ;return `<tr><td>${n}</td><td>${usd(p)}</td>${SCN.map(s=>{const v=pq*s[1]*DAYS;return `<td class="${v>=0?"pos":"neg"}">${money(v)}</td>`}).join("")}</tr>`}).join("");
+(function(){const FEE=FEEM,W=640,H=300,L=46,R=16,T=14,B=38,xm=6,y0=-.5,y1=3,X=p=>L+p/xm*(W-L-R),Y=v=>T+(y1-v)/(y1-y0)*(H-T-B),f=p=>CUT*p-FEE;let s="";
+ for(let v=-.5;v<=3;v+=.5)s+=`<line class="ax" x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${L-6}" y="${Y(v)+4}" text-anchor="end">${v<0?"−":""}$${Math.abs(v).toFixed(1)}</text>`;
+ for(let p=0;p<=6;p++)s+=`<text x="${X(p)}" y="${H-18}" text-anchor="middle">$${p}</text>`;
+ s+=`<text x="${(L+W-R)/2}" y="${H-3}" text-anchor="middle">Generator input price, $ per 1M tokens</text>`;
+ s+=`<line class="zero" x1="${L}" x2="${W-R}" y1="${Y(0)}" y2="${Y(0)}"/>`;
+ s+=`<path d="M${X(0)},${Y(f(0))} L${X(xm)},${Y(f(xm))} L${X(xm)},${Y(0)} L${X(FEE/CUT)},${Y(0)} Z" fill="var(--good)" opacity=".13"/><path d="M${X(0)},${Y(f(0))} L${X(FEE/CUT)},${Y(0)} L${X(0)},${Y(0)} Z" fill="var(--bad)" opacity=".13"/>`;
+ s+=`<line x1="${X(0)}" y1="${Y(f(0))}" x2="${X(xm)}" y2="${Y(f(xm))}" stroke="var(--gov)" stroke-width="2.5"/>`;
+ s+=`<text x="${X(FEE/CUT)+6}" y="${Y(0)-8}" style="fill:var(--ink)">break-even ≈ $${(FEE/CUT).toFixed(2)}</text>`;
+ MODELS.forEach(([n,p],i)=>{const cx=X(p),cy=Y(f(p)),dy=i%2?16:-10;s+=`<g data-tip="${n}: net ${usd(f(p))} per 1M"><circle cx="${cx}" cy="${cy}" r="5" fill="var(--gov)" stroke="var(--surface)" stroke-width="2"/><text x="${cx}" y="${cy+dy+(dy>0?4:0)}" text-anchor="${p>4?"end":"middle"}" style="fill:var(--ink)">${n.replace("Claude ","").replace(" 2.5","")}</text></g>`});
+ $("#lc").innerHTML=s})();
+
+/* ---------- flow animation ---------- */
+const CK=[ // original retrieval order; q = [relevance, evidence, contradiction, injection]
+ {id:1,t:"decoy",txt:"§70B: logs 180 days",q:[.71,.22,.05,.01],tagA:"near-miss, kept",route:"EXCLUDE · E .22 ≤ .55"},
+ {id:2,t:"gold",txt:"Report within 6 hours",q:[.97,.96,.02,0],tagA:"relevant, kept",route:"ACCEPT · E .96 > .55"},
+ {id:3,t:"conf",txt:"Older note: 24 hours",q:[.83,.74,.78,0],tagA:"stale, kept",route:"CONFLICT · C .78 > .70"},
+ {id:4,t:"gold",txt:"CERT-In email address",q:[.90,.88,.03,0],tagA:"relevant, kept",route:"ACCEPT · E .88 > .55"},
+ {id:5,t:"junk",txt:"Empty page extraction",q:null,tagA:"empty, kept"}];
+const keep=[2,4,3], fx=n=>n.toFixed(2).replace(/^0/,"");
+const RY=(base,r)=>base+r*48, CW=156, CH=40, MW=170;
+const COL={ret:100,val:280,jev:460,rte:640,rer:820,fin:1000,ans:1180};
+const A=80, B=454;
+const svg=$("#flow");
+const mk=(tag,attrs,txt,parent=svg)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;parent.appendChild(e);return e};
+const stgs=[],mods=[];
+mk("text",{x:8,y:22,class:"lane-t"},"Without Jev: plain budget fill (demo shows 5 of 20 chunks)");
+mk("text",{x:8,y:396,class:"lane-t"},"With Jev Evidence Governor");
+function module(x,y,h,w,title,sub,step){const r=mk("rect",{x:x-8,y:y,width:w,height:h,rx:10,class:"mod"});r._s=step;r._lane=y<300?"a":"b";mods.push(r);
+ const t=mk("text",{x:x,y:y+20,class:"stg"},title);t.dataset.step=step;stgs.push(t);mk("text",{x:x,y:y+33,class:"sub"},sub)}
+module(COL.ret,34,340,MW,"Retriever","top-20 (5 shown)",1);
+module(COL.jev,34,340,MW,"Prompt","every chunk, rank order",2);
+module(COL.ans,34,340,216,"Answer","plain prompt",7);
+module(COL.ret,408,380,MW,"Retriever","top-20 (5 shown)",1);
+module(COL.val,408,380,MW,"Validate","before any Jev call",2);
+module(COL.jev,408,380,MW,"Jev judge","4 typed questions",3);
+module(COL.rte,408,380,MW,"Route","policy thresholds",4);
+module(COL.rer,408,380,MW,"Rerank + budget","evidence ↓ · dedupe · fit",5);
+module(COL.fin,408,380,MW,"Final context","accepted + conflicting",6);
+module(COL.ans,408,380,216,"Answer","governed prompt",7);
+[A,B].forEach(b=>{mk("path",{d:`M44,${b+16} H88`,class:"pipe"});mk("text",{x:6,y:b+12,style:"font:500 10px var(--f-mono)"},"query")});
+const note=(x,y,t)=>mk("text",{x:x,y:y,style:"font:400 9.5px var(--f-mono)"},t);
+["? is_relevant (R)","? contains_answer_evidence (E)","? contradicts_query_premise (C)","? contains_prompt_injection (I)"].forEach((q,i)=>note(COL.jev,B+5*48+16+i*14,q));
+note(COL.val,B+5*48+16,"missing/duplicate id");note(COL.val,B+5*48+30,"empty · over-length · scope");
+note(COL.rte,B+5*48+16,"I>.70 withhold · C>.70 conflict");note(COL.rte,B+5*48+30,"R<.45 exclude · E>.55 accept");
+note(COL.rer,B+5*48+16,"dedupe: similarity ≥ .90");note(COL.rer,B+5*48+30,"fit token_budget · cl100k");
+mk("rect",{x:COL.jev,y:A+5*48+8,width:CW,height:8,rx:4,class:"meterbg"});
+const mA=mk("rect",{x:COL.jev,y:A+5*48+8,width:0,height:8,rx:4,class:"metera"});
+const tA=mk("text",{x:COL.jev,y:A+5*48+34,style:"font:500 12px var(--f-mono)"},"");
+mk("rect",{x:COL.fin,y:B+3*48+14,width:CW,height:8,rx:4,class:"meterbg"});
+const mB=mk("rect",{x:COL.fin,y:B+3*48+14,width:0,height:8,rx:4,class:"meterb"});
+const tB=mk("text",{x:COL.fin,y:B+3*48+40,style:"font:500 12px var(--f-mono)"},"");
+function ansCard(x,y,head,col,lines){const g=mk("g",{});g.style.opacity=0;g.style.transition="opacity .6s";
+ mk("text",{x:x,y:y+62,class:"ans-h",style:"fill:"+col+"!important"},head,g);
+ lines.forEach((l,i)=>mk("text",{x:x,y:y+84+i*16,class:"ans-t",style:"fill:var(--ink)!important"},l,g));return g}
+const ansA=ansCard(COL.ans,34,"DILUTED","var(--bad)",["Mentions 6 hours, but also","24 hours and the 180-day","log rule. Hedges between","them and treats the empty","page as context.","","The reader must work out","which figure is current."]);
+const ansB=ansCard(COL.ans,408,"CITED","var(--good)",["Within 6 hours of noticing","the incident [2].","","Report to the CERT-In email","address [4].","","Note: older guidance says 24","hours [3], flagged as a","conflict."]);
+function chunk(c,base){const g=mk("g",{class:"ck t-"+c.t});g.style.opacity=0;g.style.transform=`translate(40px,${RY(base,c.id-1)}px)`;
+ mk("rect",{width:CW,height:CH,rx:6},null,g);mk("text",{x:8,y:16,class:"tx"},"#"+c.id+" "+c.txt,g);const tg=mk("text",{x:8,y:31,class:"tg"},"",g);return {g,tg,c}}
+const ckA=CK.map(c=>chunk(c,A)), ckB=CK.map(c=>chunk(c,B));
+const sc=c=>c.q?`R${fx(c.q[0])} E${fx(c.q[1])} C${fx(c.q[2])} I${fx(c.q[3])}`:"";
+const CAP=["Replay to follow one query through both pipelines.",
+"Both pipelines start from the same retrieved passages (5 shown here; the tests retrieve 20). The decoy sits at rank 1, the answer at rank 2.",
+"Validation runs first and catches structural problems. The empty extraction is set aside and never sent to Jev.",
+"Each remaining passage goes to Jev in one request that asks four narrow questions and returns a 0 to 1 score for each.",
+"The policy turns scores into routes with fixed thresholds: accept, conflict, exclude or withhold.",
+"Accepted evidence is reranked by answer evidence, near-duplicates are dropped, and the budget is filled greedily.",
+"The final context holds three passages. Across the tests it averaged 1,367 tokens against 2,879 for the plain prompt, 53% fewer.",
+"The governed answer cites the right passages and flags the older figure. The plain prompt hands the model noise to untangle."];
+const LOG=[[],
+[["h","1 · Retrieve"],["","retriever → candidates with original_rank (vector similarity order). Tests: top 20 chunks of ~400 tokens; demo: 5"],["","GovernorRequest: token_budget, candidate_limit=20, allow_external_transmission=true"]],
+[["h","2 · Validate (runs before any Jev call)"],["","validate_candidates(): missing_id · duplicate_id · empty_text · over_length · out_of_scope"],["no","#5 set aside: empty_text → never sent to Jev, so it costs nothing"],["","4 candidates eligible"]],
+[["h","3 · Jev judges every eligible passage"],["","JevClient → OpenRouter Decisions API · typesafe/jev-1.13 · question set v1"],["","one Decisions request per eligible passage, each asking all four typed questions (tests: 20 requests per query); concurrent, with timeout and retries. Demo: 4 requests"],["k","scores 0–1: is_relevant R · contains_answer_evidence E · contradicts_query_premise C · contains_prompt_injection I"],
+ ...CK.filter(c=>c.q).map(c=>["",`#${c.id}  ${sc(c)}`])],
+[["h","4 · Route with policy cookbook-defaults-v1"],["","route_scores(), first rule that fires wins:"],["k","I > .70 WITHHOLD · C > .70 CONFLICT · R < .45 EXCLUDE · E > .55 ACCEPT · otherwise EXCLUDE"],
+ ["ok","#2 ACCEPT  evidence_above_threshold (E .96)"],["ok","#4 ACCEPT  evidence_above_threshold (E .88)"],["cf","#3 CONFLICT  contradiction_above_threshold (C .78)"],["no","#1 EXCLUDE  no_rule_matched: on topic (R .71) but E .22, the near-miss decoy"],
+ ["","thresholds live in app code, so reroute() can replay stored scores under another policy with zero new Jev calls"]],
+[["h","5 · Rerank, dedupe, budget"],["","order_accepted(): sort by contains_answer_evidence ↓, is_relevant ↓, original_rank ↑  →  #2 (E .96), #4 (E .88)"],["","drop_near_duplicates(): difflib ratio ≥ .90 against already-kept text → 0 dropped"],
+ ["","assemble_budget(): greedy fill with cl100k_base token counts inside token_budget; a conflict_share of it is reserved for the conflicting block (#3)"]],
+[["h","6 · Final context"],["ok","bundle → accepted [#2, #4] · conflicting [#3] · excluded [#1] · set aside [#5]"],["","each item keeps chunk id, route, rule_fired and its four scores for the trace"],["","measured over 101 queries: governed 1,367 evidence tokens vs 2,879 for a plain fill of a 3,000-token budget (−53%)"]],
+[["h","7 · Answer"],["","prompt built from the accepted and conflicting blocks; the answer cites chunk ids and flags the 24 h figure"],["no","baseline for contrast: original rank order, plain budget fill, no scoring → decoy, stale note and empty page all reach the model"]]];
+const logEl=$("#log");let logTimers=[],logAt=-1;
+function mkLine(cls,txt){const s=document.createElement("span");s.className="ln "+(cls||"");s.textContent=txt;return s}
+function setLog(step,animate){logTimers.forEach(clearTimeout);logTimers=[];
+ const prev=logAt;logAt=step;$("#logstep").textContent=step?`stage ${step} of 7`:"";
+ if(!animate||step!==prev+1){logEl.replaceChildren();for(let i=1;i<=step;i++)LOG[i].forEach(([c,t])=>logEl.appendChild(mkLine(c,t)));logEl.scrollTop=logEl.scrollHeight;return}
+ LOG[step].forEach(([c,t],i)=>logTimers.push(setTimeout(()=>{logEl.appendChild(mkLine(c,t));logEl.scrollTop=logEl.scrollHeight},i*420)))}
+function render(step,animate){
+ stgs.forEach(e=>e.classList.toggle("on",+e.dataset.step===step));
+ mods.forEach(m=>m.classList.toggle("on",m._s===step));
+ $("#cap").textContent=CAP[step];$("#stepno").textContent=step?`Stage ${step} of 7`:"";setLog(step,animate);
+ ckA.forEach(({g,tg,c})=>{g.style.opacity=step>=1?1:0;g.style.transform=`translate(${step>=2?COL.jev:COL.ret}px,${RY(A,c.id-1)}px)`;tg.textContent=step>=2?"→ "+c.tagA:""});
+ ckB.forEach(({g,tg,c})=>{const o=c.id-1,k=keep.indexOf(c.id);let x=COL.ret,y=RY(B,o),op=step>=1?1:0,label="";
+  if(step>=2){x=COL.val;label=c.q?"✓ valid":"✗ empty_text → set aside";if(!c.q)op=.35}
+  if(step>=3){x=COL.jev;if(!c.q){op=0}else label=sc(c)}
+  if(step>=4&&c.q){x=COL.rte;label=c.route;if(c.t==="decoy")op=.4}
+  if(step>=5){if(k>=0){x=COL.rer;y=RY(B,k);label=c.t==="conf"?"conflict block":"rank "+(k+1)+" · E "+fx(c.q[1])}else op=0}
+  if(step>=6&&k>=0){x=COL.fin;label=""}
+  g.style.opacity=op;g.style.transform=`translate(${x}px,${y}px)`;tg.textContent=label});
+ mA.setAttribute("width",step>=2?CW:0);tA.textContent=step>=2?"2,879 tokens avg (3,000 budget)":"";
+ mB.setAttribute("width",step>=6?CW*1367/2879:0);tB.textContent=step>=6?"1,367 tokens avg (−53%)":"";
+ ansA.style.opacity=step>=7?1:0;ansB.style.opacity=step>=7?1:0;
+}
+let step=7,timer=null,playing=false;
+const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function tick(){render(step,true);const hold=step===7?6000:step===0?900:LOG[step].length*420+2400;timer=setTimeout(()=>{step=step>=7?0:step+1;tick()},hold)}
+function play(){if(playing)return;playing=true;$("#play").textContent="Pause";tick()}
+function pause(){playing=false;clearTimeout(timer);$("#play").textContent="Play"}
+$("#play").onclick=()=>playing?pause():play();
+$("#replay").onclick=()=>{pause();step=0;logAt=-1;play()};
+stgs.forEach(e=>{e.style.cursor="pointer";e.addEventListener("click",()=>{pause();step=+e.dataset.step;render(step,false)})});
+render(7,false);
+if(reduce){pause();$("#play").disabled=true;$("#replay").disabled=true}
+else if("IntersectionObserver" in window){let started=false;new IntersectionObserver((es,o)=>{if(es[0].isIntersecting&&!started){started=true;step=0;logAt=-1;play();o.disconnect()}},{threshold:.35}).observe(svg)}
+else{step=0;logAt=-1;play()}
+</script>
+
+</body></html>
