@@ -1,32 +1,38 @@
 # Evidence Governor: test findings
 
-Jev scores every retrieved passage before your LLM sees it. Across 101 questions, 7 knowledge bases and 2 answer models (Claude Haiku 4.5 and Gemini), the governed prompt carried **53% fewer evidence tokens**. Answer quality was statistically level with the baseline, and generator cost fell, but latency rose.
+Jev scores every retrieved passage before your LLM sees it. Across 101 questions, 7 knowledge bases and 2 answer models (Claude Haiku 4.5 and Gemini), the governed prompt carried **53% fewer evidence tokens**. Differences in answer quality were not distinguishable from noise, generator cost fell, and latency rose in the Haiku and Gemini runs.
 
-All numbers are computed from `results/*.csv` and `results/*.json`. Library facts are checked against `governor/`.
+All numbers are computed from `results/*.csv` and `results/*.json` (recompute them with `python results/summarize.py`). Library facts are checked against `governor/`. Metric definitions and run-set caveats are in [`results/README.md`](results/README.md).
 
 ## Headline results
 
 | Measure | Baseline | Governed | Change |
 | --- | --- | --- | --- |
-| Evidence tokens per query | 2,879 | 1,367 | **−53%** |
-| Generator tokens per query, Haiku | 3,964 | 2,200 | −44% |
-| Generator tokens per query, Gemini | 4,415 | 2,573 | −42% |
+| Evidence tokens per query, Haiku | 2,879 | 1,364 | **−53%** |
+| Evidence tokens per query, Gemini | 2,876 | 1,344 | **−53%** |
+| Generator input tokens per query, Haiku | 3,964 | 2,200 | −44% |
+| Generator input tokens per query, Gemini | 4,415 | 2,573 | −42% |
 | Generator cost per 101 queries, Haiku | $0.503 | $0.324 | −36% |
 | Generator cost per 101 queries, Gemini | $0.563 | $0.406 | −28% |
-| Net cost including Jev fee, Haiku | $0.503 | $0.412 | −18% |
-| Net cost including Jev fee, Gemini | $0.563 | $0.494 | −12% |
-| Mean correctness (0–2), Haiku | 1.63 | 1.68 | +0.05, not significant |
-| Mean correctness (0–2), Gemini | 1.44 | 1.42 | −0.02, not significant |
-| Latency, Haiku | 5.1 s | 6.6 s | +30% |
-| Latency, Gemini | 8.7 s | 10.0 s | +15% |
+| Total cost including Jev, Haiku | $0.503 | $0.412 | −18% |
+| Total cost including Jev, Gemini | $0.563 | $0.494 | −12% |
+| Mean correctness (0–2), Haiku | 1.63 | 1.68 | +0.05, inconclusive |
+| Mean correctness (0–2), Gemini | 1.44 | 1.42 | −0.02, inconclusive |
+| Mean per-request latency, Haiku | 5.1 s | 6.6 s | +30% |
+| Mean per-request latency, Gemini | 8.7 s | 10.0 s | +15% |
+
+*Evidence tokens* are the tokens of the evidence block in the prompt; *generator input tokens* are what the answering model reported (they include the question and instructions, so they are not the same measure). *Total cost* is generator cost plus the Jev fee. Latency is the per-request time recorded by the benchmark app and is not split into Jev and generation time. Percentages are `governed / baseline − 1` on totals over 101 questions.
 
 ## How the test was set up
 
 - Each query retrieved the **top 20 chunks** of about **400 tokens** each (BGE-M3 + ChromaDB, top-k 20).
 - **Baseline** filled a 3,000-token evidence budget in retrieval order. That admits about 7 of the 20 chunks and gave 2,879 tokens on average. It is not the cost of sending all 20 chunks, which would be about 8,000 tokens.
-- **Governed** sent all 20 chunks to Jev, routed them by policy, reranked and budgeted the result. Mean evidence was 1,367 tokens.
+- **Governed** sent all 20 chunks to Jev, routed them by policy, reranked and budgeted the result. Mean evidence was 1,364 tokens in the Haiku run and 1,344 in the Gemini run.
 - Jev made **one request per chunk, 20 per query**, in all 101 runs, asking four typed questions each. That is about 22,500 Jev tokens and **$0.000872 per query** (about $0.039 per 1M Jev tokens).
 - Answers were graded 0 to 2 for correctness and grounding by a single judge model, one run per question.
+- Haiku and Gemini each had their own baseline and governed execution (including their own Jev calls). Within a question, both modes start from the same top-20 retrieval. Between the two sets, baseline evidence differs for 4 of 101 questions and governed evidence for 17.
+- The benchmark app and its scripts are not in this repository, so retrieval and prompt settings above are as reported by the author. The artifacts do not record the Gemini version or which Jev snapshot served the runs (the code requests the alias `typesafe/jev-1.13`).
+- A third set of 101 runs (`jev_baseline_vs_governed_runs.csv`, a cheaper generator whose identity is not recorded) is not used in the figures here. It showed similar evidence reduction (2,880 → 1,368) but lower governed latency (10.0 s → 8.5 s).
 
 Topics: Cybersecurity IR (18 questions), Procurement (18), Indian Law (18), Climate Migration (17), Quantum (15), Psychology (10), Corporate Reports (5). Question types: ordinary (21), exact-identifier (18), near-miss (15), unanswerable (14), synthesis (12), false-premise (11), conflicting-sources (10).
 
@@ -41,7 +47,7 @@ Topics: Cybersecurity IR (18 questions), Procurement (18), Indian Law (18), Clim
 
 Thresholds live in application code, so `reroute()` can re-run routing under another policy from stored judgments with zero new Jev calls.
 
-## Answer quality: parity, not a win
+## Answer quality: no measured difference
 
 | Model | Mean correctness | Higher | Lower | Unchanged | Sign test p | Holistic grade: governed / baseline / tie |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -61,15 +67,15 @@ Each category holds only 10 to 21 questions, so treat category gaps as hints.
 
 ## What the governor costs
 
-- **Latency** rose 15–30% because scoring runs before generation.
+- **Latency** rose 15–30% in the Haiku and Gemini runs, consistent with scoring running before generation. The third run set showed the opposite direction, so the latency effect is not settled.
 - **Haiku conflicting-source** correctness fell from 1.5 to 1.3; decoy answers rose from 2 to 4 of 101; there were 2 over-refusals.
 - **Haiku grounding** score totalled 190 governed against 201 baseline (max 202), a small drop.
 - **Gemini** hit its output cap in 41 baseline and 40 governed answers, which depresses scores in both modes.
-- **Output tokens are not reduced in general.** Answer length barely moved: −3% in characters overall, −1% outside unanswerable questions, −22% on unanswerable ones, where the governor leaves little to answer from. The "−44% generator tokens" figure comes from the smaller evidence block (input), not from shorter answers. Savings from shorter answers should not be assumed.
+- **Answer length moved little for Haiku and more for Gemini.** Measured in characters: Haiku −3% overall, −1% outside unanswerable questions, −22% on unanswerable ones; Gemini −10%, −8% and −43%. The generator-token figures are input tokens from the smaller evidence block, not output. The illustrative savings below assume no output savings.
 
 ## Illustrative savings
 
-Per query, input savings are `2,879 × 52.5% × price per token`, and the Jev fee is about `$0.000872` (20 chunks at about `$0.0000436`). Break-even is an input price of about **$0.58 per 1M tokens**. Prices are example list prices; check current ones.
+Per query, input savings are `2,879 × 52.5% × price per token` (52.5% is rounded slightly below the measured 52.6–53.3%), and the Jev fee is about `$0.000872` (20 chunks at about `$0.0000436`). Break-even is an input price of about **$0.58 per 1M tokens**. Prices are example list prices; check current ones.
 
 | Generator | Input $/M | Net per 1,000 queries | Net per month at 10,000 queries/day |
 | --- | --- | --- | --- |
@@ -83,7 +89,7 @@ Per query, input savings are `2,879 × 52.5% × price per token`, and the Jev fe
 
 **Guidance.** The governor saves money on mid-to-high-priced generators (GPT-4o, Sonnet, Opus class) and only a little on Haiku-priced ones (about $0.64 per 1,000 queries). On models priced below about $0.58 per 1M input tokens (GPT-4o mini, Gemini Flash class) it costs more than it saves. The tests did not measure a quality gain that would justify that, and the policy's prompt-injection withholding and conflict flagging were not tested by this benchmark, so no safety benefit is claimed here.
 
-To lower the fee, score fewer chunks (`candidate_limit`, default 20).
+To lower the fee, pass fewer candidates to `evaluate()`. `GovernorRequest.candidate_limit` is declared but not enforced by the library.
 
 ## Plugging it in
 
@@ -149,4 +155,4 @@ The benchmark traces came from a separate **reference chatbot app** (PDF upload,
 
 ## Limits of these tests
 
-One run per question, one judge model, 101 questions over seven knowledge bases. Token and cost reductions are large and consistent. Quality differences are not distinguishable from noise. Savings are measured against a 3,000-token baseline budget, not against sending every retrieved chunk.
+One run per question, one judge model, 101 questions over seven knowledge bases, no independent dataset, and model versions not recorded in the artifacts. Token and cost reductions were large and consistent across both generators in this benchmark. Quality differences are not distinguishable from noise. Savings are measured against a 3,000-token baseline budget, not against sending every retrieved chunk.

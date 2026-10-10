@@ -5,12 +5,25 @@ build-backend = "hatchling.build"
 [project]
 name = "evidence-governor"
 version = "0.1.0"
-description = "Evidence Governor: a Jev-powered intermediate layer between any retriever and the answering LLM. Validates, scores and routes retrieved passages with a versioned policy, returning a token-budgeted evidence bundle with full provenance and a decision trace."
+description = "JevGate: open-source evidence governance for RAG. Jev-powered passage evaluation, deterministic routing, reranking and token-budgeted evidence bundles with provenance and a decision trace."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "Apache-2.0" }
 authors = [{ name = "Rajeev" }]
-keywords = ["rag", "retrieval", "llm", "evidence", "jev", "openrouter"]
+keywords = [
+    "rag", "retrieval-augmented-generation", "llm", "reranking", "information-retrieval",
+    "evidence-evaluation", "jev", "openrouter", "prompt-injection", "token-budget",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
 # Deliberately minimal: usable with any retriever and any app.
 dependencies = [
@@ -22,6 +35,9 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/rajeevksp/jevgate"
 Repository = "https://github.com/rajeevksp/jevgate"
+Documentation = "https://rajeevksp.github.io/jevgate/"
+Issues = "https://github.com/rajeevksp/jevgate/issues"
+Changelog = "https://github.com/rajeevksp/jevgate/blob/master/CHANGELOG.md"
 
 [project.scripts]
 evidence-governor = "governor.cli:main"

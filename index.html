@@ -1,5 +1,5 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Jev Evidence Governor</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="JevGate: open-source evidence governance for RAG. Jev-powered passage evaluation, deterministic routing, reranking and token-budgeted evidence bundles, with an initial 101-question benchmark."><meta property="og:title" content="JevGate: Evidence Governance for RAG"><meta property="og:description" content="Retrieve broadly. Evaluate evidence. Generate from a governed context."><meta property="og:type" content="website"><meta property="og:url" content="https://rajeevksp.github.io/jevgate/"></head><body>
+<title>JevGate: Evidence Governance for RAG</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: one scrolling findings report. KPI strip, animated query flow, evidence charts, 1M-token calculator, adoption steps. */
@@ -144,28 +144,29 @@ svg text{font-family:var(--f-body)}
 <header class="hero">
   <div class="panel" style="padding:20px;display:flex;flex-direction:column;gap:10px">
     <div class="eyebrow">About the project</div>
-    <h2>Evidence Governor (jevgate)</h2>
-    <p>A small Python library that sits between any retriever and your answering LLM. For each query&ndash;passage pair it asks the <a href="https://openrouter.ai/typesafe/jev-1.13">Jev</a> decision model four typed questions: is it relevant, does it contain answer evidence, does it contradict the query&rsquo;s premise, and does it contain a prompt injection? Versioned threshold rules in your code route each passage, and you get back a compact, ranked, token-budgeted evidence bundle with provenance and a decision trace.</p>
-    <p>No FastAPI, database or vector store required. It works on a plain list of texts. Apache-2.0.</p>
+    <h2>JevGate: Evidence Governance for RAG</h2>
+    <p><strong>Retrieve broadly. Evaluate evidence. Generate from a governed context.</strong></p>
+    <p>A small Python library that sits between your existing retriever and your answering LLM. For each query&ndash;passage pair, the <a href="https://openrouter.ai/typesafe/jev-1.13">Jev</a> decision model scores relevance, answer-bearing evidence, contradiction of the query&rsquo;s premise and prompt-injection signals. Deterministic, versioned policy rules in your Python code then route and rerank passages, drop near-duplicates and fill a token budget, returning an evidence bundle with provenance, exclusions and a decision trace.</p>
+    <p>The scores are model judgments and can be wrong; the routing is ordinary code. No vector database or web framework required. Apache-2.0. The package is <code>evidence-governor</code> (import <code>governor</code>).</p>
     <p><a href="https://github.com/rajeevksp/jevgate"><strong>View the source on GitHub &rarr;</strong></a></p>
   </div>
 
-  <div class="eyebrow">Evidence Governor · test findings</div>
-  <h1>Send the model half the context. Answer quality holds level.</h1>
-  <p>Jev scores every retrieved passage before your LLM sees it. Across 101 questions, 7 knowledge bases and 2 answer models, the governed prompt carried 53% fewer evidence tokens with answer quality statistically level with the baseline.</p>
-  <div class="chips"><span class="chip">101 questions</span><span class="chip">7 knowledge bases</span><span class="chip">Claude Haiku + Gemini generators</span><span class="chip">baseline vs governed, same retrieval</span></div>
+  <div class="eyebrow">JevGate · initial test findings</div>
+  <h1>About half the evidence tokens. No measured difference in answer quality.</h1>
+  <p>Jev scores every retrieved passage before your LLM sees it. Across 101 questions, 7 knowledge bases and 2 answer models, the governed prompt carried 53% fewer evidence tokens, and answer-quality differences were not distinguishable from noise. One run per question; treat this as an initial evaluation.</p>
+  <div class="chips"><span class="chip">101 questions</span><span class="chip">7 knowledge bases</span><span class="chip">Claude Haiku + Gemini generators</span><span class="chip">baseline vs governed, same top-20 retrieval per question</span></div>
 </header>
 
 <section>
   <div class="kpis">
-    <div class="kpi hot"><div class="eyebrow" style="color:inherit;opacity:.8">Evidence tokens</div><div class="v">−53%</div><div class="l">2,879 → 1,367 per query</div><div class="s">measured, 101 runs</div></div>
-    <div class="kpi"><div class="eyebrow">Generator tokens</div><div class="v up">−44%</div><div class="l">Haiku 3,964 → 2,200 per query</div><div class="s">Gemini −42% (4,415 → 2,573)</div></div>
+    <div class="kpi hot"><div class="eyebrow" style="color:inherit;opacity:.8">Evidence tokens</div><div class="v">−53%</div><div class="l">Haiku run: 2,879 → 1,364 per query</div><div class="s">Gemini run: 2,876 → 1,344 · 101 questions each</div></div>
+    <div class="kpi"><div class="eyebrow">Generator input tokens</div><div class="v up">−44%</div><div class="l">Haiku 3,964 → 2,200 per query</div><div class="s">Gemini −42% (4,415 → 2,573)</div></div>
     <div class="kpi"><div class="eyebrow">Generator cost</div><div class="v up">−36%</div><div class="l">Haiku $0.503 → $0.324 per 101</div><div class="s">Gemini −28% ($0.563 → $0.406)</div></div>
     <div class="kpi"><div class="eyebrow">Net cost incl. Jev fee</div><div class="v up">−18%</div><div class="l">Haiku $0.503 → $0.412 per 101</div><div class="s">Gemini −12% ($0.563 → $0.494)</div></div>
     <div class="kpi"><div class="eyebrow">Answer correctness (0–2)</div><div class="v">1.68</div><div class="l">vs 1.63 baseline (Haiku)</div><div class="s">Gemini 1.42 vs 1.44. Both within noise (see below)</div></div>
     <div class="kpi"><div class="eyebrow">Unanswerable questions</div><div class="v up">−87%</div><div class="l">evidence 2,858 → 360 tokens</div><div class="s">correctness stays 2.0 / 2.0</div></div>
     <div class="kpi"><div class="eyebrow">Jev cost per query</div><div class="v">$0.0009</div><div class="l">20 Jev requests, ≈22.5k tokens</div><div class="s">fixed per query: one request per retrieved chunk</div></div>
-    <div class="kpi"><div class="eyebrow">Latency</div><div class="v down">+15–30%</div><div class="l">Haiku 5.1 s → 6.6 s</div><div class="s">Gemini 8.7 s → 10.0 s</div></div>
+    <div class="kpi"><div class="eyebrow">Mean per-request latency</div><div class="v down">+15–30%</div><div class="l">Haiku 5.1 s → 6.6 s</div><div class="s">Gemini 8.7 s → 10.0 s</div></div>
   </div>
 </section>
 
@@ -200,13 +201,13 @@ svg text{font-family:var(--f-body)}
 
 <section>
   <div class="sec-head"><div class="eyebrow">Tokens and money</div><h2>Where the savings come from</h2>
-  <p>Every bar is the mean of 101 paired runs. Baseline and governed use the same retrieved candidates, so the gap is the governor's filtering alone.</p></div>
+  <p>Every bar is the mean of 101 paired runs. Within a question, baseline and governed start from the same top-20 retrieval, so the gap reflects the governor's filtering plus normal run-to-run variation (one run per question).</p></div>
   <div class="grid g2">
     <div class="panel"><h3>Tokens per query</h3><p class="note">Evidence in the prompt, and total tokens the generator consumed.</p><br>
       <div class="rows" id="tokRows"></div><br><div class="key"><span><i style="background:var(--base)"></i>Baseline</span><span><i style="background:var(--gov)"></i>Governed</span></div></div>
     <div class="panel"><h3>Cost per 101 queries (USD)</h3><p class="note">Governed bars include the Jev fee on top of the generator.</p><br>
       <div class="stackcol" id="costRows"></div><br><div class="key"><span><i style="background:var(--base)"></i>Baseline generator</span><span><i style="background:var(--gov)"></i>Governed generator</span><span><i style="background:var(--jev)"></i>Jev fee</span></div></div>
-    <div class="panel"><h3>Evidence tokens by question type</h3><p class="note">The governor cuts hardest where the right move is to say less.</p><br>
+    <div class="panel"><h3>Evidence tokens by question type (Haiku run)</h3><p class="note">The governor cuts hardest where the right move is to say less.</p><br>
       <div class="rows" id="catEt"></div><br><div class="key"><span><i style="background:var(--base)"></i>Baseline</span><span><i style="background:var(--gov)"></i>Governed</span></div></div>
     <div class="panel"><h3>Head-to-head, graded by a judge</h3><p class="note">Per question: which prompt produced the better answer.</p><br>
       <div class="stackcol" id="wtl"></div><br><div class="key"><span><i style="background:var(--gov)"></i>Governed better</span><span><i style="background:var(--muted)"></i>Tie</span><span><i style="background:var(--base)"></i>Baseline better</span></div></div>
@@ -214,8 +215,8 @@ svg text{font-family:var(--f-body)}
 </section>
 
 <section>
-  <div class="sec-head"><div class="eyebrow">Answer quality</div><h2>Fewer tokens, same answers</h2>
-  <p>Correctness graded 0 (wrong) to 2 (fully correct). Haiku scored slightly higher and Gemini slightly lower, but neither difference is statistically meaningful (see the notes at the end). Individual categories hold only 10 to 21 questions, so treat category gaps as hints.</p></div>
+  <div class="sec-head"><div class="eyebrow">Answer quality</div><h2>Fewer tokens, no measured change in answers</h2>
+  <p>Correctness graded 0 (wrong) to 2 (fully correct). Haiku scored slightly higher and Gemini slightly lower, but neither difference is distinguishable from noise (see the notes at the end). Individual categories hold only 10 to 21 questions, so treat category gaps as hints.</p></div>
   <div class="grid g2">
     <div class="panel"><h3>Correctness by category · Haiku</h3><br><div class="rows" id="cH"></div></div>
     <div class="panel"><h3>Correctness by category · Gemini</h3><br><div class="rows" id="cG"></div></div>
@@ -224,7 +225,7 @@ svg text{font-family:var(--f-body)}
 
 <section>
   <div class="sec-head"><div class="eyebrow">Illustrative math</div><h2>What a production chatbot saves</h2>
-  <p>One million tokens is only about 350 queries, which is too small to feel. A production RAG support or knowledge chatbot typically answers 1,000 to 100,000 questions a day, so the calculator starts at 10,000. The inputs come from the tests. Each query retrieved 20 chunks of about 400 tokens. The baseline filled a 3,000-token evidence budget in rank order (2,879 tokens on average) and the governed prompt averaged 1,367. Jev scored all 20 chunks with one request each, about $0.000872 per query. Prices are example list prices, not quotes; verify current ones.</p></div>
+  <p>One million tokens is only about 350 queries, which is too small to feel. A production RAG support or knowledge chatbot typically answers 1,000 to 100,000 questions a day, so the calculator starts at 10,000. The inputs come from the tests. Each query retrieved 20 chunks of about 400 tokens. The baseline filled a 3,000-token evidence budget in rank order (2,879 tokens on average) and the governed prompt averaged 1,364 (Haiku run). Jev scored all 20 chunks with one request each, about $0.000872 per query. Prices are example list prices, not quotes; verify current ones.</p></div>
   <div class="panel calc">
     <div class="fields">
       <label for="scn">Deployment size<select id="scn"></select></label>
@@ -246,12 +247,12 @@ svg text{font-family:var(--f-body)}
 
 <section>
   <div class="sec-head"><div class="eyebrow">Plugging it in</div><h2>Three steps, no migration</h2>
-  <p>The <code>evidence-governor</code> package is a library and CLI with no web framework, database or specific retriever (it depends on pydantic, httpx and tiktoken only). It reads a list of passages and returns a ranked, token-budgeted bundle with provenance. The package is not on PyPI yet, so install it from a checkout.</p></div>
+  <p>The <code>evidence-governor</code> package is a library and CLI with no web framework, database or specific retriever (it depends on pydantic, httpx and tiktoken only). It reads a list of passages and returns a ranked, token-budgeted bundle with provenance. The package is not on PyPI; install it from GitHub or a checkout.</p></div>
   <div class="grid g3">
     <div class="panel step"><span class="n">STEP 1</span><h3>Install</h3><pre># from the repo root
-pip install -e ./governor
-# from the library's own checkout
-pip install -e .</pre><p class="note">You need an OpenRouter API key with access to the Jev model.</p></div>
+pip install git+https://github.com/rajeevksp/jevgate.git
+# or from a checkout
+pip install -e .</pre><p class="note">You need an OpenRouter API key with access to the Jev model. Passage text is sent to OpenRouter, which is why <code>allow_external_transmission=True</code> is a required opt-in.</p></div>
     <div class="panel step"><span class="n">STEP 2</span><h3>Call between retrieval and LLM</h3><pre>import asyncio, httpx
 from governor.contracts import Candidate, GovernorRequest
 from governor.evaluate import EvaluationConfig, evaluate
@@ -289,7 +290,7 @@ context = "\n\n".join(i.text for i in items)
   <div class="grid g3">
     <div class="panel step"><h3>Four typed questions per passage</h3><ul><li>is_relevant</li><li>contains_answer_evidence</li><li>contradicts_query_premise</li><li>contains_prompt_injection</li></ul></div>
     <div class="panel step"><h3>Rules stay in your code</h3><p class="note">Jev answers narrow facts. Thresholds and routing live in a named, versioned policy, so you can re-route a past run under a new policy with zero new Jev calls.</p></div>
-    <div class="panel step"><h3>Every decision is traceable</h3><p class="note">Each chunk keeps its route, rule fired and scores in <code>decision_trace</code>. The separate reference chatbot app (a FastAPI demo in the same repo, not part of the package) adds trace pages, analytics and a JSON API.</p></div>
+    <div class="panel step"><h3>Every decision is traceable</h3><p class="note">Each chunk keeps its route, rule fired and scores in <code>decision_trace</code>. The separate reference chatbot app (a FastAPI demo outside this repository, not part of the package) adds trace pages, analytics and a JSON API.</p></div>
   </div>
 </section>
 
@@ -297,14 +298,14 @@ context = "\n\n".join(i.text for i in items)
   <div class="sec-head"><div class="eyebrow">Read this before you quote the numbers</div><h2>What the tests show, and what they don't</h2></div>
   <div class="grid g2">
     <div class="panel"><h3>What held up</h3><ul class="win">
-      <li>Token and cost cuts held on every question type and both generators.</li>
+      <li>Evidence-token cuts held on every question type and both generators, and generator and total costs fell for both.</li>
       <li>Unanswerable questions: 87% less context and unchanged correctness (2.0 vs 2.0). Model answers there were about 22% shorter, the only place output length moved noticeably.</li>
       <li>Haiku correctness 1.68 vs 1.63: 8 questions scored higher, 7 lower, 86 unchanged. A paired sign test gives p = 1.0, so this is parity, not a win.</li>
       <li>Gemini correctness 1.42 vs 1.44: 13 higher, 16 lower, 72 unchanged (p = 0.71). Also parity.</li>
-      <li>A separate holistic grade picked governed in 10 and baseline in 15 of Haiku's questions (17 and 21 for Gemini), 76 and 63 ties. Fewer wins than losses in both models.</li>
+      <li>A separate holistic grade picked governed in 10 and baseline in 15 of Haiku's questions (17 and 21 for Gemini), 76 and 63 ties. Governed won fewer questions than baseline in both models, consistent with a tie.</li>
     </ul></div>
     <div class="panel"><h3>Where it cost something</h3><ul class="lose">
-      <li>Latency rose 15–30% because Jev scoring runs before generation.</li>
+      <li>Mean per-request latency rose 15–30% in the Haiku and Gemini runs, consistent with Jev scoring running before generation. A third run set with a different generator showed lower governed latency, so the effect is not settled.</li>
       <li>Haiku's small average gain came from ordinary (+4 points in total) and synthesis (+2) questions and was partly offset by conflicting-source (−2) and false-premise (−1) questions. Dropping a chunk can lose a detail a multi-source answer needs.</li>
       <li>Haiku conflicting-source correctness fell (1.5 → 1.3); decoy answers went from 2 to 4 of 101; 2 over-refusals.</li>
       <li>Gemini hit its output cap in 41 baseline and 40 governed answers, which depresses scores for both.</li>
@@ -312,7 +313,7 @@ context = "\n\n".join(i.text for i in items)
       <li>The savings are measured against a 3,000-token budget baseline, not against sending all 20 retrieved chunks (about 8,000 tokens).</li>
     </ul></div>
   </div>
-  <p class="note">One run per question, a single judge model for grading, 101 questions. Token and cost reductions are large and consistent. Quality differences are not distinguishable from noise. The injection-withholding and conflict-flagging features are built into the policy but were not what this benchmark measured. Source: <span style="font-family:var(--f-mono)">results/*_baseline_vs_governed_graded.csv</span>.</p>
+  <p class="note">One run per question, a single judge model for grading, 101 questions. Token and cost reductions are large and consistent. Quality differences are not distinguishable from noise. The Gemini version and Jev snapshot are not recorded in the result files, and the benchmark app is not in the repository. The injection-withholding and conflict-flagging features are built into the policy but were not what this benchmark measured. Source: <span style="font-family:var(--f-mono)">results/*_baseline_vs_governed_graded.csv</span>.</p>
 </section>
 </div>
 <div id="tip"></div>
@@ -329,9 +330,9 @@ function barRows(el,rows,max,unit,dec){
    `<div class="bw" data-tip="${r.n} · ${lab}: ${val.toFixed(dec)}${unit}"><div class="b ${cls}" style="width:${val/max*80}%"></div><span>${val.toFixed(dec)}${unit}</span></div>`).join("")}</div></div>`).join("");
 }
 barRows($("#tokRows"),[
- {n:"Evidence in prompt",v:[["base",2879,"Baseline"],["gov",1364,"Governed"]]},
- {n:"Generator tokens · Haiku",v:[["base",3964,"Baseline"],["gov",2200,"Governed"]]},
- {n:"Generator tokens · Gemini",v:[["base",4415,"Baseline"],["gov",2573,"Governed"]]}],4415," tok",0);
+ {n:"Evidence in prompt · Haiku run",v:[["base",2879,"Baseline"],["gov",1364,"Governed"]]},
+ {n:"Generator input tokens · Haiku",v:[["base",3964,"Baseline"],["gov",2200,"Governed"]]},
+ {n:"Generator input tokens · Gemini",v:[["base",4415,"Baseline"],["gov",2573,"Governed"]]}],4415," tok",0);
 const cats=["ordinary","exact-identifier","near-miss","false-premise","conflicting-sources","unanswerable","synthesis"];
 const et=[[2867,1710],[2882,1177],[2899,1392],[2880,984],[2866,1952],[2858,360],[2906,2034]];
 barRows($("#catEt"),cats.map((c,i)=>({n:c,v:[["base",et[i][0],"Baseline"],["gov",et[i][1],"Governed"]]})),2906," tok",0);
@@ -456,10 +457,10 @@ const CAP=["Replay to follow one query through both pipelines.",
 "Each remaining passage goes to Jev in one request that asks four narrow questions and returns a 0 to 1 score for each.",
 "The policy turns scores into routes with fixed thresholds: accept, conflict, exclude or withhold.",
 "Accepted evidence is reranked by answer evidence, near-duplicates are dropped, and the budget is filled greedily.",
-"The final context holds three passages. Across the tests it averaged 1,367 tokens against 2,879 for the plain prompt, 53% fewer.",
+"The final context holds three passages. Across the tests it averaged 1,364 tokens (Haiku run) against 2,879 for the plain prompt, 53% fewer.",
 "The governed answer cites the right passages and flags the older figure. The plain prompt hands the model noise to untangle."];
 const LOG=[[],
-[["h","1 · Retrieve"],["","retriever → candidates with original_rank (vector similarity order). Tests: top 20 chunks of ~400 tokens; demo: 5"],["","GovernorRequest: token_budget, candidate_limit=20, allow_external_transmission=true"]],
+[["h","1 · Retrieve"],["","retriever → candidates with original_rank (vector similarity order). Tests: top 20 chunks of ~400 tokens; demo: 5"],["","GovernorRequest: token_budget, allow_external_transmission=true"]],
 [["h","2 · Validate (runs before any Jev call)"],["","validate_candidates(): missing_id · duplicate_id · empty_text · over_length · out_of_scope"],["no","#5 set aside: empty_text → never sent to Jev, so it costs nothing"],["","4 candidates eligible"]],
 [["h","3 · Jev judges every eligible passage"],["","JevClient → OpenRouter Decisions API · typesafe/jev-1.13 · question set v1"],["","one Decisions request per eligible passage, each asking all four typed questions (tests: 20 requests per query); concurrent, with timeout and retries. Demo: 4 requests"],["k","scores 0–1: is_relevant R · contains_answer_evidence E · contradicts_query_premise C · contains_prompt_injection I"],
  ...CK.filter(c=>c.q).map(c=>["",`#${c.id}  ${sc(c)}`])],
@@ -468,7 +469,7 @@ const LOG=[[],
  ["","thresholds live in app code, so reroute() can replay stored scores under another policy with zero new Jev calls"]],
 [["h","5 · Rerank, dedupe, budget"],["","order_accepted(): sort by contains_answer_evidence ↓, is_relevant ↓, original_rank ↑  →  #2 (E .96), #4 (E .88)"],["","drop_near_duplicates(): difflib ratio ≥ .90 against already-kept text → 0 dropped"],
  ["","assemble_budget(): greedy fill with cl100k_base token counts inside token_budget; a conflict_share of it is reserved for the conflicting block (#3)"]],
-[["h","6 · Final context"],["ok","bundle → accepted [#2, #4] · conflicting [#3] · excluded [#1] · set aside [#5]"],["","each item keeps chunk id, route, rule_fired and its four scores for the trace"],["","measured over 101 queries: governed 1,367 evidence tokens vs 2,879 for a plain fill of a 3,000-token budget (−53%)"]],
+[["h","6 · Final context"],["ok","bundle → accepted [#2, #4] · conflicting [#3] · excluded [#1] · set aside [#5]"],["","each item keeps chunk id, route, rule_fired and its four scores for the trace"],["","measured over 101 queries (Haiku run): governed 1,364 evidence tokens vs 2,879 for a plain fill of a 3,000-token budget (−53%)"]],
 [["h","7 · Answer"],["","prompt built from the accepted and conflicting blocks; the answer cites chunk ids and flags the 24 h figure"],["no","baseline for contrast: original rank order, plain budget fill, no scoring → decoy, stale note and empty page all reach the model"]]];
 const logEl=$("#log");let logTimers=[],logAt=-1;
 function mkLine(cls,txt){const s=document.createElement("span");s.className="ln "+(cls||"");s.textContent=txt;return s}
@@ -489,7 +490,7 @@ function render(step,animate){
   if(step>=6&&k>=0){x=COL.fin;label=""}
   g.style.opacity=op;g.style.transform=`translate(${x}px,${y}px)`;tg.textContent=label});
  mA.setAttribute("width",step>=2?CW:0);tA.textContent=step>=2?"2,879 tokens avg (3,000 budget)":"";
- mB.setAttribute("width",step>=6?CW*1367/2879:0);tB.textContent=step>=6?"1,367 tokens avg (−53%)":"";
+ mB.setAttribute("width",step>=6?CW*1364/2879:0);tB.textContent=step>=6?"1,364 tokens avg (−53%)":"";
  ansA.style.opacity=step>=7?1:0;ansB.style.opacity=step>=7?1:0;
 }
 let step=7,timer=null,playing=false;
