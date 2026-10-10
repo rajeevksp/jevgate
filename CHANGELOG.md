@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Renamed** distribution, import package and CLI to `jevgate` (was `evidence-governor` / `governor` / `evidence-governor`).
+
 - Documentation: README repositioned as JevGate, added benchmark definitions, limitations, security and
   privacy notes; benchmark figures reconciled across README, SHOWCASE, project page and `results/`.
 - Added `results/summarize.py` to recompute headline benchmark figures from the raw result files.
@@ -10,4 +12,4 @@
 
 ## 0.1.0
 
-- Initial release.
+- Initial release (as "evidence-governor", import package `governor`).

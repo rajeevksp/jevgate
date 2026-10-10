@@ -13,9 +13,8 @@ Decisions API) four typed questions about each query–passage pair, applies det
 policy rules that live in your code, and returns a token-budgeted **evidence bundle** with provenance,
 exclusions and a decision trace. Project page: <https://rajeevksp.github.io/jevgate/>.
 
-> Naming: the repository and project are **JevGate**. The Python distribution is `evidence-governor`
-> and the import package is `governor` (`from governor.evaluate import evaluate`). These names are
-> unchanged.
+> The project, Python package, import name and CLI are all `jevgate` (`from jevgate.evaluate import evaluate`).
+> It is not on PyPI yet; install from GitHub. Earlier drafts used `evidence-governor` / `governor`.
 
 ## How it works
 
@@ -123,15 +122,15 @@ model for live calls.
 import asyncio
 import httpx
 
-from governor.contracts import Candidate, GovernorRequest
-from governor.evaluate import EvaluationConfig, evaluate
-from governor.jev.client import JevClient
-from governor.policy import DEFAULT_POLICY
+from jevgate.contracts import Candidate, GovernorRequest
+from jevgate.evaluate import EvaluationConfig, evaluate
+from jevgate.jev.client import JevClient
+from jevgate.policy import DEFAULT_POLICY
 
 
 async def main() -> None:
     request = GovernorRequest(
-        query="What does the Evidence Governor do?",
+        query="What does JevGate do?",
         candidates=[
             Candidate(id="c1", text="The governor routes passages using Jev judgments.", original_rank=1),
             Candidate(id="c2", text="Sourdough starters need feeding twice a day.", original_rank=2),
@@ -181,8 +180,8 @@ previously obtained judgments under another policy, with no Jev calls. `evaluate
 raw judgments, so keep them yourself by calling `JevClient.judge_many()` and storing the results:
 
 ```python
-from governor.evaluate import reroute
-from governor.policy import PERMISSIVE_POLICY
+from jevgate.evaluate import reroute
+from jevgate.policy import PERMISSIVE_POLICY
 
 judgments = {j.candidate_id: j for j in await jev.judge_many(request.query, request.candidates)}
 bundle = reroute(request, judgments, PERMISSIVE_POLICY, config)  # no further model calls
@@ -242,21 +241,21 @@ This describes what the code does today. It is not a security or compliance guar
 
 | Module | Purpose |
 | --- | --- |
-| `governor.contracts` | Input: `Candidate`, `GovernorRequest` |
-| `governor.bundle` | Output: `EvidenceBundle` and everything inside it |
-| `governor.validation` | Duplicate/missing ids, empty or over-length text, authorization scope |
-| `governor.jev.client` | The only place that calls OpenRouter, with retries and record/replay |
-| `governor.jev.questions` | The four typed questions, versioned |
-| `governor.policy` | Named, versioned routing thresholds (`DEFAULT_POLICY`) |
-| `governor.rerank` | Ordering and near-duplicate removal |
-| `governor.budget` | Token-budget assembly with a share reserved for conflicting evidence |
-| `governor.evaluate` | `evaluate()` (calls Jev) and `reroute()` (no new calls) |
-| `governor.cli` | The `evidence-governor` command |
+| `jevgate.contracts` | Input: `Candidate`, `GovernorRequest` |
+| `jevgate.bundle` | Output: `EvidenceBundle` and everything inside it |
+| `jevgate.validation` | Duplicate/missing ids, empty or over-length text, authorization scope |
+| `jevgate.jev.client` | The only place that calls OpenRouter, with retries and record/replay |
+| `jevgate.jev.questions` | The four typed questions, versioned |
+| `jevgate.policy` | Named, versioned routing thresholds (`DEFAULT_POLICY`) |
+| `jevgate.rerank` | Ordering and near-duplicate removal |
+| `jevgate.budget` | Token-budget assembly with a share reserved for conflicting evidence |
+| `jevgate.evaluate` | `evaluate()` (calls Jev) and `reroute()` (no new calls) |
+| `jevgate.cli` | The `jevgate` command |
 
 ```bash
 export OPENROUTER_API_KEY=sk-...
-evidence-governor evaluate --input request.json --output bundle.json
-evidence-governor policies
+jevgate evaluate --input request.json --output bundle.json
+jevgate policies
 ```
 
 Environment variables: `OPENROUTER_API_KEY`, `JEV_MODEL_ID`, `JEV_CONCURRENCY`,

@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import pytest
 
-from governor.bundle import BundleStatus
-from governor.contracts import Candidate, GovernorRequest
-from governor.evaluate import EvaluationConfig, evaluate, reroute
-from governor.policy import DEFAULT_POLICY
+from jevgate.bundle import BundleStatus
+from jevgate.contracts import Candidate, GovernorRequest
+from jevgate.evaluate import EvaluationConfig, evaluate, reroute
+from jevgate.policy import DEFAULT_POLICY
 from tests.fakes import FakeJevClient, ok_judgment, unscored_judgment
 
 CONFIG = EvaluationConfig(
@@ -182,7 +182,7 @@ async def test_reroute_uses_zero_new_jev_calls_and_can_change_routes() -> None:
     assert first.status == BundleStatus.INSUFFICIENT_EVIDENCE
     assert jev.calls == [("q", ["c1"], None)]
 
-    from governor.policy import Policy, PolicyThresholds
+    from jevgate.policy import Policy, PolicyThresholds
 
     looser_policy = Policy(
         name="looser", version="v1", thresholds=PolicyThresholds(evidence_min=0.4)

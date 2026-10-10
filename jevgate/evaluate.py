@@ -12,8 +12,8 @@ from __future__ import annotations
 import time
 from dataclasses import dataclass
 
-from governor.budget import assemble_budget
-from governor.bundle import (
+from jevgate.budget import assemble_budget
+from jevgate.bundle import (
     DecisionTrace,
     DecisionTraceEntry,
     EvidenceBundle,
@@ -23,11 +23,11 @@ from governor.bundle import (
     NeedsReviewItem,
     UsageAndLatency,
 )
-from governor.contracts import Candidate, GovernorRequest
-from governor.jev.client import JevClient, JevInsufficientCreditsError, JevJudgmentResult, JevStatus
-from governor.policy import Policy, Route, route_scores
-from governor.rerank import ScoredCandidate, drop_near_duplicates, order_accepted, order_conflicting
-from governor.validation import SetAsideCandidate, ValidationResult, validate_candidates
+from jevgate.contracts import Candidate, GovernorRequest
+from jevgate.jev.client import JevClient, JevInsufficientCreditsError, JevJudgmentResult, JevStatus
+from jevgate.policy import Policy, Route, route_scores
+from jevgate.rerank import ScoredCandidate, drop_near_duplicates, order_accepted, order_conflicting
+from jevgate.validation import SetAsideCandidate, ValidationResult, validate_candidates
 
 
 @dataclass(frozen=True)

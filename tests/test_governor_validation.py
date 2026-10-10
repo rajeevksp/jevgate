@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from governor.contracts import Candidate, GovernorRequest
-from governor.validation import SetAsideReason, validate_candidates
+from jevgate.contracts import Candidate, GovernorRequest
+from jevgate.validation import SetAsideReason, validate_candidates
 
 
 def _request(candidates: list[Candidate], **kwargs) -> GovernorRequest:

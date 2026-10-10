@@ -9,7 +9,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 
-from governor.contracts import Candidate
+from jevgate.contracts import Candidate
 
 
 @dataclass

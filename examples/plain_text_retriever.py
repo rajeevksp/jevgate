@@ -24,11 +24,11 @@ import os
 
 import httpx
 
-from governor.contracts import Candidate, GovernorRequest
-from governor.evaluate import EvaluationConfig, evaluate
-from governor.jev.client import JevClient
-from governor.jev.fixtures import JevFixtureStore
-from governor.policy import DEFAULT_POLICY
+from jevgate.contracts import Candidate, GovernorRequest
+from jevgate.evaluate import EvaluationConfig, evaluate
+from jevgate.jev.client import JevClient
+from jevgate.jev.fixtures import JevFixtureStore
+from jevgate.policy import DEFAULT_POLICY
 
 # A plain Python list -- this is the entire "retriever". Any data source
 # that can produce (id, title, text) triples works the same way: a grep over

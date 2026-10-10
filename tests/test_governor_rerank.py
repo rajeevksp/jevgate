@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from governor.contracts import Candidate
-from governor.rerank import ScoredCandidate, drop_near_duplicates, order_accepted, order_conflicting
+from jevgate.contracts import Candidate
+from jevgate.rerank import ScoredCandidate, drop_near_duplicates, order_accepted, order_conflicting
 
 
 def _item(

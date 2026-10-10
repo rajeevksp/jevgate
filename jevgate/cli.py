@@ -5,8 +5,8 @@ No FastAPI, no app.core.settings -- reads its own configuration directly
 from environment variables, so it works wherever the library is installed.
 
 Usage:
-    evidence-governor evaluate --input request.json [--policy NAME] [--output bundle.json]
-    evidence-governor policies
+    jevgate evaluate --input request.json [--policy NAME] [--output bundle.json]
+    jevgate policies
 """
 
 from __future__ import annotations
@@ -19,11 +19,11 @@ import sys
 
 import httpx
 
-from governor.contracts import GovernorRequest
-from governor.evaluate import EvaluationConfig, evaluate
-from governor.jev.client import JevClient
-from governor.jev.fixtures import JevFixtureStore
-from governor.policy import DEFAULT_POLICY, POLICIES, get_policy
+from jevgate.contracts import GovernorRequest
+from jevgate.evaluate import EvaluationConfig, evaluate
+from jevgate.jev.client import JevClient
+from jevgate.jev.fixtures import JevFixtureStore
+from jevgate.policy import DEFAULT_POLICY, POLICIES, get_policy
 
 
 def _env_bool(name: str, default: bool) -> bool:
@@ -82,7 +82,7 @@ def _run_policies() -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(prog="evidence-governor", description="Evidence Governor CLI")
+    parser = argparse.ArgumentParser(prog="jevgate", description="Evidence Governor CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     evaluate_parser = subparsers.add_parser("evaluate", help="Evaluate a GovernorRequest JSON file")

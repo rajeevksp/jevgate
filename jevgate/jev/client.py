@@ -33,9 +33,9 @@ from typing import Any
 
 import httpx
 
-from governor.contracts import Candidate
-from governor.jev.fixtures import JevFixtureStore
-from governor.jev.questions import QUESTION_SET_VERSION, questions_wire
+from jevgate.contracts import Candidate
+from jevgate.jev.fixtures import JevFixtureStore
+from jevgate.jev.questions import QUESTION_SET_VERSION, questions_wire
 
 logger = logging.getLogger(__name__)
 

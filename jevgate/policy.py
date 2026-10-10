@@ -15,7 +15,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import StrEnum
 
-from governor.jev.questions import QUESTION_SET_VERSION
+from jevgate.jev.questions import QUESTION_SET_VERSION
 
 
 class Route(StrEnum):

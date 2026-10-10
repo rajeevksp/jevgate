@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from governor.budget import assemble_budget
-from governor.contracts import Candidate
-from governor.rerank import ScoredCandidate
-from governor.tokenizer import count_tokens
+from jevgate.budget import assemble_budget
+from jevgate.contracts import Candidate
+from jevgate.rerank import ScoredCandidate
+from jevgate.tokenizer import count_tokens
 
 
 def _item(id_: str, text: str, rank: int = 1) -> ScoredCandidate:

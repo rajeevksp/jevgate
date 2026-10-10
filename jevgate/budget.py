@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from governor.rerank import ScoredCandidate
-from governor.tokenizer import count_tokens
+from jevgate.rerank import ScoredCandidate
+from jevgate.tokenizer import count_tokens
 
 
 @dataclass

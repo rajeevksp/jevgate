@@ -1,4 +1,4 @@
-# Evidence Governor: test findings
+# JevGate: test findings
 
 Jev scores every retrieved passage before your LLM sees it. Across 101 questions, 7 knowledge bases and 2 answer models (Claude Haiku 4.5 and Gemini), the governed prompt carried **53% fewer evidence tokens**. Differences in answer quality were not distinguishable from noise, generator cost fell, and latency rose in the Haiku and Gemini runs.
 
@@ -93,7 +93,7 @@ To lower the fee, pass fewer candidates to `evaluate()`. `GovernorRequest.candid
 
 ## Plugging it in
 
-The `evidence-governor` package is a library and CLI. It depends only on `pydantic`, `httpx` and `tiktoken`, and never imports FastAPI. It is not published to PyPI yet. You need an OpenRouter API key with access to the Jev model.
+The `jevgate` package is a library and CLI. It depends only on `pydantic`, `httpx` and `tiktoken`, and never imports FastAPI. It is not published to PyPI yet. You need an OpenRouter API key with access to the Jev model.
 
 ```bash
 pip install git+https://github.com/rajeevksp/jevgate.git
@@ -106,13 +106,13 @@ import asyncio
 
 import httpx
 
-from governor.contracts import Candidate, GovernorRequest
-from governor.evaluate import EvaluationConfig, evaluate
-from governor.jev.client import JevClient
-from governor.policy import DEFAULT_POLICY
+from jevgate.contracts import Candidate, GovernorRequest
+from jevgate.evaluate import EvaluationConfig, evaluate
+from jevgate.jev.client import JevClient
+from jevgate.policy import DEFAULT_POLICY
 
 OPENROUTER_API_KEY = "sk-or-..."  # your key
-question = "What does the Evidence Governor do?"
+question = "What does JevGate do?"
 hits = [  # whatever your retriever returns, best first
     "The governor routes passages using Jev judgments.",
     "Sourdough starters need feeding twice a day.",
@@ -147,7 +147,7 @@ else:
     context = "\n\n".join(item.text for item in items)
 ```
 
-Each item carries `id`, `text`, `source_location`, `original_rank`, `final_rank`, `token_count` and `scores`. A CLI is also included: `evidence-governor evaluate --input request.json --output bundle.json`. To try it without an API key, run `python examples/plain_text_retriever.py`, which replays a recorded Jev response.
+Each item carries `id`, `text`, `source_location`, `original_rank`, `final_rank`, `token_count` and `scores`. A CLI is also included: `jevgate evaluate --input request.json --output bundle.json`. To try it without an API key, run `python examples/plain_text_retriever.py`, which replays a recorded Jev response.
 
 ### What is not in this package
 

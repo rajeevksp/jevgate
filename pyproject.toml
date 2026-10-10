@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "evidence-governor"
+name = "jevgate"
 version = "0.1.0"
 description = "JevGate: open-source evidence governance for RAG. Jev-powered passage evaluation, deterministic routing, reranking and token-budgeted evidence bundles with provenance and a decision trace."
 readme = "README.md"
@@ -40,13 +40,13 @@ Issues = "https://github.com/rajeevksp/jevgate/issues"
 Changelog = "https://github.com/rajeevksp/jevgate/blob/master/CHANGELOG.md"
 
 [project.scripts]
-evidence-governor = "governor.cli:main"
+jevgate = "jevgate.cli:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.5"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["governor"]
+packages = ["jevgate"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

@@ -5,10 +5,10 @@ import json
 import httpx
 import pytest
 
-from governor.contracts import Candidate
-from governor.jev.client import JevClient, JevError, JevInsufficientCreditsError, JevStatus
-from governor.jev.fixtures import JevFixtureStore
-from governor.jev.questions import questions_wire
+from jevgate.contracts import Candidate
+from jevgate.jev.client import JevClient, JevError, JevInsufficientCreditsError, JevStatus
+from jevgate.jev.fixtures import JevFixtureStore
+from jevgate.jev.questions import questions_wire
 
 
 def _scores(**overrides: float) -> dict[str, float]:
@@ -30,7 +30,7 @@ def _ok_body(scores: dict[str, float] | None = None) -> dict:
 
 def _client(handler, *, retry_count: int = 3, no_sleep: bool = True, monkeypatch=None) -> JevClient:
     if no_sleep and monkeypatch is not None:
-        import governor.jev.client as client_module
+        import jevgate.jev.client as client_module
 
         async def _fast_sleep(_seconds: float) -> None:
             return None
@@ -273,7 +273,7 @@ def _replay_client(store: JevFixtureStore) -> JevClient:
 
 @pytest.mark.asyncio
 async def test_replayed_5xx_fixture_exhausts_retries_and_is_unscored(tmp_path, monkeypatch) -> None:
-    import governor.jev.client as client_module
+    import jevgate.jev.client as client_module
 
     async def _fast_sleep(_seconds: float) -> None:
         return None
@@ -300,7 +300,7 @@ async def test_replayed_5xx_fixture_exhausts_retries_and_is_unscored(tmp_path, m
 
 @pytest.mark.asyncio
 async def test_replayed_timeout_fixture_is_retried(tmp_path, monkeypatch) -> None:
-    import governor.jev.client as client_module
+    import jevgate.jev.client as client_module
 
     async def _fast_sleep(_seconds: float) -> None:
         return None

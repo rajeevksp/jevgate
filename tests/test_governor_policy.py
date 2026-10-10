@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from governor.policy import DEFAULT_POLICY, Route, route_scores
+from jevgate.policy import DEFAULT_POLICY, Route, route_scores
 
 
 def _scores(**overrides: float) -> dict[str, float]:

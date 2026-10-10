@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from governor.contracts import Candidate
-from governor.jev.client import JevJudgmentResult, JevStatus
+from jevgate.contracts import Candidate
+from jevgate.jev.client import JevJudgmentResult, JevStatus
 
 _ALL_QUESTION_KEYS = [
     "is_relevant",

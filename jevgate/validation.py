@@ -8,7 +8,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import StrEnum
 
-from governor.contracts import Candidate, GovernorRequest
+from jevgate.contracts import Candidate, GovernorRequest
 
 
 class SetAsideReason(StrEnum):

@@ -147,7 +147,7 @@ svg text{font-family:var(--f-body)}
     <h2>JevGate: Evidence Governance for RAG</h2>
     <p><strong>Retrieve broadly. Evaluate evidence. Generate from a governed context.</strong></p>
     <p>A small Python library that sits between your existing retriever and your answering LLM. For each query&ndash;passage pair, the <a href="https://openrouter.ai/typesafe/jev-1.13">Jev</a> decision model scores relevance, answer-bearing evidence, contradiction of the query&rsquo;s premise and prompt-injection signals. Deterministic, versioned policy rules in your Python code then route and rerank passages, drop near-duplicates and fill a token budget, returning an evidence bundle with provenance, exclusions and a decision trace.</p>
-    <p>The scores are model judgments and can be wrong; the routing is ordinary code. No vector database or web framework required. Apache-2.0. The package is <code>evidence-governor</code> (import <code>governor</code>).</p>
+    <p>The scores are model judgments and can be wrong; the routing is ordinary code. No vector database or web framework required. Apache-2.0. The package is <code>evidence-governor</code> (import <code>jevgate</code>).</p>
     <p><a href="https://github.com/rajeevksp/jevgate"><strong>View the source on GitHub &rarr;</strong></a></p>
   </div>
 
@@ -254,10 +254,10 @@ pip install git+https://github.com/rajeevksp/jevgate.git
 # or from a checkout
 pip install -e .</pre><p class="note">You need an OpenRouter API key with access to the Jev model. Passage text is sent to OpenRouter, which is why <code>allow_external_transmission=True</code> is a required opt-in.</p></div>
     <div class="panel step"><span class="n">STEP 2</span><h3>Call between retrieval and LLM</h3><pre>import asyncio, httpx
-from governor.contracts import Candidate, GovernorRequest
-from governor.evaluate import EvaluationConfig, evaluate
-from governor.jev.client import JevClient
-from governor.policy import DEFAULT_POLICY
+from jevgate.contracts import Candidate, GovernorRequest
+from jevgate.evaluate import EvaluationConfig, evaluate
+from jevgate.jev.client import JevClient
+from jevgate.policy import DEFAULT_POLICY
 
 chunks = [Candidate(id=c.id, text=c.text,
           original_rank=i + 1)
@@ -278,7 +278,7 @@ async def run():
               model_id="typesafe/jev-1.13")
         return await evaluate(
             request, jev, DEFAULT_POLICY, config)
-bundle = asyncio.run(run())</pre><p class="note"><code>hits</code> is whatever your retriever returns, <code>q</code> the user question and <code>KEY</code> your OpenRouter key. A CLI is included: <code>evidence-governor evaluate --input request.json --output bundle.json</code>.</p></div>
+bundle = asyncio.run(run())</pre><p class="note"><code>hits</code> is whatever your retriever returns, <code>q</code> the user question and <code>KEY</code> your OpenRouter key. A CLI is included: <code>jevgate evaluate --input request.json --output bundle.json</code>.</p></div>
     <div class="panel step"><span class="n">STEP 3</span><h3>Prompt from the bundle</h3><pre>items = (bundle.accepted_evidence
         + bundle.conflicting_evidence)
 context = "\n\n".join(i.text for i in items)
@@ -417,7 +417,7 @@ const svg=$("#flow");
 const mk=(tag,attrs,txt,parent=svg)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;parent.appendChild(e);return e};
 const stgs=[],mods=[];
 mk("text",{x:8,y:22,class:"lane-t"},"Without Jev: plain budget fill (demo shows 5 of 20 chunks)");
-mk("text",{x:8,y:396,class:"lane-t"},"With Jev Evidence Governor");
+mk("text",{x:8,y:396,class:"lane-t"},"With JevGate");
 function module(x,y,h,w,title,sub,step){const r=mk("rect",{x:x-8,y:y,width:w,height:h,rx:10,class:"mod"});r._s=step;r._lane=y<300?"a":"b";mods.push(r);
  const t=mk("text",{x:x,y:y+20,class:"stg"},title);t.dataset.step=step;stgs.push(t);mk("text",{x:x,y:y+33,class:"sub"},sub)}
 module(COL.ret,34,340,MW,"Retriever","top-20 (5 shown)",1);

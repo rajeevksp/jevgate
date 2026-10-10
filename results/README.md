@@ -5,7 +5,7 @@ procurement, Indian law, climate migration, quantum computing, psychology, corpo
 seven question types (ordinary, exact-identifier, near-miss, false-premise, conflicting-sources,
 unanswerable, synthesis). Each question
 was answered twice per generator: **baseline** (top-20 retrieved chunks, plain budget fill) and
-**governed** (Evidence Governor, `DEFAULT_POLICY`). Retrieval: BGE-M3 + ChromaDB, top-k 20.
+**governed** (JevGate, `DEFAULT_POLICY`). Retrieval: BGE-M3 + ChromaDB, top-k 20.
 
 | File | Contents |
 | --- | --- |
