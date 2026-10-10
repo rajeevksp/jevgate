@@ -1,6 +1,12 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="JevGate: open-source evidence governance for RAG. Jev-powered passage evaluation, deterministic routing, reranking and token-budgeted evidence bundles, with an initial 101-question benchmark."><meta property="og:title" content="JevGate: Evidence Governance for RAG"><meta property="og:description" content="Retrieve broadly. Evaluate evidence. Generate from a governed context."><meta property="og:type" content="website"><meta property="og:url" content="https://rajeevksp.github.io/jevgate/"></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>JevGate: Evidence Governance for RAG</title>
+<meta name="description" content="JevGate: open-source evidence governance for RAG. Jev-powered passage evaluation, deterministic routing, reranking and token-budgeted evidence bundles, with an initial 101-question benchmark."><meta property="og:title" content="JevGate: Evidence Governance for RAG"><meta property="og:description" content="Retrieve broadly. Evaluate evidence. Generate from a governed context."><meta property="og:type" content="website"><meta property="og:url" content="https://rajeevksp.github.io/jevgate/">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <style>
 /* Layout: one scrolling findings report. KPI strip, animated query flow, evidence charts, 1M-token calculator, adoption steps. */
 :root{
@@ -139,23 +145,27 @@ svg text{font-family:var(--f-body)}
 .topic q{font-size:12.5px;color:var(--ink2);quotes:none}
 @media (prefers-reduced-motion:reduce){.ck,.b,.metera,.meterb,.ans,.mod{transition:none}}
 </style>
+</head>
+<body>
 
 <div class="wrap">
 <header class="hero">
-  <div class="panel" style="padding:20px;display:flex;flex-direction:column;gap:10px">
-    <div class="eyebrow">About the project</div>
-    <h2>JevGate: Evidence Governance for RAG</h2>
-    <p><strong>Retrieve broadly. Evaluate evidence. Generate from a governed context.</strong></p>
-    <p>A small Python library that sits between your existing retriever and your answering LLM. For each query&ndash;passage pair, the <a href="https://openrouter.ai/typesafe/jev-1.13">Jev</a> decision model scores relevance, answer-bearing evidence, contradiction of the query&rsquo;s premise and prompt-injection signals. Deterministic, versioned policy rules in your Python code then route and rerank passages, drop near-duplicates and fill a token budget, returning an evidence bundle with provenance, exclusions and a decision trace.</p>
-    <p>The scores are model judgments and can be wrong; the routing is ordinary code. No vector database or web framework required. Apache-2.0. The package is <code>evidence-governor</code> (import <code>jevgate</code>).</p>
-    <p><a href="https://github.com/rajeevksp/jevgate"><strong>View the source on GitHub &rarr;</strong></a></p>
-  </div>
-
-  <div class="eyebrow">JevGate · initial test findings</div>
-  <h1>About half the evidence tokens. No measured difference in answer quality.</h1>
-  <p>Jev scores every retrieved passage before your LLM sees it. Across 101 questions, 7 knowledge bases and 2 answer models, the governed prompt carried 53% fewer evidence tokens, and answer-quality differences were not distinguishable from noise. One run per question; treat this as an initial evaluation.</p>
-  <div class="chips"><span class="chip">101 questions</span><span class="chip">7 knowledge bases</span><span class="chip">Claude Haiku + Gemini generators</span><span class="chip">baseline vs governed, same top-20 retrieval per question</span></div>
+  <div class="eyebrow">Open source · Apache-2.0</div>
+  <h1>JevGate: Evidence Governance for RAG</h1>
+  <p><strong>Retrieve broadly. Evaluate evidence. Generate from a governed context.</strong></p>
+  <p>A small Python library that sits between your existing retriever and your answering LLM. For each query&ndash;passage pair, the <a href="https://openrouter.ai/typesafe/jev-1.13">Jev</a> decision model scores relevance, answer-bearing evidence, contradiction of the query&rsquo;s premise and prompt-injection signals. Deterministic, versioned policy rules in your Python code then route and rerank passages, drop near-duplicates and fill a token budget, returning an evidence bundle with provenance, exclusions and a decision trace.</p>
+  <p>The scores are model judgments and can be wrong; the routing is ordinary code. No vector database or web framework required. The package is <code>jevgate</code> (import <code>jevgate</code>).</p>
+  <p><a href="https://github.com/rajeevksp/jevgate"><strong>View the source on GitHub &rarr;</strong></a></p>
 </header>
+
+<section>
+  <div class="sec-head">
+  <div class="eyebrow">Initial test findings</div>
+  <h2>About half the evidence tokens. No measured difference in answer quality.</h2>
+  <p>Jev scores every retrieved passage before your LLM sees it. Across 101 questions, 7 knowledge bases and 2 answer models, the governed prompt carried 53% fewer evidence tokens, and answer-quality differences were not distinguishable from noise. One run per question; treat this as an initial evaluation.</p>
+  </div>
+  <div class="chips"><span class="chip">101 questions</span><span class="chip">7 knowledge bases</span><span class="chip">Claude Haiku + Gemini generators</span><span class="chip">baseline vs governed, same top-20 retrieval per question</span></div>
+</section>
 
 <section>
   <div class="kpis">
