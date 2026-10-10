@@ -1,0 +1,686 @@
+[
+ {
+  "qid": "01Q01",
+  "category": "ordinary",
+  "question": "Within how many hours must an Indian service provider or body corporate report a notifiable cyber incident to CERT-In, and through which channels can the report be made?",
+  "expected_evidence": "`cybersecurity-incident-response__cert-in__directions-sec-70b-incident-reporting__2022.pdf` p.2 \u2014 direction (ii): report incidents in Annexure I \"within 6 hours of noticing\"; lists email incident@cert-in.org.in, phone 1800-11-4949 and fax 1800-11-6969.",
+  "reference_answer": "Within 6 hours of noticing the incident or being informed of it. Reports can go by email (incident@cert-in.org.in), phone (1800-11-4949) or fax (1800-11-6969).",
+  "governed_expectation": "Accept the direction (ii) passage on p.2; the FAQ passages restating 6 hours (p.13, p.15) are supporting. Exclude NIS2/SEC timelines if retrieved.",
+  "decoy": "Decoys: NIS2 24h/72h and SEC four-business-day passages are superficially similar reporting deadlines from other regimes.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the evidence, an Indian service provider or body corporate must report a notifiable cyber incident to CERT-In **within 6 hours** of noticing such incidents or being brought to notice about such incidents [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5].\n\nThe report can be made through the following channels [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5]:\n\n1. **Email**: incident@cert-in.org.in\n2. **Phone**: 1800-11-4949\n3. **Fax**: 1800-11-6969\n\nAdditionally, the evidence notes that detailed methods and formats for reporting cyber security incidents are published on the CERT-In website at www.cert-in.org.in and are updated from time to time [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5].\n\nIt is also important to note that if all information from the CERT-In incident reporting form is not available within the 6-hour timeframe, entities may provide information to the extent available at the time of reporting, with additional information reported later within reasonable time to CERT-In [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::25]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence, here is the answer:\n\n**Reporting Timeframe:**\nService providers, intermediaries, data centres, body corporates, and Government organisations must mandatorily report cyber incidents to CERT-In **within 6 hours** of noticing such incidents or being brought to notice about such incidents [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5].\n\n**Reporting Channels:**\nThe incidents can be reported to CERT-In through the following channels [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5]:\n- **Email:** incident@cert-in.org.in\n- **Phone:** 1800-11-4949\n- **Fax:** 1800-11-6969\n\nAdditionally, the evidence notes that details regarding methods and formats of reporting cyber security incidents are published on the CERT-In website (www.cert-in.org.in) and will be updated from time to time [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q02",
+  "category": "ordinary",
+  "question": "In a ransomware incident, what should a victim organisation do first to contain spread, and when is powering devices down acceptable?",
+  "expected_evidence": "`cybersecurity-incident-response__cisa__stopransomware-guide__2025.pdf` p.21 \u2014 Part 2 checklist steps 1-2: isolate impacted systems (take network offline at switch level if several subnets affected); power down only if unable to disconnect, with a note about losing volatile-memory evidence.",
+  "reference_answer": "Determine which systems are affected and isolate them immediately (taking the network offline at the switch level if several systems/subnets appear impacted, using out-of-band communication). Power devices down only if they cannot be disconnected from the network, accepting that this loses volatile-memory artefacts and potential evidence.",
+  "governed_expectation": "Accept p.21 of the StopRansomware guide. SP 800-61 containment-strategy text and CISA playbook containment sections are weaker, generic support only.",
+  "decoy": "Decoys: SP 800-61r2 sec. 3.3.1 containment criteria and CISA playbooks Containment phase are on-topic but not ransomware-specific.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Ransomware Containment: First Steps and Power-Down Guidance\n\n## First Priority: System Isolation\n\nThe first action an organization should take is to **determine which systems were impacted and immediately isolate them** [02600f82-a36e-459b-9fb1-73b919391961::chunk::38]. The evidence specifies that organizations should \"move through the first three steps in sequence,\" with isolation as step one [02600f82-a36e-459b-9fb1-73b919391961::chunk::37].\n\nIsolation methods include:\n- Taking the network offline at the switch level if multiple systems or subnets are affected\n- Unplugging network cables or removing devices from Wi-Fi if individual disconnection is needed\n- For cloud resources, taking snapshots of volumes for forensic review [02600f82-a36e-459b-9fb1-73b919391961::chunk::38]\n\nCritically, isolation should be done **in a coordinated manner using out-of-band communication methods such as phone calls** to avoid alerting threat actors that they have been discovered, which could cause them to move laterally or deploy ransomware widely [02600f82-a36e-459b-9fb1-73b919391961::chunk::38].\n\n## When Powering Down Devices is Acceptable\n\nPowering down devices is acceptable **only if you are unable to disconnect them from the network** to avoid further spread of the ransomware infection [02600f82-a36e-459b-9fb1-73b919391961::chunk::38].\n\nHowever, there is an important caveat: powering down devices will **prevent your organization from maintaining ransomware infection artifacts and potential evidence stored in volatile memory**, so it should only be used when other disconnection methods are not possible [02600f82-a36e-459b-9fb1-73b919391961::chunk::38]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Ransomware Containment: First Steps and Power-Down Guidance\n\n## First Action: System Isolation\n\nAccording to the accepted evidence, the first step a victim organization should take is to **determine which systems were impacted and immediately isolate them** [02600f82-a36e-459b-9fb1-73b919391961::chunk::38]. \n\nThe evidence specifies that organizations should:\n\n- Take the network offline at the switch level if several systems or subnets appear impacted [02600f82-a36e-459b-9fb1-73b919391961::chunk::38]\n- Prioritize isolating critical systems essential to daily operations [02600f82-a36e-459b-9fb1-73b919391961::chunk::38]\n- Use out-of-band communication methods (such as phone calls) to avoid alerting threat actors that they have been discovered [02600f82-a36e-459b-9fb1-73b919391961::chunk::38]\n\n## When Powering Down Devices is Acceptable\n\nPowering down devices is acceptable **only if you are unable to disconnect them from the network** by other means [02600f82-a36e-459b-9fb1-73b919391961::chunk::38]. \n\nHowever, the evidence includes an important caveat: powering down devices will **prevent your organization from maintaining ransomware infection artifacts and potential evidence stored in volatile memory**, so it should only be used as a last resort when temporary network shutdown or disconnection of affected hosts is not possible [02600f82-a36e-459b-9fb1-73b919391961::chunk::38].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q03",
+  "category": "ordinary",
+  "question": "How do Maximum Tolerable Downtime, Recovery Time Objective and Recovery Point Objective differ, and which one is not part of MTD?",
+  "expected_evidence": "`cybersecurity-incident-response__nist__sp-800-34r1-contingency-planning-guide__2010.pdf` p.31 \u2014 BIA section defines MTD, RTO and RPO; states \"Unlike RTO, RPO is not considered as part of MTD.\"",
+  "reference_answer": "MTD is the total outage time the system owner is willing to accept for a business process; RTO is the maximum time a system resource can be unavailable before unacceptable impact, and must normally be shorter than the MTD; RPO is the point in time to which data can be recovered (data-loss tolerance) and is not part of MTD.",
+  "governed_expectation": "Accept the p.31 definitions passage of SP 800-34r1.",
+  "decoy": "Minor decoy: other pages of SP 800-34 and SP 800-184 mention recovery objectives only in passing.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Differences Between MTD, RTO, and RPO\n\nBased on the evidence provided, here are the key differences:\n\n## Maximum Tolerable Downtime (MTD)\nMTD represents the total amount of time leaders/managers are willing to accept for a mission/business process outage or disruption and includes all impact considerations [2cbb1c29-a473-4747-a4c6-052b00fe301d::chunk::276].\n\n## Recovery Time Objective (RTO)\nRTO defines the maximum amount of time that a system resource can remain unavailable before there is an unacceptable impact on other system resources, supported mission/business processes, and the MTD [2cbb1c29-a473-4747-a4c6-052b00fe301d::chunk::276]. Importantly, the RTO must normally be shorter than the MTD, since additional processing time must be added to the RTO to stay within the time limit established by the MTD [2cbb1c29-a473-4747-a4c6-052b00fe301d::chunk::70].\n\n## Recovery Point Objective (RPO)\nThe RPO represents the point in time, prior to a disruption or system outage, to which mission/business process data must be recovered (given the most recent backup copy of the data) after an outage [2cbb1c29-a473-4747-a4c6-052b00fe301d::chunk::276].\n\n## Which is NOT Part of MTD?\n**RPO is not considered as part of MTD.** Rather, it is a factor of how much data loss the mission/business process can tolerate during the recovery process [2cbb1c29-a473-4747-a4c6-052b00fe301d::chunk::69]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Differences Between MTD, RTO, and RPO\n\nBased on the evidence provided, here are the key differences:\n\n## Maximum Tolerable Downtime (MTD)\nMTD represents the total amount of time leaders/managers are willing to accept for a mission/business process outage or disruption and includes all impact considerations [chunk-68]. It is determined by system owners and authorizing officials working with process owners and stakeholders [chunk-68].\n\n## Recovery Time Objective (RTO)\nRTO defines the maximum amount of time that a system resource can remain unavailable before there is an unacceptable impact on other system resources, supported mission/business processes, and the MTD [chunk-69]. RTO is used for selecting appropriate technologies suited for meeting the MTD [chunk-69]. Importantly, the RTO must normally be shorter than the MTD to ensure the MTD is not exceeded [chunk-70].\n\n## Recovery Point Objective (RPO)\nThe RPO represents the point in time, prior to a disruption or system outage, to which mission/business process data can be recovered (given the most recent backup copy of the data) after an outage [chunk-69]. RPO is a factor of how much data loss the mission/business process can tolerate during the recovery process [chunk-69].\n\n## Which is Not Part of MTD?\n\n**RPO is not considered as part of MTD** [chunk-69]. Rather, it is a separate factor addressing data loss tolerance, whereas MTD and RTO both relate to time thresholds for system availability.",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q04",
+  "category": "ordinary",
+  "question": "Under the Traffic Light Protocol described in NIST's threat-information-sharing guide, with whom may TLP:AMBER information be shared?",
+  "expected_evidence": "`cybersecurity-incident-response__nist__sp-800-150-cyber-threat-information-sharing__2016.pdf` p.23 \u2014 Table 3-3 (TLP v1.0): TLP:AMBER may be shared with members of the recipient's own organisation and clients/customers who need to know.",
+  "reference_answer": "TLP:AMBER information may only be shared within the recipient's own organisation and with clients or customers who need to know it to protect themselves or prevent further harm; the source may add further limits that must be respected.",
+  "governed_expectation": "Accept Table 3-3 on p.23 of SP 800-150.",
+  "decoy": "Decoy: CISA documents carry TLP:CLEAR markings and FIRST framework TLP:WHITE markings; they do not define AMBER sharing rules.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the NIST threat-information-sharing guide, TLP:AMBER information may be shared with the following parties [004e07f0-4afc-4b68-8a9a-63cac905a4a5::chunk::54]:\n\n1. Members of the recipient's own organization\n2. Clients or customers who need to know the information to protect themselves or prevent further harm\n\nAdditionally, sources are at liberty to specify additional intended limits on sharing, and these limits must be adhered to [004e07f0-4afc-4b68-8a9a-63cac905a4a5::chunk::54]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the Traffic Light Protocol in NIST SP 800-150, TLP:AMBER information may be shared with [004e07f0-4afc-4b68-8a9a-63cac905a4a5::chunk::54]:\n\n1. Members of the recipient's own organization\n2. Clients or customers who need to know the information to protect themselves or prevent further harm\n\nAdditionally, sources may specify additional intended limits on sharing, which must be adhered to [004e07f0-4afc-4b68-8a9a-63cac905a4a5::chunk::54].",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q05",
+  "category": "exact-identifier",
+  "question": "In NIST CSF 2.0, what does subcategory RS.MA-05 say?",
+  "expected_evidence": "`cybersecurity-incident-response__nist__cybersecurity-framework-csf-2-0__2024.pdf` p.27 \u2014 Respond function, Incident Management (RS.MA): \"RS.MA-05: The criteria for initiating incident recovery are applied\".",
+  "reference_answer": "RS.MA-05 (Incident Management category of the Respond function): the criteria for initiating incident recovery are applied.",
+  "governed_expectation": "Accept the RS.MA list on p.27 of CSF 2.0. Exclude SP 800-61r3 passages that map RS.MA-xx recommendations unless they only repeat the identifier.",
+  "decoy": "Decoy: SP 800-61r3 tables reference RS.MA subcategories with prioritised recommendations, and RS.MA-01..04 are adjacent.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the evidence, NIST CSF 2.0 subcategory RS.MA-05 states: \"The criteria for initiating incident recovery are applied\" [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::64].\n\nThe associated recommendations include:\n\n- R1: Apply incident recovery criteria to known and assumed characteristics of the incident to determine when an incident's recovery processes should be initiated [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::64].\n\n- R2: Take the possible operational disruption of incident recovery activities into account to determine when recovery should be initiated [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::65].\n\nThis subcategory is classified as High priority [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::64]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, NIST CSF subcategory RS.MA-05 states: \"The criteria for initiating incident recovery are applied\" [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::64].\n\nThe evidence also provides recommendations for implementing this subcategory, including:\n\n- R1: Apply incident recovery criteria to known and assumed characteristics of the incident to determine when an incident's recovery processes should be initiated [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::64].\n\n- R2: Take the possible operational disruption of incident recovery activities into account to determine when recovery should be initiated [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::65].",
+   "passages_accepted": 3,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q06",
+  "category": "exact-identifier",
+  "question": "Under Article 4 of the EU Implementing Regulation 2024/2690, when do several individually non-significant incidents count together as one significant incident?",
+  "expected_evidence": "`cybersecurity-incident-response__eur-lex__nis2-implementing-regulation-2024-2690-significant-incidents__2024.pdf` p.9 \u2014 Article 4 'Recurring incidents': at least twice within 6 months, same apparent root cause, collectively meeting Article 3(1)(a).",
+  "reference_answer": "When they all meet three conditions: they occurred at least twice within 6 months, they share the same apparent root cause, and together they meet the Article 3(1)(a) criterion (direct financial loss above EUR 500 000 or 5% of annual turnover, whichever is lower).",
+  "governed_expectation": "Accept Article 4 on p.9 (with Article 3(1)(a) on the same page). Recital (40) on p.8 is supporting.",
+  "decoy": "Decoy: NIS2 Directive Article 23(3) general significance test (p.50) lacks these specific recurring-incident conditions.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Under Article 4 of EU Implementing Regulation 2024/2690, several individually non-significant incidents shall be considered collectively as one significant incident where they meet **all** of the following criteria [e5ca1f9d-a405-46b6-8b53-30b72cb95205::chunk::30]:\n\n(a) they have occurred **at least twice within 6 months**;\n\n(b) they have **the same apparent root cause**;\n\n(c) they **collectively meet the criteria set out in Article 3(1)(a)** (i.e., collectively cause or are capable of causing direct financial loss exceeding EUR 500,000 or 5% of the relevant entity's total annual turnover in the preceding financial year, whichever is lower).\n\nThe regulation notes that such recurring incidents can indicate significant deficiencies and weaknesses in the relevant entity's cybersecurity risk management procedures and are capable of causing significant financial loss [e5ca1f9d-a405-46b6-8b53-30b72cb95205::chunk::23]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Under Article 4 of EU Implementing Regulation 2024/2690, several individually non-significant incidents shall be considered collectively as one significant incident when they meet all of the following criteria [e5ca1f9d-a405-46b6-8b53-30b72cb95205::chunk::30]:\n\n(a) they have occurred at least twice within 6 months;\n(b) they have the same apparent root cause;\n(c) they collectively meet the criteria set out in Article 3(1)(a).\n\nThe evidence indicates that the third criterion requires the incidents to collectively meet the criteria in Article 3(1)(a), but the specific content of Article 3(1)(a) is not provided in the supplied passages, so I cannot detail what that criterion entails based solely on this evidence.",
+   "passages_accepted": 3,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q07",
+  "category": "exact-identifier",
+  "question": "Under the SEC's cybersecurity disclosure rule, how long can the Attorney General allow a registrant to delay filing an Item 1.05 Form 8-K?",
+  "expected_evidence": "`cybersecurity-incident-response__sec__cybersecurity-incident-disclosure-final-rule-33-11216__2023.pdf` p.34 \u2014 Item 1.05(c): delay up to 30 days, extendable by up to 30 more days, and in extraordinary circumstances a final period of up to 60 days.",
+  "reference_answer": "Initially up to 30 days (after the date disclosure was otherwise due), extendable by up to another 30 days if substantial risk to national security or public safety continues, and for extraordinary national-security cases a final extra period of up to 60 days; the AG must notify the Commission in writing each time.",
+  "governed_expectation": "Accept p.34 (Item 1.05(c) discussion); p.12 summary table is partial support.",
+  "decoy": "Decoy: p.12 and other pages state the base four-business-day deadline, which is not the delay length.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Under the SEC's cybersecurity disclosure rule, the Attorney General can allow a registrant to delay filing an Item 1.05 Form 8-K for up to **120 days total**, structured in three phases:\n\n1. **Initial delay**: Up to 30 days following the date when disclosure was otherwise required [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]\n\n2. **First extension**: An additional period of up to 30 days if the Attorney General determines that disclosure continues to pose a substantial risk to national security or public safety [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]\n\n3. **Final extension**: A final additional period of up to 60 days in extraordinary circumstances if the Attorney General determines that disclosure continues to pose a substantial risk to national security [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]\n\nThese delays are only available when the Attorney General determines that disclosure poses a substantial risk to national security or public safety and notifies the Commission in writing [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]. Beyond the final 60-day delay, if the Attorney General indicates that further delay is necessary, the Commission will consider additional requests for delay and may grant such relief through Commission exemptive order [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Under the SEC's cybersecurity disclosure rule, the Attorney General can allow a registrant to delay filing an Item 1.05 Form 8-K for up to **120 days total**, structured in three phases [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]:\n\n1. **Initial delay**: up to 30 days following the date when disclosure was otherwise required [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]\n\n2. **First extension**: an additional period of up to 30 days if the Attorney General determines disclosure continues to pose a substantial risk to national security or public safety [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]\n\n3. **Final extension**: in extraordinary circumstances, a final additional period of up to 60 days if the Attorney General determines disclosure continues to pose a substantial risk to national security [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]\n\nThese delays are only available if the Attorney General determines that disclosure poses a substantial risk to national security or public safety and notifies the Commission in writing [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359]. Beyond the final 60-day delay, the Commission may consider additional requests for delay and may grant relief through Commission exemptive order [fe4afae4-3651-4a24-89f1-415a126c4734::chunk::359].",
+   "passages_accepted": 3,
+   "conflict_passages": 1
+  }
+ },
+ {
+  "qid": "01Q08",
+  "category": "near-miss",
+  "question": "Under the EU implementing regulation on significant incidents, what availability criteria make an incident significant for a TLD name registry?",
+  "expected_evidence": "`cybersecurity-incident-response__eur-lex__nis2-implementing-regulation-2024-2690-significant-incidents__2024.pdf` p.10 \u2014 Article 6: authoritative resolution service completely unavailable; or average response time over 10 seconds for more than one hour; or data integrity/confidentiality/authenticity compromised.",
+  "reference_answer": "Under Article 6, an incident at a TLD registry is significant if its authoritative DNS resolution service is completely unavailable (no minimum duration stated), or if for more than one hour the average response time exceeds 10 seconds, or if integrity/confidentiality/authenticity of data related to technical operation of the TLD is compromised.",
+  "governed_expectation": "Accept Article 6 only; exclude Article 5 (DNS service providers: unavailable for more than 30 minutes) and Article 7 (cloud: 30 minutes, 5% / 1 million users).",
+  "decoy": "Decoys: Article 5 (DNS providers) and Article 7 (cloud providers) both use a 30-minute unavailability threshold that does NOT apply to TLD registries; Article 5 text on the same page is nearly identical.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, under Article 6 of Commission Implementing Regulation (EU) 2024/2690, an incident shall be considered significant for a TLD name registry based on availability criteria in the following case [e5ca1f9d-a405-46b6-8b53-30b72cb95205::chunk::32]:\n\n**(a) an authoritative domain name resolution service is completely unavailable** [e5ca1f9d-a405-46b6-8b53-30b72cb95205::chunk::32]\n\nAdditionally, there is a response time criterion:\n\n**(b) for a period of more than one hour, the average response time of an authoritative domain name resolution service to DNS requests is more than 10 seconds** [e5ca1f9d-a405-46b6-8b53-30b72cb95205::chunk::32]\n\nNote that unlike DNS service providers (which require unavailability for more than 30 minutes to be significant), TLD name registries have no minimum duration threshold for complete unavailability\u2014any complete unavailability of the authoritative domain name resolution service qualifies as significant."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the evidence, under Article 6 of the EU implementing regulation, an incident shall be considered significant for a TLD name registry where it fulfils one or more of the following availability criteria:\n\n(a) an authoritative domain name resolution service is completely unavailable [e5ca1f9d-a405-46b6-8b53-30b72cb95205::chunk::32];\n\n(b) for a period of more than one hour, the average response time of an authoritative domain name resolution service to DNS requests is more than 10 seconds [e5ca1f9d-a405-46b6-8b53-30b72cb95205::chunk::32].\n\nNote that unlike the criteria for DNS service providers, which require complete unavailability to last more than 30 minutes to be significant, the TLD registry criteria in Article 6(a) do not specify a minimum duration threshold\u2014complete unavailability of the authoritative domain name resolution service is significant regardless of how long it lasts [e5ca1f9d-a405-46b6-8b53-30b72cb95205::chunk::32].",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q09",
+  "category": "near-miss",
+  "question": "What must a public company disclose about board oversight of cybersecurity risk under the SEC's new annual-report requirements?",
+  "expected_evidence": "`cybersecurity-incident-response__sec__cybersecurity-incident-disclosure-final-rule-33-11216__2023.pdf` p.12 \u2014 summary table: Regulation S-K Item 106(c) Governance: describe the board's oversight of risks from cybersecurity threats and management's role in assessing and managing them.",
+  "reference_answer": "Under Regulation S-K Item 106(c) (governance) registrants must describe the board's oversight of risks from cybersecurity threats and management's role in assessing and managing material cybersecurity risks. (Item 106(b) covers risk-management processes; Form 8-K Item 1.05 covers material incident disclosure.)",
+  "governed_expectation": "Accept the Item 106(c) row on p.12. Exclude Form 8-K Item 1.05 incident-disclosure text and Item 106(b) risk-management rows as non-answering.",
+  "decoy": "Decoys: Form 8-K Item 1.05 (incident disclosure, four business days) and Item 106(b) in the same table; many later pages discuss 106 and 1.05 commentary.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Board Oversight of Cybersecurity Risk Disclosure Requirements\n\nUnder the SEC's new annual-report requirements, a public company must disclose the following about board oversight of cybersecurity risk:\n\n**Board Responsibility and Structure:**\nDescribe the board of directors' oversight of risks from cybersecurity threats. If applicable, identify any board committee or subcommittee responsible for the oversight of risks from cybersecurity threats [chunk-342].\n\n**Board Information and Processes:**\nDescribe the processes by which the board or such committee is informed about such risks [chunk-342]. The proposed guidance also indicated that companies should discuss the frequency of the board's discussions on this topic and whether and how the board or board committee considers cybersecurity risks as part of its business strategy, risk management, and financial oversight [chunk-131].\n\n**Format Requirement:**\nThe cybersecurity disclosures, including governance information, must be provided in an Interactive Data File in accordance with Rule 405 of Regulation S-T and the EDGAR Filer Manual [chunk-342].\n\nThese requirements are part of Item 106(c) of Regulation S-K and are designed to clarify for investors how a registrant's leadership oversees and implements its cybersecurity processes [chunk-131]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Board Oversight of Cybersecurity Risk Disclosure Requirements\n\nUnder the SEC's new annual-report requirements (Item 106(c)), public companies must disclose the following about board oversight of cybersecurity risk:\n\n## Required Disclosures\n\n**1. Board Responsibility Structure** [chunk-342]\nCompanies must describe the board of directors' oversight of risks from cybersecurity threats, and if applicable, identify any board committee or subcommittee responsible for this oversight.\n\n**2. Information and Process Disclosure** [chunk-342]\nCompanies must describe the processes by which the board or relevant committee is informed about cybersecurity risks.\n\n**3. Specific Elements to Address** [chunk-131]\nAccording to the SEC's guidance, companies should discuss:\n- Whether the entire board, specific board members, or a board committee is responsible for cybersecurity risk oversight\n- The processes by which the board is informed about cybersecurity risks, and the frequency of its discussions on this topic\n- Whether and how the board or board committee considers cybersecurity risks as part of its business strategy, risk management, and financial oversight [chunk-131]\n\n## Context\n\nThe SEC noted that these requirements will benefit investors by eliciting relevant information about how registrants are managing their material cybersecurity risks, as there were previously no explicit disclosure requirements on Forms 10-K or 10-Q referring to cybersecurity governance [chunk-252].",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q10",
+  "category": "near-miss",
+  "question": "What are the common attack vectors that NIST suggests organisations use as a basis for defining incident handling procedures?",
+  "expected_evidence": "`cybersecurity-incident-response__nist__sp-800-61r2-computer-security-incident-handling-guide__2012.pdf` pp.35-36 \u2014 section 3.2.1 lists External/Removable Media, Attrition, Web, Email, Impersonation, Improper Usage, and Loss or Theft of Equipment.",
+  "reference_answer": "SP 800-61r2 sec. 3.2.1 lists: external/removable media, attrition, web, email, impersonation, improper usage, and loss or theft of equipment (the list is a basis for procedures, not a definitive classification).",
+  "governed_expectation": "Accept r2 sec. 3.2.1 (pp.35-36; also summary p.12). Exclude SP 800-61r3, which has no attack-vector list and organises response by CSF 2.0 Functions, plus CISA playbooks' incident-type material.",
+  "decoy": "Decoy: SP 800-61r3 (2025, current) and SP 800-83 malware-incident material; r3 supersedes r2 but does not contain this list.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to NIST, the common attack vectors that organizations should use as a basis for defining incident handling procedures are [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::19]:\n\n1. **External/Removable Media**: An attack executed from removable media (e.g., flash drive, CD) or a peripheral device.\n\n2. **Attrition**: An attack that employs brute force methods to compromise, degrade, or destroy systems, networks, or services.\n\n3. **Web**: An attack executed from a website or web-based application.\n\n4. **Email**: An attack executed via an email message or attachment.\n\n5. **Improper Usage**: Any incident resulting from violation of an organization's acceptable usage policies by an authorized user, excluding the above categories.\n\n6. **Loss or Theft of Equipment**: The loss or theft of a computing device or media used by the organization, such as a laptop or smartphone.\n\n7. **Other**: An attack that does not fit into any of the other categories.\n\nNIST emphasizes that these categories are \"not intended to provide definitive classification for incidents, but rather to be used as a basis for defining more specific handling procedures\" [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::19]. The guidance notes that \"different types of incidents merit different response strategies\" [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::19]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the evidence, NIST suggests organizations use the following common attack vectors as a basis for defining incident handling procedures [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::68]:\n\n1. **External/Removable Media**: An attack executed from removable media or a peripheral device\u2014for example, malicious code spreading onto a system from an infected USB flash drive [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::68].\n\n2. **Attrition**: An attack that employs brute force methods to compromise, degrade, or destroy systems, networks, or services (e.g., a DDoS intended to impair or deny access to a service or application; a brute force attack against an authentication mechanism) [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::68].\n\n3. **Web**: An attack executed from a website or web-based application\u2014for example, a cross-site scripting attack used to steal credentials or a redirect to a site that exploits a browser vulnerability and installs malware [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::68].\n\n4. **Email**: An attack executed via an email message or attachment\u2014for example, exploit code disguised as an attached document or a link to a malicious website in the body of an email message [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::68].\n\n5. **Impersonation**: An attack involving replacement of something benign with something malicious\u2014for example, spoofing, man in the middle attacks, rogue wireless access points, and SQL injection attacks [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::68].\n\nThe evidence also notes that these attack vectors are \"not intended to provide definitive classification for incidents; rather, they simply list common methods of attack\" [b2a14de3-d443-4690-a1a5-8c75aef96d12::chunk::68].",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q11",
+  "category": "false-premise",
+  "question": "CERT-In gives organisations 72 hours to report a ransomware incident after they notice it. How do we submit that report?",
+  "expected_evidence": "`cybersecurity-incident-response__cert-in__directions-sec-70b-incident-reporting__2022.pdf` p.2 \u2014 direction (ii): report \"within 6 hours of noticing\"; also `cybersecurity-incident-response__cert-in__faqs-on-cyber-security-directions__2022.pdf` pp.13, 15 (Q24, Q30) restate the 6-hour limit.",
+  "reference_answer": "The premise is wrong: CERT-In's 28 April 2022 directions require reporting within 6 hours of noticing the incident (ransomware/malicious code attacks are in Annexure I). Reports go via incident@cert-in.org.in, phone 1800-11-4949 or fax 1800-11-6969; incomplete information may be supplemented later.",
+  "governed_expectation": "Place the 6-hour direction (p.2) and FAQ Q30 (p.15) in conflicting evidence versus the 72-hour premise; answer should correct the premise. Exclude NIS2 72-hour incident-notification passage as a different regime.",
+  "decoy": "Decoy: 72 hours is the NIS2 incident-notification deadline (Art. 23(4)(b), p.50) and CIRCIA proposal mentions in the SEC release; these could tempt a careless answer.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The accepted evidence contradicts the premise of your question. According to the evidence, organizations do **not** have 72 hours to report ransomware incidents to CERT-In.\n\nInstead, the requirement is: \"Any service provider, intermediary, data centre, body corporate and Government organisation shall mandatorily report cyber incidents as mentioned in Annexure I to CERT-In **within 6 hours of noticing such incidents** or being brought to notice about such incidents.\" [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5]\n\nRansomware is explicitly listed as one of the severe cyber incidents requiring reporting within this 6-hour timeframe [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::25].\n\nRegarding how to submit the report, the evidence states: \"The incidents can be reported to CERT-In via email (incident@cert-in.org.in), Phone (1800-11-4949) and Fax (1800-11-6969).\" [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5]"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence does not support the claim that CERT-In gives organisations 72 hours to report a ransomware incident.\n\nAccording to the conflicting evidence provided, certain severe cyber incidents\u2014including ransomware (referred to as \"spread of computer contaminant including Ransomware\")\u2014must be reported within a **6 hour time frame**, not 72 hours [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::25].\n\nRegarding how to submit a report, the accepted evidence indicates that incidents can be reported to CERT-In through multiple channels [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::13]:\n- **Email**: incident@cert-in.org.in\n- **Phone**: 1800-11-4949\n- **Fax**: 1800-11-6969\n\nThe evidence also notes that detailed methods and formats for reporting are published on CERT-In's website at www.cert-in.org.in and are updated from time to time.",
+   "passages_accepted": 2,
+   "conflict_passages": 1
+  }
+ },
+ {
+  "qid": "01Q12",
+  "category": "false-premise",
+  "question": "In the final National Cyber Incident Response Plan issued in December 2024, which agency leads the Intelligence Support line among its three lines of effort?",
+  "expected_evidence": "`cybersecurity-incident-response__cisa__national-cyber-incident-response-plan-update-draft__2024.pdf` p.1 \u2014 document is a \"pre-decisional draft for public comment\"; p.5-6 \u2014 four lines of effort (Asset Response, Threat Response, Intelligence Support, Affected Entity Response); ODNI via CTIIC leads Intelligence Support.",
+  "reference_answer": "Two premises are wrong: the December 2024 NCIRP update is a public comment draft, not a final plan, and it describes four lines of effort (not three): Asset Response, Threat Response, Intelligence Support, Affected Entity Response. Intelligence Support is led by ODNI through the Cyber Threat Intelligence Integration Center (CTIIC).",
+  "governed_expectation": "Put p.1 draft statement and p.5-6 four-LOE passages in conflicting evidence; answer should correct 'final' and 'three' while giving the ODNI/CTIIC lead.",
+  "decoy": "Decoy: CISA Federal Incident and Vulnerability Response Playbooks (2021) discuss coordination roles but are a different document.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided, the **Office of the Director of National Intelligence (ODNI), through the Cyber Threat Intelligence Integration Center (CTIIC), leads the Intelligence Support line of effort** [4eb293ba-9749-4058-b551-bb9d64a0430a::chunk::12].\n\nThis is confirmed in multiple passages. The ODNI's role in Intelligence Support includes facilitating situational threat awareness, sharing related intelligence, conducting integrated analysis of threat trends and events, identifying knowledge gaps, and enabling the ability to degrade or mitigate adversary threat capabilities [4eb293ba-9749-4058-b551-bb9d64a0430a::chunk::72].\n\nNote: The evidence indicates this is a pre-decisional draft from December 2024 that was undergoing updates as of the information cutoff in October 2024 [4eb293ba-9749-4058-b551-bb9d64a0430a::chunk::1], so it may not represent the final issued version."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence provided, the **Office of the Director of National Intelligence (ODNI), through the Cyber Threat Intelligence Integration Center (CTIIC), leads the Intelligence Support line of effort** [4eb293ba-9749-4058-b551-bb9d64a0430a::chunk::12].\n\nThis is confirmed across multiple passages, which consistently identify ODNI/CTIIC as responsible for facilitating situational threat awareness, sharing related intelligence, integrated analysis of threat trends and events, identifying knowledge gaps, and degrading or mitigating adversary threat capabilities [4eb293ba-9749-4058-b551-bb9d64a0430a::chunk::72].\n\nNote: The evidence provided does not explicitly confirm this is from the \"final\" December 2024 version of the NCIRP, though the accepted evidence references the 2023 National Cybersecurity Strategy's call for an update to the 2016 plan [4eb293ba-9749-4058-b551-bb9d64a0430a::chunk::4].",
+   "passages_accepted": 6,
+   "conflict_passages": 1
+  }
+ },
+ {
+  "qid": "01Q13",
+  "category": "conflicting-sources",
+  "question": "What are the deadlines for reporting a significant cyber incident under India's CERT-In directions, the EU NIS2 Directive, and the US SEC rule?",
+  "expected_evidence": "`cybersecurity-incident-response__cert-in__directions-sec-70b-incident-reporting__2022.pdf` p.2 \u2014 6 hours; `cybersecurity-incident-response__eur-lex__nis2-directive-eu-2022-2555__2022.pdf` p.50 (Art. 23(4)) \u2014 early warning within 24 hours, notification within 72 hours, final report within one month; `cybersecurity-incident-response__sec__cybersecurity-incident-disclosure-final-rule-33-11216__2023.pdf` p.12 \u2014 Form 8-K Item 1.05 within four business days of determining materiality.",
+  "reference_answer": "CERT-In: within 6 hours of noticing the incident. NIS2: early warning within 24 hours of becoming aware, incident notification within 72 hours, and a final report within one month after the notification. SEC: Form 8-K Item 1.05 within four business days after determining the incident is material (not from discovery). The triggers and scopes differ, so there is no single deadline.",
+  "governed_expectation": "Accept all three passages as accepted evidence and present each separately without merging; none should be excluded.",
+  "decoy": "Risk: baseline may return only one regime's deadline; also SP 800-61 and CISA playbook 7-day post-incident update are different, non-regulatory timelines.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence provided, I can only answer regarding India's CERT-In directions:\n\n**India's CERT-In Directions:**\nAny service provider, intermediary, data centre, body corporate, and Government organisation shall mandatorily report cyber incidents to CERT-In **within 6 hours of noticing such incidents or being brought to notice about such incidents** [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::4] [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5].\n\nAdditionally, if all required information is not available within the 6-hour window, entities may provide information to the extent available at the time of reporting, with additional information reported later within reasonable time [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::24].\n\n**Regarding the EU NIS2 Directive and US SEC rule:**\nThe evidence is insufficient to answer questions about these frameworks, as the provided passages contain only information about India's CERT-In cyber security directions and do not include any material about EU or US regulatory requirements."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided, I can only answer the question regarding India's CERT-In directions.\n\n**India's CERT-In Directions:**\n\nAccording to the accepted evidence, any service provider, intermediary, data centre, body corporate, and Government organisation shall mandatorily report cyber incidents to CERT-In **within 6 hours of noticing such incidents or being brought to notice about such incidents** [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::5, chunk::6].\n\nThe evidence specifies that cyber incidents of severe nature (such as denial of service, distributed denial of service, intrusion, spread of computer contaminant including Ransomware), data breaches or data leaks, large-scale or most frequent incidents, and cyber incidents impacting safety of human beings should be reported within this 6-hour timeframe [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::25].\n\n**Regarding EU NIS2 Directive and US SEC rule:**\n\nThe evidence provided does not contain any information about the EU NIS2 Directive or the US SEC rule. Therefore, I cannot provide the reporting deadlines for these regulatory frameworks based on the supplied evidence.",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q14",
+  "category": "conflicting-sources",
+  "question": "Do the logs that CERT-In requires organisations to keep for 180 days have to be stored in India?",
+  "expected_evidence": "`cybersecurity-incident-response__cert-in__directions-sec-70b-incident-reporting__2022.pdf` p.3 \u2014 direction (iv): logs kept securely for a rolling 180 days and \"maintained within the Indian jurisdiction\"; `cybersecurity-incident-response__cert-in__faqs-on-cyber-security-directions__2022.pdf` p.16 \u2014 Q35: logs may be stored outside India if they can be produced to CERT-In in reasonable time.",
+  "reference_answer": "The directions say logs of ICT systems must be maintained for a rolling 180 days within Indian jurisdiction. The FAQs (Q35) soften this, saying logs may be stored outside India as long as the obligation to produce them to CERT-In in reasonable time is met (and Q36 says providers offering services to users in India must maintain logs and financial-transaction records in Indian jurisdiction). Both should be reported.",
+  "governed_expectation": "Accept both passages and flag the difference between the 2022 directions and the later FAQs rather than silently choosing one; neither should be excluded.",
+  "decoy": "Risk: a baseline that returns only the directions text will assert India-only storage; one that returns only Q35 will assert location is irrelevant.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Yes, according to the evidence, logs must be stored in India.\n\nThe accepted evidence states: \"All service providers, intermediaries, data centres, body corporate and Government organisations shall mandatorily enable logs of all their ICT systems and maintain them securely for a rolling period of 180 days and the same shall be maintained within the Indian jurisdiction.\" [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::8]\n\nThis requirement is also confirmed in another passage: \"All service providers, intermediaries, data centres, body corporate and Government organisations shall mandatorily enable logs of all their ICT systems and maintain them securely for a rolling period of 180 days and the same shall be maintained within the Indian jurisdiction.\" [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::7]\n\nHowever, there is a limited exception noted in the FAQ: \"The logs may be stored outside India also as long as the obligation to produce logs to CERT-In is adhered to by the entities in a reasonable time.\" [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::27] This suggests that while the default requirement is storage within Indian jurisdiction, logs may be stored outside India provided that entities can still produce them to CERT-In within a reasonable timeframe."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided, the answer is **no, not necessarily**.\n\nThe mandatory requirement states that logs \"shall be maintained within the Indian jurisdiction\" [6e4f1728-5bb0-4b74-a294-5bc1d0358315::chunk::7]. However, this is clarified in the FAQ section:\n\n\"The logs may be stored outside India also as long as the obligation to produce logs to CERT-In is adhered to by the entities in a reasonable time.\" [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::26]\n\nSo while the initial directive states logs should be maintained within Indian jurisdiction, the clarification indicates that logs can be stored outside India provided that organisations can still produce them to CERT-In within a reasonable timeframe when required.",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q15",
+  "category": "unanswerable",
+  "question": "Within how many hours must a data fiduciary notify India's Data Protection Board of a personal data breach under the DPDP Act?",
+  "expected_evidence": "No supporting passage in any PDF of this folder. grep for DPDP, 'Digital Personal Data', 'Data Protection Board' (Indian), 'Personal Data Protection' found nothing relevant (only EU NIS2/GDPR references).",
+  "reference_answer": "The corpus does not contain this; evidence is insufficient. (Only CERT-In's 6-hour incident-reporting direction and GDPR references appear.)",
+  "governed_expectation": "Expected status insufficient_evidence; all retrieved passages (CERT-In 6 hours, NIS2 72 hours) should be excluded as not answering the DPDP question.",
+  "decoy": "Decoy: CERT-In directions p.2 data-breach reporting and NIS2 p.50 are on-topic breach-notification timelines for different regimes.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about the Data Protection Board or notification requirements under the DPDP Act (Digital Personal Data Protection Act).\n\nThe evidence supplied discusses the Cyber Security Directions of 28.04.2022, which require reporting of cyber incidents to CERT-In within 6 hours [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::23]. However, this is a different regulatory framework and a different authority than what your question asks about.\n\nTo answer your question about data fiduciary notification requirements under the DPDP Act, I would need evidence that specifically addresses that legislation and the Data Protection Board's requirements."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "The evidence is insufficient to answer this question. No accepted or conflicting evidence passages have been provided about the notification timeline requirements under India's Digital Personal Data Protection (DPDP) Act.\n\nTo answer your question accurately, I would need relevant passages from the DPDP Act or official guidance documents that specify the notification timeframe for data fiduciaries reporting personal data breaches to India's Data Protection Board.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q16",
+  "category": "unanswerable",
+  "question": "What reporting timeline does the RBI Master Direction on IT Governance (2023) require banks to follow for cyber incidents?",
+  "expected_evidence": "No supporting passage in any PDF of this folder. grep for 'IT Governance', 'CSCRF', 'ISO 27035' found nothing; 'Master Direction' appears only as the RBI KYC Master Direction in the CERT-In directions annexure (p.8), and RBI otherwise only as a KYC reference (p.4); notes.md lists this PDF as unavailable.",
+  "reference_answer": "The corpus does not contain this; evidence is insufficient.",
+  "governed_expectation": "Expected status insufficient_evidence; the CERT-In 6-hour direction (p.2), which mentions RBI only for KYC, should be excluded as not about the RBI Master Direction.",
+  "decoy": "Decoy: CERT-In directions p.2 gives a 6-hour reporting rule and p.4/p.8 mention RBI KYC directions - looks relevant but is not an RBI sectoral rule.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about the RBI Master Direction on IT Governance (2023) or any RBI requirements for banks regarding cyber incident reporting timelines.\n\nThe evidence does contain reporting timeline requirements from India's Cyber Security Directions of 28.04.2022, which require organisations to report cyber incidents to CERT-In within 6 hours of noticing the incident or being brought to notice about such incident [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::23]. However, this is not from the RBI Master Direction you asked about.\n\nTo answer your question about the RBI Master Direction on IT Governance (2023), I would need evidence from that specific document, which is not included in the passages provided."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about the RBI Master Direction on IT Governance (2023) or its requirements for banks regarding cyber incident reporting timelines.\n\nThe evidence supplied relates to the Cyber Security Directions of 28.04.2022 issued under the Information Technology Act, 2000, which requires cyber incidents to be reported to CERT-In within 6 hours [e2dff37d-075a-4e98-9cee-cb454549dda8::chunk::23]. However, this is a different regulatory framework than the RBI Master Direction you are asking about.\n\nTo answer your question about RBI's specific requirements, I would need evidence passages from the RBI Master Direction on IT Governance (2023).",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q17",
+  "category": "synthesis",
+  "question": "How did NIST's incident response life cycle change between SP 800-61 Revision 2 and Revision 3?",
+  "expected_evidence": "`cybersecurity-incident-response__nist__sp-800-61r2-computer-security-incident-handling-guide__2012.pdf` p.31 \u2014 phases: preparation, detection and analysis, containment/eradication/recovery, post-incident activity; `cybersecurity-incident-response__nist__sp-800-61r3-incident-response-recommendations-csf2__2025.pdf` pp.13-14 \u2014 six CSF 2.0 Functions (Govern, Identify, Protect, Detect, Respond, Recover) with Table 1 mapping old phases to Functions; p.3 states it supersedes r2.",
+  "reference_answer": "Rev. 2 (2012) used four sequential phases: preparation; detection and analysis; containment, eradication and recovery; post-incident activity. Rev. 3 (April 2025) supersedes it and uses a model based on the six CSF 2.0 Functions: Govern, Identify and Protect (preparation, not part of response itself), plus Detect, Respond, Recover, with continuous improvement via ID.IM; Table 1 maps old phases to Functions (e.g. Preparation -> Govern/Identify/Protect).",
+  "governed_expectation": "Accept r2 p.31 and r3 pp.13-14 (and p.3 supersession note) as complementary; the answer must attribute each model to its version and note r3 is current.",
+  "decoy": "Risk: mixing the two models or presenting r2's four phases as current guidance; r2 also appears in many r3 cross-references.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Changes to NIST's Incident Response Life Cycle Between Revisions 2 and 3\n\nThe evidence provided indicates that significant changes were made, but the specific details of how the life cycle model itself changed are not fully explained in these passages.\n\n## What the Evidence Shows:\n\n**Previous Model (Revision 2):** The incident response life cycle in SP 800-61r2 consisted of four major phases: preparation, detection and analysis, containment/eradication/recovery, and post-incident activity [20916b52-1ec7-4687-928b-d34836d932f3::chunk::57].\n\n**New Model (Revision 3):** Section 2.1 of the new publication \"explores the incident response life cycle and proposes a new life cycle model based on CSF 2.0 Functions\" [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::17]. The document notes that \"Fig. 1 depicts the incident response life cycle model illustrated in the previous version of this publication [SP800-61r2]\" [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::17], suggesting a comparison is made, but the actual figure and detailed explanation are not included in these passages.\n\n## Conclusion:\n\nThe evidence is insufficient to describe the specific changes to the life cycle model. While it confirms that Revision 3 proposes a new model based on CSF 2.0 Functions (rather than the four-phase model), the actual details of how the phases or structure changed are not provided in these passages."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Changes to NIST's Incident Response Life Cycle Between Revision 2 and Revision 3\n\nBased on the accepted evidence, the most significant change was a **fundamental shift in the underlying framework and conceptual model**:\n\n## Framework Change\nThe incident response life cycle was reorganized from a **circular model with four phases** to a **model based on the six CSF 2.0 Functions** [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::20, chunk::22]. \n\nThe mapping shows:\n- **Previous phases** (Preparation, Detection & Analysis, Containment/Eradication/Recovery, Post-Incident Activity) were replaced with **CSF 2.0 Functions** (Govern, Identify, Protect, Detect, Respond, Recover) [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::22]\n\n## Conceptual Shift\nThe revision reflected a change in how incident response itself is understood:\n\n- **Revision 2 approach**: Treated incident response as a separate, intermittent set of activities performed by a dedicated team in a circular cycle [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::20]\n\n- **Revision 3 approach**: Positioned incident response as **integrated across organizational operations** and part of broader cybersecurity risk management, with **continuous improvement** as an ongoing process rather than a discrete post-incident phase [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::20, chunk::22]\n\nThis change reflected the reality that modern incidents are more frequent, complex, and damaging than when Revision 2 was written [2515b6bd-a51a-494c-96c4-d12a0b3db30a::chunk::20].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "01Q18",
+  "category": "synthesis",
+  "question": "What are the seven steps of the contingency planning process described in NIST SP 800-34 Rev. 1?",
+  "expected_evidence": "`cybersecurity-incident-response__nist__sp-800-34r1-contingency-planning-guide__2010.pdf` p.13 \u2014 Executive Summary seven-step process.",
+  "reference_answer": "(1) Develop the contingency planning policy statement; (2) conduct the business impact analysis; (3) identify preventive controls; (4) create contingency strategies; (5) develop the information system contingency plan; (6) ensure plan testing, training and exercises; (7) ensure plan maintenance.",
+  "governed_expectation": "Accept the executive-summary list on p.13; later chapter headings (e.g. TOC p.8) are redundant support.",
+  "decoy": "Decoy: SP 800-61 phase lists and SP 800-184 playbook-building steps are other multi-step lifecycles.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the evidence, the seven steps of the information system contingency planning process described in NIST SP 800-34 Rev. 1 are [2cbb1c29-a473-4747-a4c6-052b00fe301d::chunk::55]:\n\n1. Develop the contingency planning policy\n2. Conduct the business impact analysis (BIA)\n3. Identify preventive controls\n4. Create contingency strategies\n5. Develop an information system contingency plan\n6. Ensure plan testing, training, and exercises\n7. Ensure plan maintenance\n\nThese steps are described as representing \"key elements in a comprehensive information system contingency planning capability\" and are designed to be common to all information systems [2cbb1c29-a473-4747-a4c6-052b00fe301d::chunk::55]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, the seven steps of the contingency planning process described in NIST SP 800-34 Rev. 1 are [2cbb1c29-a473-4747-a4c6-052b00fe301d::chunk::55]:\n\n1. Develop the contingency planning policy\n2. Conduct the business impact analysis (BIA)\n3. Identify preventive controls\n4. Create contingency strategies\n5. Develop an information system contingency plan\n6. Ensure plan testing, training, and exercises\n7. Ensure plan maintenance\n\nThese steps are described as representing \"key elements in a comprehensive information system contingency planning capability\" and are designed to be common to all information systems [2cbb1c29-a473-4747-a4c6-052b00fe301d::chunk::55].",
+   "passages_accepted": 5,
+   "conflict_passages": 1
+  }
+ },
+ {
+  "qid": "02Q01",
+  "category": "ordinary",
+  "question": "What is the ordinary minimum time that must be allowed for bid submission in an advertised tender enquiry for goods under the General Financial Rules, and is it longer if bids are also sought from abroad?",
+  "expected_evidence": "`public-procurement__doe-mof__general-financial-rules-2017-updated-to-31-jan-2026__2026.pdf` p.38-39 \u2014 Rule 161(vi): \"minimum time to be allowed for submission of bids should be three weeks\"; where bids are also sought from abroad the minimum is four weeks for both domestic and foreign bidders.",
+  "reference_answer": "Ordinarily three weeks from the date of publication of the tender notice or availability of the bidding document for sale, whichever is later. Where bids are also contemplated from abroad, the minimum is four weeks for both domestic and foreign bidders.",
+  "governed_expectation": "Accept the GFR Rule 161 passage (the sentence spans the p.38/39 page break, so both chunks may be needed). Exclude the World Bank 30 Business Days period and the EU Directive time limits as different regimes.",
+  "decoy": "World Bank Regulations p.42 (30 Business Days for open international competitive procurement) and EU Directive 2014/24/EU Art. 27-28 time limits are look-alikes; the Rule 161 sentence is split across two pages.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence provided:\n\n**Ordinary minimum time for bid submission:**\n\nThe ordinary minimum time to be allowed for submission of bids should be **three weeks from the date of publication** of the tender notice or availability of the bidding document for sale, whichever is later [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::145].\n\n**Extended period when bids are sought from abroad:**\n\nYes, the minimum period is longer when the Department contemplates obtaining bids from abroad. In such cases, **the minimum period should be kept as four weeks for both domestic and foreign bidders** [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::147].\n\nSo the minimum time is extended from three weeks to four weeks when international competition is solicited."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Answer\n\nBased on the accepted evidence:\n\n**Ordinary minimum time for bid submission:**\n\nThe ordinary minimum time to be allowed for submission of bids should be **three weeks from the date of publication of the tender notice or availability of the bidding document for sale, whichever is later** [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::147].\n\n**If bids are also sought from abroad:**\n\nYes, the minimum period is longer. Where the Department contemplates obtaining bids from abroad, **the minimum period should be kept as four weeks for both domestic and foreign bidders** [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::147].\n\nThis is also confirmed in the context of Global Tender Enquiries, where the due date fixed for opening of the tender shall be **a minimum of four weeks from the date of advertisement** [b1089110-334a-4ed4-b707-9b9d9b8a5480::chunk::213].",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q02",
+  "category": "ordinary",
+  "question": "Under the Public Procurement Policy for Micro and Small Enterprises, what share of annual procurement must central ministries and CPSUs source from MSEs, and what sub-targets apply for SC/ST-owned and women-owned MSEs?",
+  "expected_evidence": "`public-procurement__dc-msme__faqs-public-procurement-policy-for-mses__2022.pdf` p.2-3 \u2014 mandatory 25% of annual procurement from MSEs, including 4% (within the 25%) from SC/ST-owned and 3% (within the 25%) from women-owned MSEs.",
+  "reference_answer": "At least 25% of annual procurement must come from MSEs. Within that 25%, 4% is earmarked for MSEs owned by SC/ST entrepreneurs and 3% for MSEs owned by women entrepreneurs; if such MSEs fail to participate or meet L1 price, the sub-targets are met from other MSEs.",
+  "governed_expectation": "Accept the MSE FAQ passages (Q.1 and Q.2). No conflict expected.",
+  "decoy": "The Make-in-India circular's 20% margin and 50% quantity split, and the MSE L1+15% band, are different regimes; do not mix them.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Public Procurement Policy for MSEs: Procurement Targets\n\nBased on the accepted evidence, here are the procurement requirements:\n\n## Overall MSE Procurement Target\n\nCentral Government Ministries, Departments, and Public Sector Undertakings (CPSUs) must procure a **minimum of 25 percent of their total annual procurement from MSEs** [chunk-583, chunk-592, chunk-0, chunk-1191].\n\n## Sub-Targets for Specific MSE Categories\n\nOut of the 25% MSE procurement target, the following sub-targets are earmarked:\n\n- **4% of annual procurement** from MSEs owned by Scheduled Caste (SC) / Scheduled Tribe (ST) entrepreneurs [chunk-583, chunk-592, chunk-0, chunk-1191]\n\n- **3% of annual procurement** from MSEs owned by women entrepreneurs [chunk-583, chunk-592, chunk-0, chunk-1191]\n\n## Flexibility Provision\n\nIf MSEs in these reserved categories fail to participate in the tender process or do not meet tender requirements and the L1 (lowest) price, the 4% and 3% sub-targets can be met from other MSEs [chunk-583, chunk-592, chunk-0, chunk-1191].\n\n## Implementation Status\n\nAs per Gazette Notification (S.O. 5670(E) dated 8th November 2018, these procurement targets are **mandatory** for all Central Government Ministries, Departments, and CPSEs [chunk-585, chunk-594]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Public Procurement Policy for MSEs: Procurement Targets\n\nBased on the accepted evidence, here are the procurement requirements:\n\n## Overall MSE Procurement Target\n\nCentral Government Ministries, Departments, and Public Sector Undertakings must procure a **minimum of 25 percent** of their total annual procurement from MSEs [a92fd92f-b6de-43ff-aa02-a2a12a08885b::chunk::0].\n\n## Sub-Targets for Reserved Categories\n\nOut of the 25% MSE procurement target, the following sub-targets are earmarked:\n\n- **4% sub-target** for MSEs owned by Scheduled Caste (SC) / Scheduled Tribe (ST) entrepreneurs [a92fd92f-b6de-43ff-aa02-a2a12a08885b::chunk::0]\n\n- **3% sub-target** for MSEs owned by women entrepreneurs [a92fd92f-b6de-43ff-aa02-a2a12a08885b::chunk::0]\n\nThese sub-targets are **within the 25%** overall MSE target, not in addition to it [a92fd92f-b6de-43ff-aa02-a2a12a08885b::chunk::0].\n\n## Flexibility Provision\n\nIf SC/ST-owned or women-owned MSEs fail to participate in the tender process or meet tender requirements and L1 price, the unfulfilled portions of these sub-targets can be met from other MSEs [a92fd92f-b6de-43ff-aa02-a2a12a08885b::chunk::0].",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q03",
+  "category": "ordinary",
+  "question": "What limits does the GFR place on advance payments to suppliers, and how do they differ for private firms versus government agencies or public sector undertakings?",
+  "expected_evidence": "`public-procurement__doe-mof__general-financial-rules-2017-updated-to-31-jan-2026__2026.pdf` p.43 \u2014 Rule 172(1): advance not to exceed 30% of contract value for private firms, 40% for State/Central Government agency or PSU, and six months' payable amount for maintenance contracts.",
+  "reference_answer": "Advance payments should not exceed 30% of contract value to private firms and 40% to a State or Central Government agency or PSU; for a maintenance contract the advance should not exceed the amount payable for six months. Adequate safeguards such as a bank guarantee should be obtained, and Ministries may relax the ceilings in consultation with their Financial Advisers.",
+  "governed_expectation": "Accept the Rule 172(1) passage. Exclude Rule 172(2) part-payment text if it is retrieved but does not state the 30%/40% ceilings.",
+  "decoy": "Rule 172(2) (part payment) is adjacent on the same page.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Advance Payment Limits Under GFR 2017\n\nAccording to Rule 172(1) of the General Financial Rules 2017, the quantum of advance payments should not generally exceed the following limits [1c60c153-5404-4667-9b24-29b54e7386e4::chunk::290]:\n\n## Limits by Entity Type\n\n**Private Firms:** 30% of the contract value [1c60c153-5404-4667-9b24-29b54e7386e4::chunk::290]\n\n**State or Central Government Agencies or PSEs:** 40% of the contract value [1c60c153-5404-4667-9b24-29b54e7386e4::chunk::290]\n\n**Maintenance Contracts:** The amount should not exceed the amount payable for six months under the contract, regardless of entity type [1c60c153-5404-4667-9b24-29b54e7386e4::chunk::290]\n\n## Key Difference\n\nThe evidence shows a **10 percentage point difference** between private firms (30%) and government agencies/PSEs (40%), reflecting a higher ceiling for government entities and public sector undertakings [1c60c153-5404-4667-9b24-29b54e7386e4::chunk::290].\n\n## Exceptional Cases\n\nIn exceptional cases, the competent authority may relax these ceilings with prior concurrence of the Associated/Integrated Finance [1c60c153-5404-4667-9b24-29b54e7386e4::chunk::290]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Advance Payment Limits Under GFR 2017\n\nAccording to the General Financial Rules (GFR) 2017, advance payments are subject to specific quantum limits that differ based on the type of contractor [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::603]:\n\n## Limits by Contractor Type\n\n**Private Firms:** Advance payments should not generally exceed **30% of the contract value** [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::603].\n\n**Government Agencies or Public Sector Undertakings (PSEs):** Advance payments should not generally exceed **40% of the contract value** [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::603].\n\n**Maintenance Contracts:** For maintenance contracts specifically, the amount should not exceed **the amount payable for six months under the contract**, regardless of contractor type [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::603].\n\n## Key Difference\n\nThe primary distinction is that government agencies and PSEs are permitted a higher ceiling (40%) compared to private firms (30%). This reflects a differentiation in risk assessment between the two categories of contractors.\n\n## Exception Clause\n\nIn exceptional cases, the competent authority may relax these ceilings with prior concurrence of the Associated/Integrated Finance [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::603].",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q04",
+  "category": "ordinary",
+  "question": "For goods that are listed on GeM, up to what value can a government buyer purchase directly from any available supplier, and what is required for purchases above that value up to Rs 10 lakh?",
+  "expected_evidence": "`public-procurement__doe-mof__general-financial-rules-2017-updated-to-31-jan-2026__2026.pdf` p.34 \u2014 Rule 149: direct on-line purchase up to Rs 50,000 from any supplier on GeM meeting quality/specification/delivery; above that up to Rs 10,00,000 from the lowest-priced GeM seller among at least three different manufacturers.",
+  "reference_answer": "Up to Rs 50,000 the buyer may purchase from any available GeM supplier meeting the requirements. Above Rs 50,000 and up to Rs 10,00,000 the purchase must be from the GeM seller with the lowest price among available sellers of at least three different manufacturers. (A footnote gives Rs 1 lakh as the lower band for specified scientific ministries/institutions.)",
+  "governed_expectation": "Accept the Rule 149 passage. Exclude Rule 154 (purchase without quotation) as a different, non-GeM route.",
+  "decoy": "Rule 154 (Rs 50,000 without quotation, items not on GeM) and Rule 155 (Purchase Committee) use the same Rs 50,000 figure and are a look-alike.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence:\n\n**Up to Rs. 50,000:** Government buyers can purchase directly from any available supplier on GeM that meets the requisite quality, specification, and delivery period [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::237].\n\n**Above Rs. 50,000 up to Rs. 10,00,000 (10 lakh):** Purchases must be made through the GeM Seller having the lowest price amongst available sellers of at least three different manufacturers of goods (or service providers in case of services), meeting the requisite quality, specification, and delivery period [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::237].\n\n**Note:** For automobiles, direct procurement under the first category is permitted without any ceiling limit [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::237]. Additionally, online bidding and online reverse auction tools available on GeM can be used by the buyer even for procurements less than Rs. 10,00,000 [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::237]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence:\n\n**Up to Rs. 50,000/-:** Government buyers can purchase directly from any available supplier on GeM, provided the supplier meets the requisite quality, specification, and delivery period requirements [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::237].\n\n**Above Rs. 50,000/- and up to Rs. 10,00,000/-:** Purchases must be made through the GeM Seller having the **lowest price amongst the available sellers, of at least three different manufacturers** of goods or service providers (in case of services), on GeM, meeting the requisite quality, specification, and delivery period [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::237].\n\nAdditionally, the evidence notes that online bidding and online reverse auction tools available on GeM can be used by the Buyer even for procurements less than Rs. 10,00,000/- [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::237].\n\n**Exception:** In the case of automobiles, direct procurement under the first category (up to Rs. 50,000/-) is permitted without any ceiling limit [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::237].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q05",
+  "category": "exact-identifier",
+  "question": "What does Section 52 of the UK Procurement Act 2023 require regarding key performance indicators, and above what contract value does it apply?",
+  "expected_evidence": "`public-procurement__uk-legislation__procurement-act-2023__2023.pdf` p.43 \u2014 s.52(1): before entering a public contract with an estimated value of more than 5 million pounds, set at least three KPIs; s.52(3): publish them.",
+  "reference_answer": "Before entering a public contract with an estimated value of more than 5 million pounds, a contracting authority must set at least three key performance indicators and must publish them. The duty does not apply if the authority considers supplier performance could not appropriately be assessed by KPIs (s.52(2)).",
+  "governed_expectation": "Accept s.52 on p.43. Exclude generic performance-security or contract-management passages from the GFR/manuals.",
+  "decoy": "Performance security and KPI-like language in the DoE manuals is superficially similar but belongs to a different regime.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to Section 52 of the Procurement Act 2023, the following requirements apply regarding key performance indicators:\n\n**Requirement:** Before entering into a public contract with an estimated value of more than \u00a35 million, a contracting authority must set at least three key performance indicators in respect of the contract [chunk-81].\n\n**Definition:** A \"key performance indicator\" is a factor or measure against which a supplier's performance of a contract can be assessed during the life-cycle of the contract [chunk-81, chunk-82].\n\n**Publication:** A contracting authority must publish any key performance indicators set under this requirement [chunk-81, chunk-82].\n\n**Exceptions:** The requirement does not apply if:\n- The contracting authority considers that the supplier's performance under the contract could not appropriately be assessed by reference to key performance indicators [chunk-81]\n- The contract is a framework, a utilities contract awarded by a private utility, a concession contract, or a light touch contract [chunk-82]\n\n**Threshold:** The requirement applies to contracts with an estimated value of **more than \u00a35 million** [chunk-81]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Section 52 Requirements for Key Performance Indicators\n\nAccording to Section 52 of the UK Procurement Act 2023, the following requirements apply:\n\n## Threshold and Basic Requirement\nBefore entering into a public contract with an estimated value of **more than \u00a35 million**, a contracting authority must set **at least three key performance indicators** in respect of the contract [003443ad-290b-4773-b5dd-470de501effa::chunk::81].\n\n## Definition\nA \"key performance indicator\" is defined as \"a factor or measure against which a supplier's performance of a contract can be assessed during the life-cycle of the contract\" [003443ad-290b-4773-b5dd-470de501effa::chunk::81].\n\n## Publication Requirement\nA contracting authority must **publish any key performance indicators** set under this requirement [003443ad-290b-4773-b5dd-470de501effa::chunk::81].\n\n## Exceptions\nThe requirement does not apply if:\n- The contracting authority considers that the supplier's performance could not appropriately be assessed by reference to key performance indicators [003443ad-290b-4773-b5dd-470de501effa::chunk::81], or\n- The contract is a framework, utilities contract awarded by a private utility, concession contract, or light touch contract [003443ad-290b-4773-b5dd-470de501effa::chunk::82].",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q06",
+  "category": "exact-identifier",
+  "question": "In the Make in India procurement preference framework (PPP-MII Order as implemented through the NTPC circular), what is the margin of purchase preference, and who benefits from it?",
+  "expected_evidence": "`public-procurement__ntpc__ppp-make-in-india-order-implementation-circular-with-dpiit-orders__2020.pdf` p.5 \u2014 para 3.0: \"The margin of purchase preference shall be 20%\"; para 4.0 gives purchase preference to 'Class-I local supplier'.",
+  "reference_answer": "The margin of purchase preference is 20%, meaning the evaluated bid price of a Class-I local supplier may be up to 20% above L1 for the purpose of purchase preference. The preference is given to Class-I local suppliers (para 4.0), including in ICB tenders.",
+  "governed_expectation": "Accept para 3.0/4.0 (and the para 1 definition of margin on p.2 if retrieved). Exclude the MSE FAQ L1+15% band.",
+  "decoy": "MSE policy uses an L1+15% band (MSE FAQ p.3), a look-alike margin from a different policy.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Margin of Purchase Preference and Beneficiaries\n\n## Margin of Purchase Preference\n\nThe margin of purchase preference is **20%** [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::64]. This is defined as \"the maximum extent to which the price quoted by a 'Class-I local supplier' may be above the L1 for the purpose of purchase preference\" [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::64].\n\n## Who Benefits\n\n**Class-I local suppliers** are the primary beneficiaries of this purchase preference. According to the framework:\n\n- Only those 'Class-I local suppliers' whose quoted rates fall within the 20% margin of purchase preference are eligible for purchase preference [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::72].\n\n- Purchase preference is given to 'Class-I local suppliers' over both 'Class-II local suppliers' and 'Non-local suppliers' [9b957a6c-5877-4724-a91a-af57c747faa1::chunk::70].\n\n- The lowest quoting eligible 'Class-I local supplier' receives first preference for purchase [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::72].\n\n- In contrast, 'Class-II local supplier' will not get purchase preference in any procurement undertaken by procuring entities [9b957a6c-5877-4724-a91a-af57c747faa1::chunk::114]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Margin of Purchase Preference and Beneficiaries\n\n## Margin of Purchase Preference\n\nThe margin of purchase preference is **20%** [9b957a6c-5877-4724-a91a-af57c747faa1::chunk::70], [b1089110-334a-4ed4-b707-9b9d9b8a5480::chunk::75], [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::72].\n\n## Primary Beneficiary\n\n**'Class-I local suppliers'** are the primary beneficiaries of this purchase preference [9b957a6c-5877-4724-a91a-af57c747faa1::chunk::70], [b1089110-334a-4ed4-b707-9b9d9b8a5480::chunk::75].\n\n## Eligibility Criteria\n\nOnly those 'Class-I local suppliers' whose quoted rates fall **within the 20% margin of purchase preference** are eligible for the preference, subject to:\n- Meeting prescribed criteria for award of contract\n- Compliance with the constraint of maximum quantity that can be sourced from any single supplier [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::72], [b1089110-334a-4ed4-b707-9b9d9b8a5480::chunk::75]\n\n## Exclusion\n\n'Class-II local suppliers' do **not** get purchase preference in any procurement undertaken by procuring entities [9b957a6c-5877-4724-a91a-af57c747faa1::chunk::114].",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q07",
+  "category": "exact-identifier",
+  "question": "What does GFR Rule 154 allow, up to what value, and what must the competent authority record?",
+  "expected_evidence": "`public-procurement__doe-mof__general-financial-rules-2017-updated-to-31-jan-2026__2026.pdf` p.36 \u2014 Rule 154: purchase of goods up to Rs 50,000 on each occasion without quotations or bids, on a recorded certificate of personal satisfaction.",
+  "reference_answer": "Rule 154 permits purchase of goods (in case an item is not available on GeM) up to Rs 50,000 on each occasion without inviting quotations or bids, on the basis of a certificate recorded by the competent authority that the goods are of the requisite quality and specification and were purchased from a reliable supplier at a reasonable price.",
+  "governed_expectation": "Accept Rule 154. Exclude Rule 155 (Purchase Committee, above Rs 50,000 up to Rs 5 lakh) and Rule 149 (GeM bands).",
+  "decoy": "Rules 149, 155 and 162 all use Rs 50,000/50 lakh style thresholds and are neighbours on the same pages.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about GFR Rule 154. While the accepted evidence includes multiple chunks from the General Financial Rules 2017 and related procurement manuals, none of them specifically address Rule 154 or what it allows, any associated value limits, or what the competent authority must record under that rule.\n\nTo answer your question accurately, I would need evidence that directly references Rule 154 of the GFR 2017."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "I cannot answer this question because no evidence passages have been supplied. The accepted evidence and conflicting evidence sections are both empty.\n\nTo answer your question about what GFR Rule 154 allows, up to what value, and what the competent authority must record, I would need relevant passages containing information about GFR Rule 154.\n\nPlease provide the evidence passages you would like me to use to answer this question.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q08",
+  "category": "near-miss",
+  "question": "How long is the mandatory standstill period under the UK Procurement Act 2023 after a contract award notice is published?",
+  "expected_evidence": "`public-procurement__uk-legislation__procurement-act-2023__2023.pdf` p.42 \u2014 s.51(2): \"period of eight working days beginning with the day on which a contract award notice is published\".",
+  "reference_answer": "The mandatory standstill period is eight working days beginning with the day the contract award notice is published (s.51(2)); a voluntary standstill period in the notice may not be shorter than eight working days (s.51(5)). Certain contracts, e.g. frameworks and urgent direct awards, are exempt (s.51(3)).",
+  "governed_expectation": "Accept UK Act s.51. Exclude World Bank Regs para 5.79 (ten Business Days, p.51) and UNCITRAL Model Law Art. 22(2) (duration left to regulations, p.30) as other regimes.",
+  "decoy": "World Bank Regulations para 5.78-5.80 (10 Business Days) and UNCITRAL Art. 22 discuss the same 'standstill period' concept with a different duration; careless retrieval could return 10 days.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, the mandatory standstill period under the UK Procurement Act 2023 is **eight working days** beginning with the day on which a contract award notice is published in respect of the contract [003443ad-290b-4773-b5dd-470de501effa::chunk::80].\n\nThis is specified in section 51(2) of the Procurement Act 2023, which states: \"The 'mandatory standstill period' is the period of eight working days beginning with the day on which a contract award notice is published in respect of the contract.\""
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, the mandatory standstill period under the UK Procurement Act 2023 is **eight working days beginning with the day on which a contract award notice is published** [003443ad-290b-4773-b5dd-470de501effa::chunk::80].",
+   "passages_accepted": 3,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q09",
+  "category": "near-miss",
+  "question": "Under the GFR, how long should a bid security normally remain valid, and by when must unsuccessful bidders' bid securities be returned?",
+  "expected_evidence": "`public-procurement__doe-mof__general-financial-rules-2017-updated-to-31-jan-2026__2026.pdf` p.42 \u2014 Rule 170(i)-(ii): bid security normally valid for forty-five days beyond the final bid validity; returned on or before the 30th day after contract award.",
+  "reference_answer": "Bid security normally remains valid for forty-five days beyond the final bid validity period. Unsuccessful bidders' bid securities should be returned at the earliest after expiry of final bid validity and latest on or before the 30th day after the award of the contract (for two-stage bidding, within 30 days of declaring the first-stage result).",
+  "governed_expectation": "Accept Rule 170 (bid security). Exclude Rule 171 performance security (valid sixty days beyond completion of all contractual obligations, p.42-43) and UNCITRAL Art. 17 tender securities.",
+  "decoy": "Rule 171(ii) performance security validity (sixty days beyond completion of obligations) sits right after Rule 170 and uses similar wording.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence, here are the requirements under the GFR:\n\n**Bid Security Validity Period:**\nThe bid security is normally to remain valid for a period of 45 (forty-five) days beyond the final bid validity period [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::561].\n\n**Return of Unsuccessful Bidders' Bid Securities:**\nBid securities of unsuccessful bidders should be returned to them as soon as possible after the expiry of the final bid validity period and, at the latest, by the 30th day after the award of the contract [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::567].\n\n**Exception for Two-Packet or Two-Stage Tendering:**\nIn the case of two-packet or two-stage tendering, bid securities of unsuccessful bidders during the first stage (i.e., technical evaluation, etc.) should be returned within 30 days of declaration of the result of the first stage [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::567].\n\n**Successful Bidder's Bid Security:**\nThe bid security should be refunded to the successful bidder upon receipt of performance security [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::567]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence, here are the requirements for bid security validity and return:\n\n**Bid Security Validity Period:**\nThe bid security is normally to remain valid for a period of 45 (forty-five) days beyond the final bid validity period [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::169, a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::289, b1089110-334a-4ed4-b707-9b9d9b8a5480::chunk::299, 1c60c153-5404-4667-9b24-29b54e7386e4::chunk::277, c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::561].\n\n**Return of Unsuccessful Bidders' Bid Securities:**\nBid securities of unsuccessful bidders should be returned to them as soon as possible after the expiry of the final bid validity period and, at the latest, by the 30th day after the award of the contract [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::563]. Alternatively stated, they should be returned \"at the earliest after expiry of the final bid validity and latest on or before the 30th day after the award of the contract\" [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::169].\n\n**Exception for Two-Stage Bidding:**\nIn the case of two-packet or two-stage tendering, bid securities of unsuccessful bidders during the first stage (technical evaluation, etc.) should be returned within 30 days of declaration of the result of that first stage [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::563].",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q10",
+  "category": "near-miss",
+  "question": "When can a ministry use a limited tender enquiry for goods under the GFR, how many suppliers must receive the documents, and how does this differ from the value at which advertised tender enquiry is required?",
+  "expected_evidence": "`public-procurement__doe-mof__general-financial-rules-2017-updated-to-31-jan-2026__2026.pdf` p.39 \u2014 Rule 162(i): limited tender enquiry when estimated value is up to Rs 50 lakh, to registered suppliers, number of firms more than three; Rule 161(i) on p.38 requires advertised tender for Rs 50 lakh and above.",
+  "reference_answer": "Limited tender enquiry may be used when the estimated value of the goods is up to Rs 50 lakh, with bidding documents sent to firms on the registered-supplier list, and the number of supplier firms should be more than three. It can exceed Rs 50 lakh only in specified cases (urgency certified, public-interest reasons, or sources definitely known). Advertised tender enquiry (Rule 161, on GeM/CPPP) applies at Rs 50 lakh and above.",
+  "governed_expectation": "Accept Rule 162 (p.39) and the Rule 161 threshold (p.38). Exclude Rule 154/155 (small-value purchases) and Rule 166 (single tender).",
+  "decoy": "Rules 154, 155, 161, 162 and 166 form a cluster of value-threshold rules; the answer must tie the 'more than three firms' requirement to Rule 162 only.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Limited Tender Enquiry (LTE) Requirements Under GFR\n\n## When LTE Can Be Used\n\nLimited Tender Enquiry may be adopted when the estimated value of goods to be procured is up to Rs. 50 lakhs (Rupees Fifty Lakhs) [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::148]. However, LTE may also be adopted even where the estimated value exceeds Rupees Fifty Lakhs in certain circumstances, such as when the competent authority certifies that the demand is urgent and any additional expenditure involved by not procuring through advertised tender enquiry is justified in view of urgency [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::148].\n\n## Number of Suppliers\n\nThe number of supplier firms in Limited Tender Enquiry should be **more than three** [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::148]. Efforts should be made to identify a higher number of approved suppliers to obtain more responsive bids on competitive basis [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::148]. However, if less than three approved vendors are available, LTE may be sent to available approved vendors with competent authority approval, duly recording reasons [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::434].\n\n## Difference from Advertised Tender Enquiry\n\nThe evidence does not contain sufficient information to directly compare the value thresholds at which advertised tender enquiry becomes required versus LTE. The evidence indicates LTE is used for lower-value procurements (up to Rs. 50 lakhs as the standard threshold), but does not explicitly state the threshold value that triggers mandatory use of advertised tender enquiry."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Limited Tender Enquiry Requirements Under GFR\n\n## When Limited Tender Enquiry Can Be Used\n\n**For standard cases:** Limited Tender Enquiry (LTE) may be adopted when the estimated value of goods to be procured is up to Rs. 50 lakhs (Rupees Fifty Lakhs) [chunk-148, chunk-147].\n\n**Exception for Scientific Ministries:** For Scientific Ministries/Departments/Organizations (including Department of Science and Technology, Department of Bio-technology, Department of Atomic Energy, Department of Space, etc.), the threshold is up to Rs. 1,00,00,000 (Rupees one crore) [chunk-149].\n\n**Beyond the threshold:** LTE may still be adopted even where estimated value exceeds these amounts if specific circumstances are met, including: (a) competent authority certification of urgency, (b) sufficient reasons recorded in writing that advertised tender would not be in public interest, or (c) sources of supply are definitely known with remote possibility of fresh sources [chunk-149].\n\n## Number of Suppliers Required\n\nThe minimum number of supplier firms to whom LTE documents should be sent is **more than three** [chunk-148, chunk-147, chunk-434]. However, if fewer than three approved vendors are available, LTE may be sent to available approved vendors with competent authority approval and recorded reasons [chunk-434].\n\n## Comparison with Advertised Tender Enquiry\n\nThe evidence indicates that for non-consulting services with estimated value **above Rs. 50 lakhs**, advertised tender enquiry is required, with advertisements published on GeM and GeM-CPPP [chunk-199]. This establishes that advertised tender enquiry is the required method for procurements exceeding the LTE thresholds.",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q11",
+  "category": "false-premise",
+  "question": "Since the GFR requires every bidder, MSEs included, to furnish a bid security of at least 10% of the estimated value of the goods, how should this be priced into a tender?",
+  "expected_evidence": "`public-procurement__doe-mof__general-financial-rules-2017-updated-to-31-jan-2026__2026.pdf` p.42 \u2014 Rule 170(i): bid security ordinarily ranges between two and five percent of estimated value, and MSEs/registered/startup bidders are excluded from the requirement.",
+  "reference_answer": "The premise is wrong. Under Rule 170 bid security should ordinarily range between 2% and 5% of the estimated value of the goods, not a minimum of 10%. Micro and Small Enterprises (as defined in the MSE policy), bidders registered with the Central Purchase Organisation or the Ministry/Department, and DPIIT-recognised startups are excepted; a bid-securing declaration may be used in place of bid security (Rule 170(iii)).",
+  "governed_expectation": "Place Rule 170 in conflicting evidence against the 10%/all-bidders premise and accept it as the correcting source; the answer should correct both the percentage and the MSE claim.",
+  "decoy": "The 10% figure appears for works performance security in the Works manual (3-10%, p.127) and could lure a retriever into confirming the premise.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence does not support the premise of your question. According to the accepted evidence, the GFR does **not** require every bidder, including MSEs, to furnish a bid security of at least 10% of the estimated value.\n\nInstead, the evidence shows:\n\n1. **General bid security requirement**: The amount of bid security should ordinarily range between **two (2) to five (5) per cent** of the estimated value [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::288], [1c60c153-5404-4667-9b24-29b54e7386e4::chunk::276], [b1089110-334a-4ed4-b707-9b9d9b8a5480::chunk::298].\n\n2. **MSE exemption**: Micro and Small Enterprises (MSEs) as defined in the MSE Procurement Policy and registered Startups are **exempt from payment of EMD** [1c60c153-5404-4667-9b24-29b54e7386e4::chunk::279]. Additionally, Rule 170 of the GFR states that bid security is to be obtained from bidders **except** MSEs and registered Startups [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::166].\n\nTherefore, the premise of a 10% minimum bid security requirement for all bidders including MSEs is incorrect according to the evidence provided."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence is insufficient to answer this question as stated.\n\nThe conflicting evidence provided discusses bid security requirements, but it does not support the premise of your question. According to both passages, the bid security should \"ordinarily range between two (2) to five (5) per cent of the estimated value of the services to be procured\" [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::288] [1c60c153-5404-4667-9b24-29b54e7386e4::chunk::276], not 10%.\n\nAdditionally, the passages do not mention any special exemption or different treatment for MSEs (Micro and Small Enterprises) regarding bid security requirements, nor do they discuss how to price bid security into a tender.\n\nTo properly answer your question, I would need evidence that:\n1. Confirms the 10% bid security requirement you reference\n2. Specifies whether MSEs have different requirements\n3. Provides guidance on pricing bid security into tender documents",
+   "passages_accepted": 0,
+   "conflict_passages": 2
+  }
+ },
+ {
+  "qid": "02Q12",
+  "category": "false-premise",
+  "question": "The World Bank Procurement Regulations require a standstill period of 15 calendar days after the Notification of Intention to Award; how should a borrower count it?",
+  "expected_evidence": "`public-procurement__world-bank__procurement-regulations-for-ipf-borrowers-7th-edition__2025.pdf` p.51 \u2014 para 5.79: standstill period \"shall last ten (10) Business Days\" after transmission of the Notification of Intention to Award.",
+  "reference_answer": "The premise is wrong: para 5.79 sets the Standstill Period at ten (10) Business Days after transmission of the Notification of Intention to Award, not 15 calendar days. The contract may not be awarded before or during it, and para 5.80 lists exceptions (e.g. only one bid, direct selection); a timely debriefing request can extend it (para 5.82).",
+  "governed_expectation": "Place para 5.79 in conflicting evidence and correct the premise. Do not substitute the UK 8 working days.",
+  "decoy": "UK Act s.51 (eight working days) and UNCITRAL Art. 22 (unspecified) are decoys; no 15-day figure exists for this in the corpus.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence does not support the premise of your question. According to the accepted evidence, the World Bank Procurement Regulations require a Standstill Period of **ten (10) Business Days**, not 15 calendar days.\n\nSpecifically: \"The Standstill Period shall last ten (10) Business Days after such transmission date, unless otherwise extended in accordance with Paragraph 5.82.\" [cdf1b195-6dd8-46f8-8545-00659dfbe8f1::chunk::84]\n\nThe Standstill Period is measured in **Business Days**, not calendar days. Business Days typically exclude weekends and public holidays, though the evidence provided does not define the specific calculation method for what constitutes a \"Business Day\" in this context.\n\nThe 10 Business Day period can be extended in certain circumstances\u2014specifically, when debriefings are delayed beyond the standard five (5) Business Day timeframe for providing them [cdf1b195-6dd8-46f8-8545-00659dfbe8f1::chunk::85]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence does not support the premise of your question. According to the accepted evidence, the World Bank Procurement Regulations require a standstill period of **ten (10) Business Days** (not 15 calendar days) after transmission of the Notification of Intention to Award [cdf1b195-6dd8-46f8-8545-00659dfbe8f1::chunk::85, paragraph 5.79].\n\nThe regulations specify that the period is measured in **Business Days**, not calendar days. The evidence states: \"The Standstill Period shall last ten (10) Business Days after such transmission date, unless otherwise extended in accordance with Paragraph 5.82\" [cdf1b195-6dd8-46f8-8545-00659dfbe8f1::chunk::85, paragraph 5.79].\n\nAdditionally, this period can be extended if the Borrower delays providing a debriefing beyond five (5) Business Days, in which case the Standstill Period is automatically extended until five (5) Business Days after the debriefing is provided [cdf1b195-6dd8-46f8-8545-00659dfbe8f1::chunk::85, paragraph 5.82].",
+   "passages_accepted": 1,
+   "conflict_passages": 1
+  }
+ },
+ {
+  "qid": "02Q13",
+  "category": "conflicting-sources",
+  "question": "What percentage of contract value should a performance security be, and does the answer differ between goods/services and works across the GFR and the DoE manuals?",
+  "expected_evidence": "`public-procurement__doe-mof__general-financial-rules-2017-updated-to-31-jan-2026__2026.pdf` p.42 \u2014 Rule 171: for goods/consultancy/non-consultancy services, three to five percent; `public-procurement__doe-mof__manual-for-procurement-of-goods-2nd-edition__2024.pdf` p.160 \u2014 3 to 5 per cent (3 to 10% for Works); `public-procurement__doe-mof__manual-for-procurement-of-works-2nd-edition__2025.pdf` p.127 \u2014 3 to 10 per cent for works.",
+  "reference_answer": "For goods and services the GFR Rule 171 and the Goods Manual give 3-5% of contract value. For works the Works Manual gives 3-10% (the Goods Manual also notes 3-10% for Works), with a lower percentage within the band suggested for very high-value tenders (above about Rs 50 Cr). So the figure depends on the type of procurement.",
+  "governed_expectation": "Accept all three passages and report both bands, attributing 3-5% to goods/services and 3-10% to works rather than picking one.",
+  "decoy": "Goods Manual p.111 (3-5% on rate-contract supply orders) is a narrower, related passage that may be wrongly generalised.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Performance Security Percentages: GFR and DoE Guidance\n\nBased on the accepted evidence, there is a **clear distinction** between goods/services and works:\n\n## For Goods, Consultancy Services, and Non-Consultancy Services\n\nPerformance security should be **3 to 5 percent** of the contract value [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::170].\n\nThe evidence notes that \"in case of contracts for goods, the need for the Performance Security depends on the market conditions and commercial practice for the particular kind of goods\" [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::564].\n\n## For Works\n\nPerformance security should be **3 to 10 percent** of the contract value [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::568], [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::171].\n\n## International Competitive Procurement (Bank Guidelines)\n\nFor bank guarantees specifically, the amount \"should not exceed ten percent (10%) of the contract price unless the commercial practice for the industry recommends a different percentage\" [cdf1b195-6dd8-46f8-8545-00659dfbe8f1::chunk::185].\n\n## Summary\n\nYes, the answer differs significantly: **goods/services require 3-5%, while works require 3-10%**. The higher range for works reflects the greater performance risks associated with construction and similar contracts."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Performance Security Percentage Requirements\n\nBased on the accepted evidence, the performance security percentage **does differ between goods/services and works**:\n\n## For Goods and Consultancy/Non-Consultancy Services\n\nPerformance security should be **3-5% of the contract value** [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::170], [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::564], [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::568].\n\nHowever, there is an important exception: **submission of performance security is not necessary for tender values up to Rs 50 lakh** [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::568].\n\n## For Works\n\nPerformance security should be **3-10% of the contract value** [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::564], [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::568].\n\n## Additional Flexibility\n\nThe procuring entity may stipulate an **upper ceiling for performance security amounts** in larger tenders to avoid restricting competition, with illustrative examples provided (e.g., Rs 75 Lakhs for tenders up to Rs 50 Crores) [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::564], [a47a9bee-5b26-4f10-80e4-e63833d61de1::chunk::293].\n\nThe evidence also notes that for goods specifically, the need for performance security depends on market conditions and commercial practice [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::170].",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q14",
+  "category": "conflicting-sources",
+  "question": "How far above the lowest bid (L1) may an MSE quote and still get preference in purchases, compared with a Class-I local supplier under the Make in India preference order?",
+  "expected_evidence": "`public-procurement__dc-msme__faqs-public-procurement-policy-for-mses__2022.pdf` p.3 \u2014 MSEs quoting within the band of L1+15% may supply a portion by matching L1; `public-procurement__ntpc__ppp-make-in-india-order-implementation-circular-with-dpiit-orders__2020.pdf` p.5 \u2014 para 3.0 margin of purchase preference is 20% for Class-I local suppliers.",
+  "reference_answer": "The two policies differ: under the MSE procurement policy, MSEs within L1+15% can be offered at least 25% of the tendered value by matching L1; under the PPP-MII Order as implemented in the NTPC circular, the margin of purchase preference for Class-I local suppliers is 20% above L1. The answer should report both and not merge them.",
+  "governed_expectation": "Accept both passages as two accepted pieces of evidence for different policies; the answer must report both figures and their regimes (the NTPC circular p.9 also shows the two interacting).",
+  "decoy": "A careless answer would pick only 15% or only 20%.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Answer\n\nBased on the evidence provided, there is a **key difference** in how far above L1 each category can quote and still receive preference:\n\n**MSEs (Micro and Small Enterprises):**\nMSEs are eligible for preference if their evaluated bid price falls within **15% of the lowest evaluated bid (L1) price** [chunk-75, chunk-17]. For example, the evidence states: \"all qualified MSE bidder(s), whose Evaluated Bid Price is within the range of 15% of the lowest evaluated (L1) price shall be eligible for an opportunity to match the lowest evaluated (L1) price\" [chunk-77].\n\n**Class-I Local Suppliers:**\nClass-I local suppliers are eligible for preference if their evaluated bid price falls within **20% of the lowest evaluated bid (L1) price** [chunk-70]. The evidence explicitly states: \"The margin of purchase preference shall be 20%\" [chunk-70].\n\n**Comparison:**\nClass-I local suppliers can quote up to **5 percentage points higher** than MSEs and still receive preference consideration (20% margin vs. 15% margin)."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided, there is a difference in the margins of purchase preference for MSEs versus Class-I local suppliers:\n\n**For MSEs:** An MSE may quote up to **15% above the lowest evaluated bid (L1)** and still be eligible for preference consideration [9b957a6c-5877-4724-a91a-af57c747faa1::chunk::75, chunk::76, chunk::80].\n\n**For Class-I local suppliers:** A Class-I local supplier may quote up to **20% above the lowest evaluated bid (L1)** and still be eligible for preference consideration [9b957a6c-5877-4724-a91a-af57c747faa1::chunk::75, chunk::76, chunk::114].\n\n**The difference:** Class-I local suppliers have a **5 percentage point wider margin** (20% vs. 15%) within which they can quote and still receive purchase preference compared to MSEs.\n\nIt should be noted that the overall margin of purchase preference under the order is 20% [9b957a6c-5877-4724-a91a-af57c747faa1::chunk::114], but the specific 15% threshold for MSEs applies in scenarios where both MSE and Class-I local supplier preferences are being evaluated.",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q15",
+  "category": "unanswerable",
+  "question": "What minimum bid submission period does the Telangana state government's e-procurement framework prescribe for open tenders?",
+  "expected_evidence": "None. No document in the folder covers Telangana or Andhra Pradesh state e-procurement rules (grep for Telangana and Andhra returns no hits; the notes list state e-procurement GOs as a gap).",
+  "reference_answer": "The corpus does not contain this; evidence is insufficient. (Related but different figures, e.g. GFR Rule 161(vi) three weeks for central government, should not be presented as the Telangana rule.)",
+  "governed_expectation": "Return status insufficient_evidence; any retrieved passage on GFR Rule 161(vi), World Bank 30 Business Days or EU time limits should be excluded as a different jurisdiction.",
+  "decoy": "GFR Rule 161(vi) (three weeks) is a tempting but wrong answer for a state-level question.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about the Telangana state government's e-procurement framework. The passages supplied discuss procurement rules that appear to be from the Government of India's procurement manual and guidelines (referencing the Department of Expenditure, Ministry of Finance, and various central government ministries and departments).\n\nTo answer your question about Telangana state government's specific e-procurement requirements, I would need evidence from Telangana's procurement policies or guidelines, which is not included in the materials provided.\n\nIf you have evidence about Telangana's e-procurement framework, please provide it and I can help answer your question."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about the Telangana state government's e-procurement framework or its specific requirements for bid submission periods.\n\nThe accepted evidence discusses bid submission periods under what appears to be the Government of India's procurement rules (references to Department of Expenditure, Ministry of Finance, and central procurement portals). According to this central framework, the minimum time allowed for bid submission is ordinarily three weeks from the date of publication of the tender notice, or four weeks where the department contemplates obtaining bids from abroad [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::147].\n\nHowever, this is the central government's framework, not Telangana state government's specific e-procurement framework. To answer your question about Telangana's requirements, evidence from Telangana's own e-procurement policies or guidelines would be needed.",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q16",
+  "category": "unanswerable",
+  "question": "How many days does a bidder have to file a bid protest with the US Government Accountability Office after learning the basis of protest?",
+  "expected_evidence": "None. No document in the folder mentions the GAO, the US Federal Acquisition Regulation or US bid-protest deadlines (grep returns no hits; notes list the GAO guide as unavailable).",
+  "reference_answer": "The corpus does not contain this; evidence is insufficient.",
+  "governed_expectation": "Return status insufficient_evidence; challenge/complaint passages (UNCITRAL Ch. VIII, World Bank Annex III, UK Act) concern other regimes and should be excluded.",
+  "decoy": "UNCITRAL challenge-proceedings and World Bank complaint-timeline passages are semantically close decoys.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence is insufficient to answer this question. The passages provided contain procurement complaint and grievance redressal procedures from various sources (including Indian procurement guidelines and UNCITRAL Model Law provisions), but they do not contain any information about the US Government Accountability Office (GAO) or its bid protest procedures.\n\nTo answer your question about GAO bid protest timelines, I would need evidence specifically addressing US federal procurement protest procedures under the GAO's jurisdiction."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "The evidence is insufficient to answer this question. No accepted or conflicting evidence passages have been provided for me to reference.\n\nTo answer your question about the timeline for filing a bid protest with the US Government Accountability Office (GAO), I would need relevant evidence passages about GAO bid protest procedures and deadlines.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q17",
+  "category": "synthesis",
+  "question": "List the methods of procurement that the UNCITRAL Model Law on Public Procurement (2011) provides for, and say which one is the default.",
+  "expected_evidence": "`public-procurement__uncitral__model-law-on-public-procurement__2011.pdf` p.37 \u2014 Art. 27(1) lists ten methods (open tendering to single-source procurement) and Art. 28(1) makes open tendering the default.",
+  "reference_answer": "Article 27(1) lists: open tendering; restricted tendering; request for quotations; request for proposals without negotiation; two-stage tendering; request for proposals with dialogue; request for proposals with consecutive negotiations; competitive negotiations; electronic reverse auction; single-source procurement. Framework agreement procedures are covered separately (Art. 27(2), chapter VII). Open tendering is the default (Art. 28(1)); other methods are allowed only under Arts. 29-31 with reasons recorded.",
+  "governed_expectation": "Accept Art. 27-28 (p.37). Exclude the Guide to Enactment commentary unless used as supplementary context, and exclude EU/UK/World Bank method lists.",
+  "decoy": "The Guide to Enactment (p.153) discusses the same article at length and the EU/UK documents list different procedures.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Procurement Methods Under the 2011 UNCITRAL Model Law\n\n## Available Methods\n\nAccording to the evidence, the 2011 Model Law provides the following procurement methods [chunk-729]:\n\n- Open tendering\n- Restricted tendering\n- Request for quotations\n- Two-stage tendering\n- Competitive negotiations\n- Single-source procurement\n\nThe evidence also indicates that article 27 of the 2011 Model Law \"lists all procurement methods and techniques available\" [chunk-729], though the full list is not exhaustively detailed in the passages provided.\n\n## Default Method\n\n**Open tendering is the default procurement method** [chunk-735]. The evidence states: \"The default procurement method remains open tendering (the change in terminology from tendering to open tendering has been made to harmonize the Model Law with other international instruments regulating public procurement)\" [chunk-735].\n\n## Use of Other Methods\n\nAny procurement method other than open tendering requires justification. The procuring entity must demonstrate that the conditions for use under articles 29 to 31 of the 2011 Model Law are satisfied, and must include \"a statement of the reasons and circumstances relied upon by the procuring entity to justify the use of such other methods\" in the record of the procurement proceedings [chunk-735]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Procurement Methods under UNCITRAL Model Law (2011)\n\nBased on the evidence provided, the UNCITRAL Model Law on Public Procurement (2011) provides the following methods of procurement:\n\n1. Open tendering (default method) [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::735]\n2. Restricted tendering [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n3. Request for quotations [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n4. Request for proposals without negotiation [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n5. Two-stage tendering [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n6. Request for proposals with dialogue [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n7. Request for proposals with consecutive negotiations [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n8. Competitive negotiations [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n9. Electronic reverse auction [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n10. Single-source procurement [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n11. Framework agreements [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::321]\n\n**Default Method:** Open tendering is the default procurement method [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::735]. The use of any other procurement method requires justification through consideration of whether the conditions for use under articles 29 to 31 are satisfied [cba9c291-7ebc-4e34-921d-918925c3886a::chunk::735].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "02Q18",
+  "category": "synthesis",
+  "question": "Summarise the fundamental principles of public buying that the GFR says every procurement, including works, must conform to.",
+  "expected_evidence": "`public-procurement__doe-mof__general-financial-rules-2017-updated-to-31-jan-2026__2026.pdf` p.33-34 \u2014 Rule 144: responsibility for efficiency, economy and transparency, followed by yardsticks (i)-(xi) on specifications, fair procedure, price reasonableness, recording of reasons, published procurement schedule, annual procurement plan.",
+  "reference_answer": "Rule 144 makes authorities responsible for efficiency, economy, transparency, fair treatment of suppliers and promotion of competition. Yardsticks include: objective, functional, generic specifications without brand; clearly spelt-out specifications without superfluous features; use of national/international standards; avoiding excess quantities; a fair, transparent and reasonable procedure; satisfying that the offer meets the requirement and the price is reasonable; recording considerations at each stage; publishing a complete procurement-cycle schedule with the tender; preparing an Annual Procurement Plan; and compliance with any DoE-imposed restrictions on bidders from certain countries.",
+  "governed_expectation": "Accept the Rule 144 chunks from both p.33 and p.34 (the rule spans a page break). Exclude Rules 142-143 and 145+ as separate rules.",
+  "decoy": "The list is split across two pages with a footnote block interleaved; a top-k retriever may return only one half.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Fundamental Principles of Public Buying\n\nAccording to General Financial Rules, 2017, Rule 144, every authority delegated with financial powers of procuring goods in the public interest must conform to the following fundamental principles [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::82]:\n\n1. **Efficiency, Economy, and Transparency**: Bring efficiency, economy, and transparency in matters relating to public procurement [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::82]\n\n2. **Fair and Equitable Treatment**: Ensure fair and equitable treatment of suppliers [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::82]\n\n3. **Promotion of Competition**: Promote competition in public procurement [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::82]\n\nAdditionally, the procedure for public procurement must conform to three specific yardsticks [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::83]:\n\na) Offers should be invited following a fair, transparent, and reasonable procedure\n\nb) The procuring authority should be satisfied that the selected offer adequately meets the requirement in all respects\n\nc) The procuring authority should satisfy itself that the price of the selected offer is reasonable and consistent with the quality required"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Fundamental Principles of Public Buying\n\nAccording to the General Financial Rules, 2017 (Rule 144), every authority delegated with financial powers of procuring goods in public interest must conform to the following fundamental principles [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::117]:\n\n1. **Efficiency, Economy, and Transparency** - Bring efficiency, economy, and transparency in matters relating to public procurement [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::117]\n\n2. **Fair and Equitable Treatment** - Ensure fair and equitable treatment of suppliers [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::117]\n\n3. **Promotion of Competition** - Promote competition in public procurement [b2fa2b0a-7c57-4946-8df9-b83411d99c96::chunk::117]\n\nThe evidence also identifies five broader fundamental principles that procuring authorities must abide by [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::78]:\n\n- **Transparency Principle** - Ensuring transparency, fairness, equality, competition, and appeal rights with consistent, predictable, clear, and non-discriminatory processes [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::78]\n\n- **Professionalism Principle** - Ensuring professionalism, economy, efficiency, effectiveness, and integrity in the procurement process [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::82]\n\n- **Broader Obligations Principle** - Conducting procurement to facilitate achievement of broader government objectives including economic growth, local industry strengthening, and employment creation [c4a51a39-d67a-421b-8e04-efc0264fd98d::chunk::83]",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ }
+]

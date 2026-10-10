@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "evidence-governor"
+version = "0.1.0"
+description = "Evidence Governor: a Jev-powered intermediate layer between any retriever and the answering LLM. Validates, scores and routes retrieved passages with a versioned policy, returning a token-budgeted evidence bundle with full provenance and a decision trace."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Rajeev" }]
+keywords = ["rag", "retrieval", "llm", "evidence", "jev", "openrouter"]
+
+# Deliberately minimal: usable with any retriever and any app.
+dependencies = [
+    "pydantic>=2.6",
+    "httpx>=0.27",
+    "tiktoken>=0.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/rajeevksp/jevgate"
+Repository = "https://github.com/rajeevksp/jevgate"
+
+[project.scripts]
+evidence-governor = "governor.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.5"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["governor"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

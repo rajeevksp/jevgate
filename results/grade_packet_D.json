@@ -1,0 +1,344 @@
+[
+ {
+  "qid": "08Q01",
+  "category": "ordinary",
+  "question": "Under the Right to Information Act, 2005, how many days does a Public Information Officer have to respond to an information request, and is there a faster deadline in any case?",
+  "expected_evidence": "`indian-law__cic__right-to-information-act__2005.pdf` p.11 \u2014 Section 7(1): response \"within thirty days of the receipt of the request\"; proviso gives forty-eight hours where the information concerns life or liberty of a person.",
+  "reference_answer": "Thirty days from receipt of the request (section 7(1)), either providing the information on payment of the prescribed fee or rejecting it on grounds in sections 8 and 9. Where the information concerns the life or liberty of a person, it must be provided within forty-eight hours.",
+  "governed_expectation": "Accept the section 7(1) passage and its proviso on p.11; answer with both 30 days and 48 hours. Exclude the appeal-time passages (section 19) as not answering the question.",
+  "decoy": "Section 19 also contains 30-day and 90-day periods, which could be wrongly merged into the answer; the 5-day extension for requests via an Assistant PIO (p.10) is a side detail.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Response Timeline for Information Requests\n\nUnder the Right to Information Act, 2005, a Public Information Officer has **thirty days** to respond to an information request [2c171505-e059-47b1-9be7-2743cbe2356f::chunk::19]. However, there is a faster deadline in a specific case:\n\n**Expedited Timeline:** Where the information sought concerns the life or liberty of a person, the information must be provided within **forty-eight hours** of receipt of the request [2c171505-e059-47b1-9be7-2743cbe2356f::chunk::19].\n\n**Important Note:** If an application is submitted through a Central Assistant Public Information Officer or State Assistant Public Information Officer (rather than directly to the main Public Information Officer), an additional **five days** is added to the response period [2c171505-e059-47b1-9be7-2743cbe2356f::chunk::16].\n\nAdditionally, if the Public Information Officer fails to give a decision within the specified period, they are deemed to have refused the request [2c171505-e059-47b1-9be7-2743cbe2356f::chunk::19]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Under the Right to Information Act, 2005, a Public Information Officer has **thirty days** to respond to an information request [chunk-19]. \n\nYes, there is a faster deadline in a specific case: where the information sought concerns the life or liberty of a person, the information shall be provided within **forty-eight hours** of receipt of the request [chunk-19].\n\nAdditionally, if the request concerns a third party and that third party is given an opportunity to make representation against disclosure, the deadline extends to **forty days** after receipt of the request [chunk-29].",
+   "passages_accepted": 3,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q02",
+  "category": "ordinary",
+  "question": "What does the Law Ministry's July 2024 notification say about references to the IPC, CrPC and Indian Evidence Act that appear in other laws?",
+  "expected_evidence": "`indian-law__ministry-of-law-gazette__so-2790e-references-to-ipc-crpc-iea-to-be-read-as-bns-bnss-bsa__2024.pdf` p.2 (Hindi text on p.1-2) \u2014 S.O. 2790(E) of 16 July 2024: such references \"shall respectively be read as the reference of\" BNS, BNSS or BSA.",
+  "reference_answer": "S.O. 2790(E), issued under section 8 of the General Clauses Act, 1897, says that wherever an Act of Parliament, a State Act, an Ordinance, a President's order, or rules/regulations/orders/notifications refer to the IPC, CrPC 1973 or Indian Evidence Act 1872 (or their provisions), the reference is to be read respectively as a reference to the BNS, BNSS or BSA, and corresponding provisions construed accordingly.",
+  "governed_expectation": "Accept the English operative paragraph of the notification (p.2). The Hindi text on p.1-2 is equivalent and may also be accepted.",
+  "decoy": "The BNS/BNSS/BSA Acts themselves contain repeal-and-savings sections that are related but are not this notification.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the Ministry of Law and Justice notification dated 16th July, 2024 [9243d07c-fd5b-4202-90c1-7d60b7f30e30::chunk::8], where any reference to the Indian Penal Code (45 of 1860), the Code of Criminal Procedure, 1973 (2 of 1974), or the Indian Evidence Act, 1872 (1 of 1872) is made in any Act made by Parliament, Act made by a State Legislature, Ordinance, Regulations, President's order, or rules/regulations/orders/notifications made under any Act, Ordinance or Regulation, such references shall respectively be read as references to:\n\n- The Bharatiya Nyaya Sanhita, 2023 (45 of 2023) (BNS)\n- The Bharatiya Nagarik Suraksha Sanhita, 2023 (46 of 2023) (BNSS)\n- The Bharatiya Sakshya Adhiniyam, 2023 (47 of 2023) (BSA)\n\nThe corresponding provisions of these new laws shall be construed accordingly [9243d07c-fd5b-4202-90c1-7d60b7f30e30::chunk::8]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the Ministry of Law and Justice notification dated 16th July, 2024, any reference to the Indian Penal Code (45 of 1860), the Code of Criminal Procedure, 1973 (2 of 1974), or the Indian Evidence Act, 1872 (1 of 1872) that appears in various types of legal instruments shall be read as references to their replacements [9243d07c-fd5b-4202-90c1-7d60b7f30e30::chunk::8].\n\nSpecifically, such references shall be construed as references to:\n- The **Bharatiya Nyaya Sanhita, 2023** (45 of 2023) (BNS) \u2014 replacing the IPC\n- The **Bharatiya Nagarik Suraksha Sanhita, 2023** (46 of 2023) (BNSS) \u2014 replacing the CrPC\n- The **Bharatiya Sakshya Adhiniyam, 2023** (47 of 2023) (BSA) \u2014 replacing the Indian Evidence Act\n\nThis substitution applies to references made in Acts of Parliament, State Legislature Acts, Ordinances, Regulations under Article 240 of the Constitution, President's orders, and rules, regulations, orders or notifications made under any Act, Ordinance or Regulation currently in force [9243d07c-fd5b-4202-90c1-7d60b7f30e30::chunk::8]. The corresponding provisions of the new laws are to be construed accordingly.",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q03",
+  "category": "ordinary",
+  "question": "How can an FIR for a cognizable offence be given by electronic communication under the Bharatiya Nagarik Suraksha Sanhita, and what must the informant do afterwards?",
+  "expected_evidence": "`indian-law__gazette-of-india-via-bprd__bharatiya-nagarik-suraksha-sanhita-act-46-of-2023__2023.pdf` p.52 \u2014 Section 173(1)(ii): information by electronic communication is recorded \"on being signed within three days by the person giving it\".",
+  "reference_answer": "Under section 173(1), information about a cognizable offence may be given orally or by electronic communication to the officer in charge of a police station, irrespective of the area where the offence was committed. If given by electronic communication, it is taken on record on being signed by the informant within three days.",
+  "governed_expectation": "Accept section 173(1) on p.52. The answer should include the three-day signing requirement.",
+  "decoy": "The BNSS-to-CrPC comparison table (p.13) describes the same change at summary level (section 173 / CrPC 154, zero FIR) but does not give the three-day period; it is supporting only.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Answer\n\nAccording to the evidence, information relating to a cognizable offence may be given by electronic communication under the Bharatiya Nagarik Suraksha Sanhita, 2023. Specifically:\n\n**How it can be given:**\nInformation may be given \"by electronic communication to an officer in charge of a police station\" [2ae838f4-3f58-41dc-b04f-3417757e04a0::chunk::185]. When given by electronic communication, \"it shall be taken on record by him on being signed within three days by the person giving it\" [2ae838f4-3f58-41dc-b04f-3417757e04a0::chunk::185].\n\n**What the informant must do afterwards:**\nThe informant must **sign the electronically communicated information within three days** of it being taken on record by the police officer [2ae838f4-3f58-41dc-b04f-3417757e04a0::chunk::185].\n\nAdditionally, \"a copy of the information as recorded under sub-section (1) shall be given forthwith, free of cost, to the informant or the victim\" [2ae838f4-3f58-41dc-b04f-3417757e04a0::chunk::188]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Answer\n\nAccording to the accepted evidence, under the Bharatiya Nagarik Suraksha Sanhita, an FIR for a cognizable offence can be given by electronic communication as follows:\n\n**How it can be given:**\nInformation relating to the commission of a cognizable offence may be given by electronic communication to an officer in charge of a police station [chunk-185].\n\n**What the informant must do afterwards:**\nWhen information is given by electronic communication, it shall be taken on record by the officer, and the person giving it must sign it within three days [chunk-185].",
+   "passages_accepted": 1,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q04",
+  "category": "ordinary",
+  "question": "What is the punishment for snatching under the Bharatiya Nyaya Sanhita, 2023, and how is snatching defined?",
+  "expected_evidence": "`indian-law__gazette-of-india-via-bprd__bharatiya-nyaya-sanhita-act-45-of-2023__2023.pdf` p.80 \u2014 Section 304: theft is snatching if the offender suddenly or forcibly seizes or grabs movable property from a person; punishment up to three years and fine.",
+  "reference_answer": "Section 304(1) defines snatching as theft where, in order to commit theft, the offender suddenly or quickly or forcibly seizes, secures, grabs or takes away movable property from any person or his possession. Section 304(2) punishes it with imprisonment of either description up to three years and also fine.",
+  "governed_expectation": "Accept BNS section 304 (p.80). The comparison table (BNS-to-IPC, p.30) corroborates that snatching is a new addition with no IPC equivalent.",
+  "decoy": "Adjacent sections on theft (303), theft in a dwelling house (305) and robbery (309) have different punishments.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided is insufficient to answer your question. While the accepted evidence contains multiple passages from the Bharatiya Nyaya Sanhita, 2023, none of them include the definition of snatching or specify the punishment for this offense.\n\nThe passages discuss various procedural matters (such as summary trials, charges, and cognizance of offenses), and reference numerous sections of the Act (including sections on theft, murder, culpable homicide, and other crimes), but they do not contain the substantive provisions that would define snatching or prescribe its punishment.\n\nTo answer your question, I would need evidence passages that specifically address the offense of snatching in the Bharatiya Nyaya Sanhita, 2023."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Snatching: Definition and Punishment\n\n## Definition\n\nAccording to the accepted evidence, snatching is defined as follows [chunk-280]:\n\nTheft is snatching if, in order to commit theft, the offender **suddenly or quickly or forcibly seizes or secures or grabs or takes away from any person or from his possession any movable property**.\n\n## Punishment\n\nThe punishment for snatching is [chunk-280]:\n\n- **Imprisonment** of either description for a term which may extend to **three years**\n- **Fine** (the amount is not specified in the provided evidence)",
+   "passages_accepted": 1,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q05",
+  "category": "exact-identifier",
+  "question": "What does Article 21A of the Constitution of India provide?",
+  "expected_evidence": "`indian-law__legislative-dept-via-faolex__constitution-of-india-as-on-1-april-2019__2019.pdf` p.28 \u2014 Article 21A: the State shall provide \"free and compulsory education to all children of the age of six to fourteen years\".",
+  "reference_answer": "Article 21A (Right to education) says the State shall provide free and compulsory education to all children of the age of six to fourteen years in such manner as the State may by law determine. It appears as an inserted article in the 2019 edition.",
+  "governed_expectation": "Accept the Article 21A text on p.28 (the table of contents entry on p.5 is not sufficient). Exclude Article 45 (early childhood care for children below six) and Article 51A(k) (parental duty) as different provisions.",
+  "decoy": "Article 45 and Article 51A(k) also concern children's education and use similar wording; Article 45 mentions the age of six.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided, Article 21A of the Constitution of India provides for the **Right to education** [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::6].\n\nHowever, the evidence only lists the title of Article 21A and does not contain the detailed text or specific provisions of that article. To provide a more complete answer about what Article 21A actually provides, additional evidence would be needed."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, Article 21A of the Constitution of India provides for the **Right to education** [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::6].\n\nThe evidence lists this as a brief heading but does not provide the detailed text or full provisions of Article 21A itself.",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q06",
+  "category": "exact-identifier",
+  "question": "What does section 479 of the Bharatiya Nagarik Suraksha Sanhita provide on the maximum period an undertrial prisoner can be detained, and which CrPC section did it replace?",
+  "expected_evidence": "`indian-law__gazette-of-india-via-bprd__bharatiya-nagarik-suraksha-sanhita-act-46-of-2023__2023.pdf` p.144 \u2014 Section 479(1): release on bail after detention up to one-half of the maximum imprisonment; first-time offenders after one-third. `indian-law__mha-via-kerala-prisons__comparison-summary-bnss-to-crpc__2024.pdf` p.35 \u2014 maps BNSS 479 to CrPC 436A.",
+  "reference_answer": "Section 479(1) requires release by the Court on bail once an undertrial has undergone detention up to one-half of the maximum imprisonment for the offence (excluding offences punishable with death or life imprisonment). A first-time offender (never convicted of any offence) is released on bond after one-third of the maximum period. It corresponds to CrPC section 436A.",
+  "governed_expectation": "Accept BNSS section 479 (p.144) for the substance and the comparison table (p.35) for the CrPC 436A mapping. Exclude section 478 (bail in bailable cases) and section 480.",
+  "decoy": "Section 478 (CrPC 436) is adjacent and about bail in bailable offences. A retriever matching only the table might miss the one-third first-time offender proviso.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Answer\n\n## Maximum Period for Detention Under Section 479 of BNSS\n\nSection 479 of the Bharatiya Nagarik Suraksha Sanhita provides that [2ae838f4-3f58-41dc-b04f-3417757e04a0::chunk::535]:\n\n- A person who has undergone detention for a period extending up to **one-half of the maximum period of imprisonment** specified for an offence shall be released by the Court on bail.\n\n- For **first-time offenders** (who have never been convicted), the threshold is lower: they shall be released on bond if they have undergone detention for a period extending up to **one-third of the maximum period of imprisonment** specified for the offence.\n\n- The Court may order continued detention beyond one-half of the maximum period or release on bail bond instead of bond, after hearing the Public Prosecutor and recording reasons in writing.\n\n- **No person shall be detained for more than the maximum period of imprisonment provided for the offence** under the law.\n\n## CrPC Section Replaced\n\nSection 479 of BNSS replaced **Section 436A of the CrPC** [8acf7123-76e1-4526-939e-61f7629d2b7d::chunk::66]. The comparison notes that several new provisions were added to Section 479, including a new proviso about bail for first-time offenders and two additional subsections regarding bail for individuals with multiple pending cases and applications by jail superintendents."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Section 479 of the Bharatiya Nagarik Suraksha Sanhita\n\n## Maximum Period for Detention\n\nSection 479 provides that [2ae838f4-3f58-41dc-b04f-3417757e04a0::chunk::536]:\n\n- A person who has undergone detention during investigation, inquiry, or trial for an offence (not punishable by death or life imprisonment) for a period extending up to **one-half of the maximum period of imprisonment** specified for that offence shall be released by the Court on bail.\n\n- For **first-time offenders** (never convicted before), the threshold is lower: they shall be released on bond if they have undergone detention for a period extending up to **one-third of the maximum period of imprisonment** specified for the offence.\n\n- Critically, **no person shall in any case be detained during investigation, inquiry or trial for more than the maximum period of imprisonment provided for the said offence**.\n\n## CrPC Section Replaced\n\nSection 479 replaced **Section 436A of the CrPC** [8acf7123-76e1-4526-939e-61f7629d2b7d::chunk::65]. According to the evidence, the new section added provisions regarding bail for first-time offenders and bail for individuals with multiple pending investigations or trials for more than one offence.",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q07",
+  "category": "exact-identifier",
+  "question": "What certificate must accompany an electronic record offered as evidence under section 63 of the Bharatiya Sakshya Adhiniyam, and what must it contain?",
+  "expected_evidence": "`indian-law__gazette-of-india-via-bprd__bharatiya-sakshya-adhiniyam-act-47-of-2023__2023.pdf` p.22-23 \u2014 section 63(4): a certificate is submitted with the electronic record; p.46-47 \u2014 the Schedule certificate with Part A (party) and Part B (expert), including HASH value.",
+  "reference_answer": "Section 63(4) requires a certificate, in the form given in the Schedule, to be submitted along with the electronic record each time it is offered. The Schedule certificate has Part A, to be filled by the party, and Part B, to be filled by the expert; each identifies the device/source and states the hash value of the record with the algorithm used (hash report enclosed).",
+  "governed_expectation": "Accept section 63 (p.22-23) and the Schedule (p.46-47). Exclude section 61 (admissibility not to be denied) and section 62 (contents of electronic records) as less specific.",
+  "decoy": "Sections 61 and 62 are neighbouring electronic-record provisions; the Schedule is on separate pages from section 63 so both parts must be retrieved.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Certificate Requirements Under Section 63 of the Bharatiya Sakshya Adhiniyam, 2023\n\nAccording to the accepted evidence, when an electronic record is offered as evidence under section 63, a certificate must be submitted along with the electronic record at each instance where it is being submitted for admission [999f3e07-a316-4198-a891-496f848aab7a::chunk::73].\n\n## Required Contents of the Certificate\n\nThe certificate must do the following:\n\n**(a) Identify and describe the electronic record:** It must identify the electronic record containing the statement and describe the manner in which it was produced [999f3e07-a316-4198-a891-496f848aab7a::chunk::73].\n\n**(b) Provide device particulars:** It must give such particulars of any device involved in the production of that electronic record as may be appropriate for showing that the electronic record was produced by a computer or a communication device [999f3e07-a316-4198-a891-496f848aab7a::chunk::73].\n\n**(c) Address conditions:** It must deal with any of the matters to which the conditions mentioned in sub-section (2) relate [999f3e07-a316-4198-a891-496f848aab7a::chunk::73].\n\n## Signatory and Standard\n\nThe certificate must be signed by a person in charge of the computer or communication device or the management of the relevant activities (whichever is appropriate) and an expert. For purposes of this section, it shall be sufficient for a matter to be stated to the best of the knowledge and belief of the person stating it in the certificate [999f3e07-a316-4198-a891-496f848aab7a::chunk::73]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Certificate Requirements Under Section 63\n\nAccording to the accepted evidence, when an electronic record is offered as evidence under section 63, a certificate must be submitted along with the electronic record at each instance of admission [999f3e07-a316-4198-a891-496f848aab7a::chunk::74].\n\n## Required Contents of the Certificate\n\nThe certificate must do the following:\n\n**(a) Identify and describe the electronic record:** It must identify the electronic record containing the statement and describe the manner in which it was produced [999f3e07-a316-4198-a891-496f848aab7a::chunk::74].\n\n**(b) Provide device particulars:** It must give particulars of any device involved in the production of the electronic record as may be appropriate to show that it was produced by a computer or communication device [999f3e07-a316-4198-a891-496f848aab7a::chunk::74].\n\n**(c) Address conditions:** It must deal with any matters to which the conditions mentioned in sub-section (2) relate [999f3e07-a316-4198-a891-496f848aab7a::chunk::74].\n\n## Signatory and Evidentiary Value\n\nThe certificate must be signed by a person in charge of the computer or communication device or the management of the relevant activities (whichever is appropriate), and an expert. The certificate shall be evidence of any matter stated in it, and it is sufficient for a matter to be stated to the best of the knowledge and belief of the person stating it [999f3e07-a316-4198-a891-496f848aab7a::chunk::74].",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q08",
+  "category": "near-miss",
+  "question": "What does section 152 of the Bharatiya Nyaya Sanhita, 2023 criminalise, and what is the punishment?",
+  "expected_evidence": "`indian-law__gazette-of-india-via-bprd__bharatiya-nyaya-sanhita-act-45-of-2023__2023.pdf` p.48 \u2014 Section 152: acts endangering sovereignty, unity and integrity of India; punishment life imprisonment or imprisonment up to seven years, and fine. Corroborated as a newly added section in `indian-law__mha-via-kerala-prisons__comparison-summary-bns-to-ipc__2024.pdf` p.17.",
+  "reference_answer": "BNS section 152 punishes whoever, purposely or knowingly, by words, signs, visible representation, electronic communication, financial means or otherwise, excites or attempts to excite secession, armed rebellion or subversive activities, encourages separatist feelings, or endangers the sovereignty or unity and integrity of India. Punishment is imprisonment for life or imprisonment up to seven years, and fine.",
+  "governed_expectation": "Accept BNS p.48 as the primary source; the comparison table p.17 may be accepted as corroboration. Exclude the table rows saying IPC section 152 (assaulting a public servant when suppressing a riot) corresponds to BNS 195 (p.21-22), and BNS section 195 itself.",
+  "decoy": "Look-alike numbering: IPC section 152 is a different offence (assaulting/obstructing a public servant suppressing a riot) that the comparison table maps to BNS 195. The Law Commission sedition report discusses the older 124A, not BNS 152.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about section 152 of the Bharatiya Nyaya Sanhita, 2023. While the passages reference various sections of this Act and include tables listing offences and their corresponding sections, section 152 is not specifically described or discussed in any of the supplied chunks.\n\nTo answer your question about what section 152 criminalises and its punishment, I would need evidence passages that directly address that section."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about section 152 of the Bharatiya Nyaya Sanhita, 2023. The passage discusses procedures for handling offences under sections 210, 213, 214, 215, and 267 of the Bharatiya Nyaya Sanhita, 2023, but does not describe what section 152 criminalises or its associated punishment.\n\nTo answer your question, I would need evidence that specifically addresses section 152 of the Bharatiya Nyaya Sanhita, 2023.",
+   "passages_accepted": 1,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q09",
+  "category": "near-miss",
+  "question": "Within how many days must a second appeal against a Public Information Officer's decision be filed with the Information Commission under the RTI Act?",
+  "expected_evidence": "`indian-law__cic__right-to-information-act__2005.pdf` p.19 \u2014 Section 19(3): second appeal lies \"within ninety days\" from the date the decision should have been made or was received.",
+  "reference_answer": "Ninety days from the date on which the decision should have been made or was actually received (section 19(3)); the Commission may admit a late appeal for sufficient cause. The first appeal to the senior officer in the public authority has a different period (thirty days under section 19(1)).",
+  "governed_expectation": "Accept section 19(3) on p.19. Treat the 30-day first-appeal period in section 19(1) and the 30-day third-party appeal in 19(2) as decoys that should be excluded or at least not used as the answer.",
+  "decoy": "Same section contains 30-day and 90-day periods; section 7(1) also has 30 days; the 45-day extended disposal limit in 19(6) (p.20) is another number to avoid.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, a second appeal against a Public Information Officer's decision must be filed within **ninety days** from the date on which the decision should have been made or was actually received, with the Central Information Commission or the State Information Commission [chunk-50].\n\nHowever, there is an important exception: the Central Information Commission or the State Information Commission may admit the appeal after the expiry of the ninety-day period if it is satisfied that the appellant was prevented by sufficient cause from filing the appeal in time [chunk-50]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, a second appeal against a Public Information Officer's decision must be filed within **ninety days** from the date on which the decision should have been made or was actually received, with the Central Information Commission or the State Information Commission [2c171505-e059-47b1-9be7-2743cbe2356f::chunk::50].\n\nHowever, there is an important exception: the Information Commission may admit the appeal after the expiry of the ninety-day period if it is satisfied that the appellant was prevented by sufficient cause from filing the appeal in time [2c171505-e059-47b1-9be7-2743cbe2356f::chunk::50].",
+   "passages_accepted": 1,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q10",
+  "category": "near-miss",
+  "question": "What is the maximum imprisonment for a manufacturer or service provider who causes a false or misleading advertisement prejudicial to consumers under the Consumer Protection Act, 2019?",
+  "expected_evidence": "`indian-law__gazette-of-india-via-prs__consumer-protection-act-35-of-2019__2019.pdf` p.33 \u2014 Section 89: imprisonment up to two years and fine up to ten lakh rupees; for each subsequent offence up to five years and fine up to fifty lakh rupees.",
+  "reference_answer": "Under section 89, imprisonment may extend to two years and the fine to ten lakh rupees for a first offence; for every subsequent offence imprisonment may extend to five years and the fine to fifty lakh rupees.",
+  "governed_expectation": "Accept section 89 (p.33). Exclude section 21 (p.14-15), which empowers the Central Consumer Protection Authority to impose monetary penalties of up to ten lakh rupees (fifty lakh for repeat) but no imprisonment.",
+  "decoy": "Section 21 covers the same subject (false or misleading advertisements) with the same rupee figures, so a careless retriever could answer with a civil penalty instead of imprisonment.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, under the Consumer Protection Act, 2019:\n\nFor the **first offence**, a manufacturer or service provider who causes a false or misleading advertisement prejudicial to consumers shall be punished with **imprisonment for a term which may extend to two years** [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::108].\n\nFor **every subsequent offence**, the maximum imprisonment increases to **imprisonment for a term which may extend to five years** [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::108].\n\nIn both cases, imprisonment can be accompanied by fines as well (ten lakh rupees for the first offence and fifty lakh rupees for subsequent offences)."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, for a manufacturer or service provider who causes a false or misleading advertisement prejudicial to consumers:\n\n- **First offence**: The maximum imprisonment is **two years** [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::108]\n\n- **Subsequent offence**: The maximum imprisonment is **five years** [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::108]\n\nAdditionally, fines are also prescribed: up to ten lakh rupees for the first offence and up to fifty lakh rupees for subsequent offences [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::108].",
+   "passages_accepted": 1,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q11",
+  "category": "false-premise",
+  "question": "Since a Proclamation of President's Rule under Article 356 must be approved by Parliament within one month, what happens if the approval is not given in that time?",
+  "expected_evidence": "`indian-law__legislative-dept-via-faolex__constitution-of-india-as-on-1-april-2019__2019.pdf` p.150 \u2014 Article 356(3): Proclamation ceases at the expiration of \"two months\" unless approved by both Houses. The one-month period is in Article 352(4), p.148.",
+  "reference_answer": "The premise is wrong: under Article 356(3) the approval period for a Proclamation of President's Rule is two months, not one month (one month applies to a Proclamation of Emergency under Article 352(4)). If both Houses do not approve it within two months, it ceases to operate (with a special 30-day rule if the House of the People is dissolved).",
+  "governed_expectation": "The Article 356(3) passage (p.150) should be accepted and the Article 352(4) one-month passage (p.148) placed in conflicting/excluded evidence as the source of the false premise. The answer should correct the period to two months.",
+  "decoy": "The wrong one-month figure comes from Article 352(4); a retriever that picks only that passage would confirm the false premise.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence indicates there is a discrepancy in the timeframe stated in your question.\n\nAccording to the accepted evidence, a Proclamation issued under Article 356 does **not** have a one-month approval deadline. Instead:\n\n[ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::532] states that the Proclamation \"shall cease to operate at the expiration of **two months** unless before the expiration of that period it has been approved by resolutions of both Houses of Parliament.\"\n\nIf approval is not obtained within the two-month period, the Proclamation automatically ceases to operate [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::532].\n\nHowever, there is a special provision: if the House of the People is dissolved during this two-month period and the Council of States has approved the Proclamation but the House of the People has not, then the Proclamation \"shall cease to operate at the expiration of thirty days from the date on which the House of the People first sits after its reconstitution unless before the expiration of the said period of thirty days a resolution approving the Proclamation has been also passed by the House of the People\" [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::532]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Answer\n\nThe accepted evidence and conflicting evidence disagree on the initial timeframe, so I must note this explicitly.\n\n**According to the accepted evidence:** A Proclamation issued under Article 356 must be approved by resolutions of both Houses of Parliament within **one month**. If approval is not given within that period, the Proclamation **ceases to operate** at the expiration of one month [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::523].\n\n**According to the conflicting evidence:** The timeframe is **two months**, not one month. If approval is not given within that period, the Proclamation similarly **ceases to operate** at the expiration of two months [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::533] [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::934].\n\n**Special provision:** There is an exception when the House of the People is dissolved during this period. If the Council of States approves but the House of the People has not approved before the expiration of the initial period, the Proclamation shall cease to operate at the expiration of thirty days from the date on which the House of the People first sits after its reconstitution, unless it is approved by then [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::523].\n\nThe core consequence in all cases is the same: **the Proclamation ceases to operate** if parliamentary approval is not obtained within the specified timeframe.",
+   "passages_accepted": 4,
+   "conflict_passages": 2
+  }
+ },
+ {
+  "qid": "08Q12",
+  "category": "false-premise",
+  "question": "Why did the Law Commission of India, in its Report No. 279 on sedition, recommend repealing section 124A of the IPC altogether?",
+  "expected_evidence": "`indian-law__law-commission-of-india__report-279-usage-of-the-law-of-sedition__2023.pdf` p.63 \u2014 para 7.4: alleged misuse \"does not by implication warrant a call for its repeal\"; p.84-86 recommendations to retain with amendments.",
+  "reference_answer": "The premise is wrong. Report No. 279 did not recommend repeal; it said misuse does not by itself warrant repeal and that repeal could have serious adverse ramifications for the security and integrity of the country. It instead recommended retaining section 124A with amendments: incorporating the Kedar Nath Singh ratio, procedural safeguards before an FIR, and revising the punishment (imprisonment up to seven years instead of up to three years).",
+  "governed_expectation": "Accept para 7.4 (p.63) and the recommendations (p.84-86) as contradicting the premise; the answer must correct it rather than invent reasons for repeal. Any passage summarising arguments of those who demand repeal (earlier chapters) should be treated as conflicting or excluded.",
+  "decoy": "The report discusses arguments for repeal in places, which a retriever could mistake for the Commission's own conclusion. The OCR quality of this PDF is poor, so wording may be garbled.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence does not support the premise of your question. According to the accepted evidence, the Law Commission of India did **not** recommend repealing Section 124A of the IPC altogether.\n\nInstead, the evidence states:\n\n\"the Law Commission is of the considered view that Section l24A needs to be **retained** in the Indian Penal Code, though certain amendments, as suggested, may be introduced in it by incorporating the rotio decidendi of Kedar Nath Singh v. State of Bihar\" [chunk-3]\n\nThe Law Commission recommended **amendments** to Section 124A rather than its repeal. Specifically, the recommendations included:\n\n1. Incorporation of the ratio of the Kedar Nath judgment to bring greater clarity [chunk-154]\n2. Procedural guidelines to prevent alleged misuse [chunk-154]\n3. Amendment of the punishment scheme to bring it in parity with other offences under Chapter VI of IPC [chunk-3]\n\nThe evidence indicates the Commission took the position that Section 124A \"has its utility in combating anti-national and secessionist elements\" and that \"it becomes imperative to retain Section l24A\" [chunk-146]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about whether the Law Commission of India recommended repealing Section 124A of the IPC altogether in Report No. 279 on sedition.\n\nThe accepted evidence discusses alleged misuse of Section 124A and mentions various recommendations (incorporation of the Kedar Nath judgment ratio, procedural guidelines, removal of oddities in punishment, and proposals for amendment), but it does not state that the Law Commission recommended complete repeal of the section [69f7747f-232a-402e-bb9f-81f7af1b8a0e::chunk::10].\n\nThe conflicting evidence provides background on the Law Commission's reference and work on criminal law review, but does not address the specific question about a repeal recommendation [69f7747f-232a-402e-bb9f-81f7af1b8a0e::chunk::10].\n\nTo answer your question accurately, I would need evidence that explicitly discusses the Law Commission's final recommendations regarding Section 124A in Report No. 279.",
+   "passages_accepted": 2,
+   "conflict_passages": 1
+  }
+ },
+ {
+  "qid": "08Q13",
+  "category": "conflicting-sources",
+  "question": "How long will the constitutional reservation of seats for women in the Lok Sabha last, and how does that compare with the time limit on reservation of seats for Scheduled Castes and Scheduled Tribes in the Constitution?",
+  "expected_evidence": "`indian-law__egazette__constitution-106th-amendment-act-womens-reservation__2023.pdf` p.2 \u2014 new Article 334A(1): women's reservation takes effect after delimitation following the first census after commencement, and ceases after \"fifteen years\". `indian-law__legislative-dept-via-faolex__constitution-of-india-as-on-1-april-2019__2019.pdf` p.138-139 \u2014 Article 334: SC/ST seat reservation ceases after \"seventy years\" from commencement of the Constitution.",
+  "reference_answer": "The 106th Amendment (new article 334A) makes women's reservation effective only after delimitation based on the first census taken after the Amendment's commencement, and it ceases 15 years from that commencement (Parliament may by law continue it). The SC/ST reservation in Article 334, as in the April 2019 text, ceases on the expiration of seventy years from commencement of the Constitution. The 2019 Constitution text does not contain women's reservation articles 330A/332A/334A because they were added later.",
+  "governed_expectation": "Both documents should be accepted and the answer should report both periods and note that they relate to different provisions and different dates (the 2019 edition predates the 106th Amendment). It should not state that the 2019 Constitution already contains the women's reservation.",
+  "decoy": "The Constitution file is the 2019 edition and does not reflect the 106th Amendment; a retriever may return only Article 334 and miss Article 334A, or vice versa.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Duration of Women's Reservation vs. SC/ST Reservation\n\n## Women's Reservation in the Lok Sabha\n\nAccording to Article 334A(1), the provisions for reservation of seats for women in the House of the People shall \"come into effect after an exercise of delimitation is undertaken for this purpose after the relevant figures for the first census taken after commencement of the Constitution (One Hundred and Sixth Amendment) Act, 2023 have been published and shall cease to have effect on the expiration of a period of fifteen years from such commencement\" [a25cfe11-9f60-4e22-a13c-a15be1c60526::chunk::7].\n\nHowever, Article 334A(2) provides that \"seats reserved for women in the House of the People...shall continue till such date as the Parliament may by law determine\" [a25cfe11-9f60-4e22-a13c-a15be1c60526::chunk::7].\n\n## SC/ST Reservation\n\nThe evidence indicates that reservation of seats for Scheduled Castes and Scheduled Tribes in the House of the People shall cease \"on the expiration of the period specified in article 334\" [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::488]. The evidence references a \"seventy years\" period but does not provide the current status or exact expiration date of this provision.\n\n## Comparison\n\nThe evidence is insufficient to make a complete comparison because it does not clearly establish the current expiration date for SC/ST reservations. The women's reservation has an initial 15-year period, but can be extended indefinitely by Parliament, whereas SC/ST reservations appear to have a fixed period tied to Article 334."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Duration of Women's Reservation in the Lok Sabha\n\nAccording to the accepted evidence, the constitutional reservation of seats for women in the House of the People (Lok Sabha) shall **cease to have effect on the expiration of a period of fifteen years from the commencement of the Constitution (One Hundred and Sixth Amendment) Act, 2023** [a25cfe11-9f60-4e22-a13c-a15be1c60526::chunk::6]. However, clause (2) of Article 334A provides that these seats \"shall continue till such date as the Parliament may by law determine\" [a25cfe11-9f60-4e22-a13c-a15be1c60526::chunk::6].\n\n# Comparison with SC/ST Reservation\n\nThe evidence provided does not contain complete information about the time limit for reservation of seats for Scheduled Castes and Scheduled Tribes. While the passages reference Article 334 regarding \"Reservation of seats and special representation to cease after [seventy years]\" [ce19187d-70d0-4769-8f5e-fca650ee507a::chunk::488], the full text of that provision is not included in the evidence supplied.\n\n**Therefore, the evidence is insufficient to make a complete comparison** between the duration of women's reservation (15 years, subject to Parliament's extension) and the time limit on SC/ST reservations, as the specific details of the latter are not fully provided in the accepted evidence.",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q14",
+  "category": "conflicting-sources",
+  "question": "How is the offence of sedition punished under the old IPC section 124A as discussed by the Law Commission, compared with the corresponding new provision in the Bharatiya Nyaya Sanhita?",
+  "expected_evidence": "`indian-law__law-commission-of-india__report-279-usage-of-the-law-of-sedition__2023.pdf` p.86 \u2014 current 124A: imprisonment for life or up to three years, or fine. `indian-law__gazette-of-india-via-bprd__bharatiya-nyaya-sanhita-act-45-of-2023__2023.pdf` p.48 \u2014 section 152: imprisonment for life or up to seven years, and fine. `indian-law__mha-via-kerala-prisons__comparison-summary-bns-to-ipc__2024.pdf` p.17 \u2014 says BNS 152 is newly added.",
+  "reference_answer": "The IPC section 124A (as quoted in Report 279) provides imprisonment for life with fine, or imprisonment up to three years with fine, or fine only. BNS section 152 (acts endangering sovereignty, unity and integrity of India) provides imprisonment for life or up to seven years, and fine, and uses different wording (secession, armed rebellion, subversive activities, separatist feelings); the comparison table treats it as a newly added section rather than a straight replacement of 124A. The Law Commission's own proposal was to retain 124A with a seven-year upper limit.",
+  "governed_expectation": "Accept LC279 p.86, BNS p.48 and optionally the comparison table p.17; the answer should present both regimes and not pick one silently. It should not claim that BNS 152 is word-for-word the same as 124A.",
+  "decoy": "A retriever may return only one document. The Law Commission report is an OCR scan with noisy text, and the BNS-IPC comparison table does not explicitly map 124A.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Punishment for Sedition: IPC Section 124A vs. Bharatiya Nyaya Sanhita\n\n## Current IPC Section 124A Punishment\n\nAccording to the evidence, the current Section 124A of IPC provides for punishment that is described as \"very odd\" [chunk-32]. Specifically, it allows for [chunk-157]:\n- Imprisonment for life, to which fine may be added, OR\n- Imprisonment which may extend to three years, to which fine may be added, OR\n- Fine alone\n\nThe Law Commission criticized this as problematic because there is \"nothing in between\" [chunk-32] the two extremes of life imprisonment and three years.\n\n## Proposed Amendment by Law Commission\n\nThe Law Commission recommended amending Section 124A to provide for [chunk-33]:\n- Rigorous imprisonment for a term which may extend to **seven years**, and\n- Also liable to fine\n\nThe rationale was that \"the Legislature should...give a firmer indication to the Courts of the gravity of the offence by fixing the maximum punishment at seven years' rigorous imprisonment and fine\" [chunk-33].\n\n## Bharatiya Nyaya Sanhita Comparison\n\nThe evidence provided does not contain sufficient information about the corresponding punishment provision in the Bharatiya Nyaya Sanhita. The correspondence table [chunk-0] only shows structural comparisons but does not detail the actual punishment provisions for sedition under the new law."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Answer\n\nThe evidence provided discusses the punishment for sedition under the old IPC Section 124A but does not contain information about the corresponding provision in the Bharatiya Nyaya Sanhita.\n\n## Old IPC Section 124A Punishment\n\nAccording to the accepted evidence, the current Section 124A of IPC provides for punishment as follows [69f7747f-232a-402e-bb9f-81f7af1b8a0e::chunk::157]:\n\n- Imprisonment for life, to which fine may be added, OR\n- Imprisonment which may extend to three years, to which fine may be added, OR\n- Fine alone\n\nThe Law Commission criticized this punishment structure as \"very odd\" because it allowed either life imprisonment or imprisonment up to three years, \"but nothing in between\" [69f7747f-232a-402e-bb9f-81f7af1b8a0e::chunk::32]. The Commission recommended fixing the maximum punishment at seven years' rigorous imprisonment and fine [69f7747f-232a-402e-bb9f-81f7af1b8a0e::chunk::33].\n\n## Bharatiya Nyaya Sanhita Provision\n\n**The evidence is insufficient** to answer the comparative question, as the supplied passages do not contain any information about the sedition provision or its punishment under the Bharatiya Nyaya Sanhita.",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q15",
+  "category": "unanswerable",
+  "question": "What is the exact application fee, in rupees, that must be paid when filing an RTI request with a central public authority?",
+  "expected_evidence": "Not in the corpus. The RTI Act text (section 6(1)) only says \"such fee as may be prescribed\"; the amount is set in the RTI Rules, which are not in this folder.",
+  "reference_answer": "The corpus does not state the fee amount; it only says the application is accompanied by a prescribed fee. The answer should say the evidence is insufficient to give a figure.",
+  "governed_expectation": "Status should be insufficient_evidence. The governor may accept the section 6(1) passage as partially relevant but must not produce a rupee amount. Passages on fees for copying, section 7(3), are decoys.",
+  "decoy": "Absence verified by grep for \"ten rupees\", \"Rs\" and \"application fee\" in the RTI file. Section 7(3) fee and the Consumer Protection Act complaint fee wording are distractors.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence is insufficient to answer this question. \n\nWhile the Right to Information Act, 2005 passages discuss that applicants must pay \"such fee as may be prescribed\" when making RTI requests [chunk-18], the actual amount of the fee is not specified in the provided evidence. The passages indicate that fees are to be determined through rules made by the appropriate Government [chunk-61], but the specific rupee amount is not stated in any of the chunks provided.\n\nTo find the exact application fee, one would need to consult the rules prescribed under the Act by the appropriate Government, which are not included in this evidence."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "The evidence is insufficient to answer this question. No accepted or conflicting evidence passages have been provided, so I cannot determine the exact application fee in rupees for filing an RTI (Right to Information) request with a central public authority.\n\nTo answer this question accurately, I would need relevant passages from official RTI regulations or guidelines.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q16",
+  "category": "unanswerable",
+  "question": "Which section of the Indian Evidence Act, 1872 was replaced by section 63 of the Bharatiya Sakshya Adhiniyam, 2023?",
+  "expected_evidence": "Not in the corpus. The BSA text contains no cross-reference to a particular Evidence Act section, and the folder has no BSA-to-Evidence-Act comparison table (only BNS-IPC and BNSS-CrPC tables).",
+  "reference_answer": "The corpus does not say. Evidence is insufficient to identify the replaced section; the folder only confirms the Evidence Act was repealed by BSA section 170 and that S.O. 2790(E) generally maps references.",
+  "governed_expectation": "Status should be insufficient_evidence. BSA section 63 and the S.O. 2790(E) notification are topically close but do not give the section-level mapping; the answer must not invent \"section 65B\" from outside knowledge.",
+  "decoy": "Absence verified by grep for \"65B\" across the BSA, BNS, BNSS and S.O. texts. The comparison tables cover only BNS-IPC and BNSS-CrPC.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided is insufficient to answer this question. \n\nWhile the passages confirm that the Bharatiya Sakshya Adhiniyam, 2023 (BSA) replaced the Indian Evidence Act, 1872 [9243d07c-fd5b-4202-90c1-7d60b7f30e30::chunk::8], and that references to the Indian Evidence Act should now be read as references to the BSA [9243d07c-fd5b-4202-90c1-7d60b7f30e30::chunk::8], none of the provided passages contain specific information about which section of the Indian Evidence Act, 1872 corresponds to section 63 of the Bharatiya Sakshya Adhiniyam, 2023.\n\nTo answer your question, I would need a correspondence table or comparative analysis showing the mapping between specific sections of the two acts."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "I cannot answer this question because no evidence passages have been provided. The accepted evidence and conflicting evidence sections are both empty.\n\nTo answer your question about which section of the Indian Evidence Act, 1872 was replaced by section 63 of the Bharatiya Sakshya Adhiniyam, 2023, I would need relevant passages containing information about the correspondence between these two legislative instruments.\n\nPlease provide the evidence passages you would like me to use to answer this question.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q17",
+  "category": "synthesis",
+  "question": "What changes did the Law Commission's Report No. 279 recommend for section 124A of the IPC?",
+  "expected_evidence": "`indian-law__law-commission-of-india__report-279-usage-of-the-law-of-sedition__2023.pdf` p.84-86 \u2014 Recommendations: A. incorporate Kedar Nath ratio; B. procedural guidelines/proviso to CrPC section 154 (Inspector-level preliminary inquiry within seven days, government permission); C. remove oddity in punishment; D. proposed amended text with seven-year limit.",
+  "reference_answer": "The Commission recommended retaining 124A but: (A) incorporating the Kedar Nath Singh test (tendency to incite violence or cause public disorder) into the wording; (B) adding procedural safeguards - no FIR unless an officer not below the rank of Inspector conducts a preliminary inquiry (within seven days) and the Central or State Government grants permission, via model guidelines or a proviso to CrPC section 154; (C) removing the 'odd' punishment gap; and (D) an amended text with imprisonment of either description up to seven years instead of up to three years, alongside life imprisonment or fine.",
+  "governed_expectation": "Accept the recommendations chapter (p.84-86) as the main evidence; earlier discussion chapters can be excluded or marked secondary. The answer should list all four recommendation groups.",
+  "decoy": "The recommendations span three pages; a top-k retriever may return only part. OCR noise in this scan may garble words.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about Law Commission Report No. 279 or its recommendations for Section 124A of the IPC.\n\nThe passages discuss recommendations from what appears to be a Law Commission report on Section 124A (the sedition provision), which include:\n\n- Incorporation of the Kedar Nath Singh test into Section 124A's language [chunk 155]\n- Procedural guidelines requiring preliminary inquiry by an Inspector-rank officer before FIR registration [chunks 155-156]\n- Revision of the punishment scheme to remove the \"oddity\" of having only life imprisonment or up to three years with nothing in between [chunk 156]\n\nHowever, these recommendations are not attributed to Report No. 279 in the evidence. The passages reference the \"22nd Law Commission\" and mention earlier reports (Nos. 264, 267, 268, 271, 273, and 277) [chunk 10], but do not specifically identify the report number for the Section 124A recommendations provided.\n\nTo answer your question accurately, I would need evidence that explicitly connects these recommendations to Report No. 279."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence provided, the Law Commission's Report recommended the following changes for Section 124A of the IPC:\n\n**A. Incorporation of the Kedar Nath Judgment Ratio** [chunk-155]\nThe ratio of the Kedar Nath Singh judgment should be incorporated into the phraseology of Section 124A to bring clarity to its interpretation and usage, since a plain reading of the section may seem vague and confusing.\n\n**B. Procedural Guidelines to Prevent Misuse** [chunk-155, chunk-156]\n- A mandatory preliminary inquiry should be conducted by a police officer not below the rank of Inspector before registering an FIR under Section 124A\n- Permission from the Central Government or State Government must be granted before an FIR can be registered\n- This preliminary inquiry should be completed within seven days to determine if a prima facie case exists with cogent evidence [chunk-156]\n- The officer must record reasons in writing before permission is granted\n\n**C. Removal of Oddity in Punishment** [chunk-156]\nThe punishment scheme should be revised because it currently allows only life imprisonment or imprisonment up to three years (with no middle ground), which creates a glaring disparity compared to other offences under Chapter VI of the IPC. The provision should be amended to give courts greater discretion in awarding punishment proportionate to the gravity of the act.",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "08Q18",
+  "category": "synthesis",
+  "question": "Compare the monetary jurisdiction of the District, State and National Consumer Disputes Redressal Commissions under the Consumer Protection Act, 2019 as written in the Act.",
+  "expected_evidence": "`indian-law__gazette-of-india-via-prs__consumer-protection-act-35-of-2019__2019.pdf` p.17 (section 34), p.23 (section 47), p.26 (section 58) \u2014 District up to one crore; State above one crore up to ten crore; National above ten crore.",
+  "reference_answer": "As written in the Act, the District Commission hears complaints where the consideration paid does not exceed one crore rupees (section 34); the State Commission hears those exceeding one crore but not exceeding ten crore (section 47), and also appeals from District Commissions; the National Commission hears those exceeding ten crore (section 58), and appeals from State Commissions and the Central Authority. In each case the Central Government may prescribe another value.",
+  "governed_expectation": "Accept the three jurisdiction sections on p.17, p.23 and p.26 together. A good answer notes the Act's figures and that the Central Government may prescribe other values.",
+  "decoy": "Three separate sections on distant pages must all be retrieved. Rules made later may have changed the limits, but only the Act text is in the corpus.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Monetary Jurisdiction of Consumer Disputes Redressal Commissions\n\nBased on the Consumer Protection Act, 2019, the three-tier commission system has the following monetary jurisdictions:\n\n## District Commission\nThe evidence provided does not contain specific information about the District Commission's monetary jurisdiction limits.\n\n## State Commission\nThe State Commission has jurisdiction to entertain [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::75]:\n- Complaints where the value of goods or services paid as consideration **exceeds rupees one crore, but does not exceed rupees ten crore**\n- Complaints against unfair contracts, where the value of goods or services paid as consideration does not exceed ten crore rupees\n\n## National Commission\nThe National Commission has jurisdiction to entertain [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::85]:\n- Complaints where the value of goods or services paid as consideration **exceeds rupees ten crore**\n- Complaints against unfair contracts, where the value of goods or services paid as consideration exceeds ten crore rupees\n\n## Summary\nThe Act establishes a hierarchical monetary jurisdiction: State Commission handles cases between \u20b91 crore and \u20b910 crore, while the National Commission handles cases exceeding \u20b910 crore. However, the evidence is insufficient to provide the District Commission's specific monetary threshold."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Monetary Jurisdiction Comparison\n\nBased on the accepted evidence provided, I can compare the jurisdiction of the State and National Commissions, but the evidence does not contain information about the District Commission's monetary jurisdiction.\n\n## State Commission\n\nThe State Commission has jurisdiction to entertain complaints where the value of goods or services paid as consideration **exceeds rupees one crore, but does not exceed rupees ten crore** [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::75]. The evidence notes that the Central Government may prescribe other values if deemed necessary.\n\nThe State Commission also entertains complaints against unfair contracts where the value does not exceed ten crore rupees [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::75].\n\n## National Commission\n\nThe National Commission has jurisdiction to entertain complaints where the value of goods or services paid as consideration **exceeds rupees ten crore** [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::85]. Again, the Central Government may prescribe other values if deemed necessary.\n\nThe National Commission also entertains complaints against unfair contracts where the value exceeds ten crore rupees [9042cc6b-521f-4440-8142-957b0f0f2c3f::chunk::85].\n\n## District Commission\n\n**The evidence is insufficient** to determine the monetary jurisdiction of the District Commission, as the provided passages do not contain this information.",
+   "passages_accepted": 3,
+   "conflict_passages": 0
+  }
+ }
+]

@@ -1,0 +1,77 @@
+{
+  "request": {
+    "model": "typesafe/jev-1.13",
+    "questions": {
+      "contains_answer_evidence": {
+        "criteria": {
+          "false": "It only mentions the topic without stating usable information.",
+          "true": "It states a fact, value, rule or step that answers part of the query."
+        },
+        "instructions": "Does the passage state information usable in a direct answer?",
+        "type": "noul"
+      },
+      "contains_prompt_injection": {
+        "criteria": {
+          "false": "It is ordinary content with no embedded instructions.",
+          "true": "It contains instructions aimed at an AI or the reader's system."
+        },
+        "instructions": "Does the passage try to control the system answering the query?",
+        "type": "noul"
+      },
+      "contradicts_query_premise": {
+        "criteria": {
+          "false": "It is silent on, or consistent with, the query's premise.",
+          "true": "It states something incompatible with what the query assumes."
+        },
+        "instructions": "Does the passage conflict with a factual premise stated in the query?",
+        "type": "noul"
+      },
+      "is_relevant": {
+        "criteria": {
+          "false": "It is on an adjacent or look-alike topic.",
+          "true": "It discusses the same subject, entity or task as the query."
+        },
+        "instructions": "Does the passage address the subject of the query?",
+        "type": "noul"
+      }
+    },
+    "state": {
+      "passage": {
+        "id": "cand-relevant",
+        "source_type": "documentation",
+        "text": "The Evidence Governor sends one OpenRouter Decisions request per authorized passage, asking Jev four typed questions about the query-passage pair, then routes each passage with versioned threshold rules held in application code.",
+        "title": "Evidence Governor overview"
+      },
+      "query": "How does the Evidence Governor decide which passages to include?"
+    }
+  },
+  "response_body": {
+    "answers": {
+      "contains_answer_evidence": {
+        "noul": 0.94,
+        "type": "noul"
+      },
+      "contains_prompt_injection": {
+        "noul": 0.08,
+        "type": "noul"
+      },
+      "contradicts_query_premise": {
+        "noul": 0.08,
+        "type": "noul"
+      },
+      "is_relevant": {
+        "noul": 0.94,
+        "type": "noul"
+      }
+    },
+    "id": "gen-dec-1790654509-2Nuv8K8PckqMXHQdIIob",
+    "model": "typesafe/jev-1.13-20260917",
+    "provider": "TypeSafe",
+    "usage": {
+      "cost": 2.52e-05,
+      "input_tokens": 600,
+      "output_tokens": 85
+    }
+  },
+  "status_code": 200
+}

@@ -1,0 +1,77 @@
+{
+  "request": {
+    "model": "typesafe/jev-1.13",
+    "questions": {
+      "contains_answer_evidence": {
+        "criteria": {
+          "false": "It only mentions the topic without stating usable information.",
+          "true": "It states a fact, value, rule or step that answers part of the query."
+        },
+        "instructions": "Does the passage state information usable in a direct answer?",
+        "type": "noul"
+      },
+      "contains_prompt_injection": {
+        "criteria": {
+          "false": "It is ordinary content with no embedded instructions.",
+          "true": "It contains instructions aimed at an AI or the reader's system."
+        },
+        "instructions": "Does the passage try to control the system answering the query?",
+        "type": "noul"
+      },
+      "contradicts_query_premise": {
+        "criteria": {
+          "false": "It is silent on, or consistent with, the query's premise.",
+          "true": "It states something incompatible with what the query assumes."
+        },
+        "instructions": "Does the passage conflict with a factual premise stated in the query?",
+        "type": "noul"
+      },
+      "is_relevant": {
+        "criteria": {
+          "false": "It is on an adjacent or look-alike topic.",
+          "true": "It discusses the same subject, entity or task as the query."
+        },
+        "instructions": "Does the passage address the subject of the query?",
+        "type": "noul"
+      }
+    },
+    "state": {
+      "passage": {
+        "id": "cand-contradiction",
+        "source_type": "documentation",
+        "text": "Contrary to common belief, the Evidence Governor calls Jev twice per passage, not once, because each call only returns a single score.",
+        "title": "Common misconceptions"
+      },
+      "query": "The Evidence Governor calls Jev exactly once per passage. Is that right?"
+    }
+  },
+  "response_body": {
+    "answers": {
+      "contains_answer_evidence": {
+        "noul": 0.98,
+        "type": "noul"
+      },
+      "contains_prompt_injection": {
+        "noul": 0.09,
+        "type": "noul"
+      },
+      "contradicts_query_premise": {
+        "noul": 0.97,
+        "type": "noul"
+      },
+      "is_relevant": {
+        "noul": 0.98,
+        "type": "noul"
+      }
+    },
+    "id": "gen-dec-1790654509-TcflQOlAT7MyGdi9mxlI",
+    "model": "typesafe/jev-1.13-20260917",
+    "provider": "TypeSafe",
+    "usage": {
+      "cost": 2.478e-05,
+      "input_tokens": 590,
+      "output_tokens": 85
+    }
+  },
+  "status_code": 200
+}

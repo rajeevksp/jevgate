@@ -1,0 +1,420 @@
+[
+ {
+  "qid": "03Q02",
+  "category": "ordinary",
+  "question": "What are \"trapped populations\" in the context of environmental change, and why are they at particular risk?",
+  "expected_evidence": "`climate-migration__uk-govt-office-for-science__foresight-migration-and-global-environmental-change-final-report__2011.pdf` p.14 \u2014 people with low wealth/capital cannot move away from rising environmental threats yet are more vulnerable because of that same lack of capital (\"likely to become trapped in places where they are vulnerable\").",
+  "reference_answer": "Trapped populations are people with low wealth or capital (social, economic, political) who face increasing environmental threats but lack the ability to move away. They face a double risk: they cannot migrate, and their lack of capital makes them more vulnerable to environmental change.",
+  "governed_expectation": "Accept the Executive Summary passage and Figure ES.2 description (p.14); Box 1.3 (p.28) is acceptable supporting evidence. Exclude passages that only mention \"trapped\" in passing, such as scenario risk tables.",
+  "decoy": "The word \"trapped\" recurs in scenario tables (pp.16, 73, 87); a careless retriever may return a bullet without the definition.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Trapped Populations in Environmental Change\n\n## Definition\n\n\"Trapped populations\" refers to people living in areas of high environmental risk who lack the financial, social, political, or physical assets necessary to migrate away from these dangerous areas [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::51]. They represent a situation where individuals or populations are unable to leave vulnerable locations despite worsening environmental conditions [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::265].\n\n## Why They Face Particular Risk: Double Jeopardy\n\nTrapped populations face a distinctive \"double jeopardy\" [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::51]:\n\n1. **Inability to move**: Those with low financial, social, political, and physical assets lack the resources to migrate away from environmentally dangerous areas, while those with greater assets are more able to do so [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::51].\n\n2. **Heightened vulnerability**: It is precisely those with low capital who are most vulnerable to environmental change effects and least able to protect themselves [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::51].\n\nThis creates a paradox: migration is positively associated with wealth and social capital, while vulnerability to environmental change is negatively correlated with these same factors [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::19].\n\n## Policy Implications\n\nWhen populations are trapped, policy implications are likely to be severe, including challenges in providing human security, social protection, adequate health services, and promoting development in affected areas [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::298]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Trapped Populations in Environmental Change\n\n## Definition\n\n\"Trapped populations\" are groups of people living in environmentally vulnerable areas who lack the financial, social, political, or physical assets necessary to migrate away from those locations [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::51]. They represent populations with high vulnerability to environmental change but low ability to move [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::262].\n\n## Why They Face Particular Risk\n\nTrapped populations face a \"double jeopardy\" or \"double dilemma\" [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::51]:\n\n1. **Inability to escape**: Their lack of capital means they cannot move away from situations of increasing environmental threats [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::18].\n\n2. **Heightened vulnerability**: This very same lack of capital makes them even more vulnerable to environmental change itself [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::262].\n\n## Evidence of the Pattern\n\nResearch demonstrates that migration is positively associated with wealth and social capital, while vulnerability to environmental change is negatively correlated with wealth and social capital [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::262]. The New Orleans Hurricane Katrina example illustrates this: wealthy residents migrated proactively, while lower-income populations remained in their homes or sought dangerous emergency shelters and were disproportionately affected [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::19].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q03",
+  "category": "ordinary",
+  "question": "How did IOM's 2007 working definition describe an \"environmental migrant\"?",
+  "expected_evidence": "`climate-migration__iom__migration-environment-and-climate-change-assessing-the-evidence__2009.pdf` p.21 \u2014 \"Environmental migrants are persons or groups of persons who, for compelling reasons of sudden or progressive change in the environment\u2026\"",
+  "reference_answer": "Persons or groups who, for compelling reasons of sudden or progressive environmental change that adversely affects their lives or living conditions, are obliged to leave their habitual homes or choose to do so, temporarily or permanently, and who move within their country or abroad. It covers temporary or permanent, internal or cross-border, voluntary or forced movement.",
+  "governed_expectation": "Accept p.21 (the definition is repeated on p.255 and p.359, which are also acceptable). Exclude passages using the term \"environmental refugees\" in a different sense.",
+  "decoy": "The definition appears at several places; \"environmental refugees\" passages discuss a different, narrower concept.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, IOM's 2007 working definition described an \"environmental migrant\" as follows [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::27]:\n\n\"Environmental migrants are persons or groups of persons who, for compelling reasons of sudden or progressive change in the environment that adversely affects their lives or living conditions, are obliged to leave their habitual homes, or choose to do so, either temporarily or permanently, and who move either within their country or abroad.\"\n\nThe definition was designed to encompass population movement or displacement regardless of whether it was temporary or permanent, internal or cross-border, and whether it was voluntary or forced, or due to sudden or gradual environmental change [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::27]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the accepted evidence, IOM's 2007 working definition described an \"environmental migrant\" as follows:\n\n\"Environmental migrants are persons or groups of persons who, for compelling reasons of sudden or progressive change in the environment that adversely affects their lives or living conditions, are obliged to leave their habitual homes, or choose to do so, either temporarily or permanently, and who move either within their country or abroad.\" [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::619]\n\nThis definition was designed to encompass population movement or displacement whether temporary or permanent, internal or cross-border, and regardless of whether it is voluntary or forced, or due to sudden or gradual environmental change [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::27].",
+   "passages_accepted": 6,
+   "conflict_passages": 1
+  }
+ },
+ {
+  "qid": "03Q04",
+  "category": "ordinary",
+  "question": "Is the Global Compact for Safe, Orderly and Regular Migration legally binding, and what does it say about State sovereignty?",
+  "expected_evidence": "`climate-migration__un-general-assembly__global-compact-for-safe-orderly-regular-migration-a-res-73-195__2018.pdf` p.3 (para 7) and p.5 (principles (b) and (c)) \u2014 the Compact is a \"non-legally binding, cooperative framework\" and reaffirms the sovereign right of States to determine national migration policy.",
+  "reference_answer": "It is non-legally binding: a cooperative framework whose authority rests on its consensual nature, credibility, collective ownership, joint implementation, follow-up and review. It upholds State sovereignty and reaffirms the sovereign right of States to determine their national migration policy and govern migration within their jurisdiction, in conformity with international law.",
+  "governed_expectation": "Accept para 7 (p.3) and the guiding principles (b)-(c) (p.5). Exclude the Teitiota Views and Nansen Agenda passages, which discuss binding human-rights obligations or soft-law agendas.",
+  "decoy": "Teitiota cites the Compact (footnote on p.11); Nansen is also a non-binding agenda. Neither answers the question about the Compact's own status.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Legal Binding Status\n\nThe Global Compact for Safe, Orderly and Regular Migration is **not legally binding**. It is described as \"a non-legally binding cooperative framework\" [chunk-b4ee8308-87af-4c96-bbd7-f80d5544aab4::15] and \"a non-legally binding, cooperative framework\" [chunk-b4ee8308-87af-4c96-bbd7-f80d5544aab4::6].\n\n# State Sovereignty\n\nThe Global Compact explicitly affirms State sovereignty. One of its guiding principles is **National sovereignty**, which states:\n\n\"The Global Compact reaffirms the sovereign right of States to determine their national migration policy and their prerogative to govern migration within their jurisdiction, in conformity with international law. Within their sovereign jurisdiction, States may distinguish between regular and irregular migration status, including as they determine their legislative and policy measures for the implementation of the Global Compact, taking into account different national realities, policies, priorities and requirements for entry, residence and work, in accordance with international law.\" [chunk-b4ee8308-87af-4c96-bbd7-f80d5544aab4::15]\n\nThe document also notes that the Global Compact \"upholds the sovereignty of States and their obligations under international law\" [chunk-b4ee8308-87af-4c96-bbd7-f80d5544aab4::6]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Legal Binding Status\n\nThe Global Compact for Safe, Orderly and Regular Migration is **not legally binding**. The evidence states that it \"presents a non-legally binding, cooperative framework\" [b4ee8308-87af-4c96-bbd7-f80d5544aab4::chunk::6] and describes it as \"a non-legally binding cooperative framework that recognizes that no State can address migration on its own because of the inherently transnational nature of the phenomenon\" [b4ee8308-87af-4c96-bbd7-f80d5544aab4::chunk::15].\n\n# State Sovereignty\n\nRegarding State sovereignty, the Global Compact explicitly affirms it as a guiding principle. The evidence states:\n\n\"The Global Compact reaffirms the sovereign right of States to determine their national migration policy and their prerogative to govern migration within their jurisdiction, in conformity with international law. Within their sovereign jurisdiction, States may distinguish between regular and irregular migration status, including as they determine their legislative and policy measures for the implementation of the Global Compact, taking into account different national realities, policies, priorities and requirements for entry, residence and work, in accordance with international law\" [b4ee8308-87af-4c96-bbd7-f80d5544aab4::chunk::15].\n\nThe framework also \"upholds the sovereignty of States and their obligations under international law\" [b4ee8308-87af-4c96-bbd7-f80d5544aab4::chunk::6].",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q05",
+  "category": "exact-identifier",
+  "question": "What does paragraph 9.12 of the Human Rights Committee's Views in Teitiota v. New Zealand say about the 10-to-15-year time frame for Kiribati becoming uninhabitable?",
+  "expected_evidence": "`climate-migration__un-human-rights-committee__teitiota-v-new-zealand-views-ccpr-c-127-d-2728-2016__2020.pdf` pp.11-12 \u2014 para 9.12 accepts Kiribati is likely to become uninhabitable but says the 10-to-15-year window could allow intervening acts.",
+  "reference_answer": "The Committee accepts that sea level rise is likely to render Kiribati uninhabitable, but notes the 10 to 15 year time frame could allow Kiribati, with international assistance, to take protective or relocation measures. It was not in a position to conclude that the domestic authorities' assessment that Kiribati's measures would suffice was clearly arbitrary or erroneous.",
+  "governed_expectation": "Accept para 9.12 (starts p.11, continues p.12). Exclude 9.11 (the general statement about non-refoulement and \"life with dignity\") and 9.13-9.14 as the primary answer.",
+  "decoy": "Neighbouring paragraphs 9.11 and 9.13 are semantically similar; the \"10 to 15\" text is split across a page break.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to paragraph 9.12 [b33a2a5e-e32b-4c64-a3c3-da4d4db811e0::chunk::41], the Human Rights Committee states that while it accepts the author's claim that sea level rise is likely to render Kiribati uninhabitable, the 10-to-15-year time frame suggested by the author \"could allow for intervening acts by Kiribati, with the assistance of the international community, to take affirmative measures to protect and, where necessary, relocate its population.\"\n\nIn other words, the Committee viewed the 10-to-15-year timeframe not as an imminent threat requiring immediate protection, but rather as a period during which there would be opportunity for Kiribati and the international community to take protective or relocation measures."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to paragraph 9.12, the Human Rights Committee accepts the author's claim that sea level rise is likely to render Kiribati uninhabitable [b33a2a5e-e32b-4c64-a3c3-da4d4db811e0::chunk::41]. However, the Committee notes that the 10-to-15-year time frame suggested by the author \"could allow for intervening acts by Kiribati, with the assistance of the international community, to take affirmative measures to protect and, where necessary, relocate its population\" [b33a2a5e-e32b-4c64-a3c3-da4d4db811e0::chunk::41].\n\nIn other words, while acknowledging the threat of uninhabitability within that timeframe, the Committee viewed the 10-to-15-year window as potentially sufficient time for Kiribati and the international community to implement protective or relocation measures.",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q06",
+  "category": "exact-identifier",
+  "question": "What does paragraph 18(i) of the Global Compact for Migration commit States to regarding adaptation and resilience strategies for disasters and climate change?",
+  "expected_evidence": "`climate-migration__un-general-assembly__global-compact-for-safe-orderly-regular-migration-a-res-73-195__2018.pdf` p.10 \u2014 18(i) on developing adaptation and resilience strategies, \"adaptation in the country of origin is a priority\".",
+  "reference_answer": "Para 18(i) (under Objective 2) commits States to develop adaptation and resilience strategies for sudden-onset and slow-onset natural disasters, climate change effects and environmental degradation (e.g. desertification, land degradation, drought, sea level rise), taking potential migration implications into account, while recognizing that adaptation in the country of origin is a priority.",
+  "governed_expectation": "Accept the 18(i) passage (p.10). Exclude 18(h), 18(j) and the Objective 5 para 21(g)-(h) text.",
+  "decoy": "Adjacent sub-paragraphs 18(h), (j), (l) and 21(h) all concern climate-related movement.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the evidence provided, paragraph 18(i) of the Global Compact for Safe, Orderly and Regular Migration commits States to:\n\n\"Develop adaptation and resilience strategies to sudden-onset and slow-onset natural disasters, the adverse effects of climate change, and environmental degradation, such as desertification, land degradation, drought and sea level rise, taking into account the potential implications for migration, while recognizing that adaptation in the country of origin is a priority\" [b4ee8308-87af-4c96-bbd7-f80d5544aab4::chunk::33]\n\nThe key elements of this commitment are:\n1. Developing strategies for both sudden-onset and slow-onset natural disasters\n2. Addressing adverse climate change effects and environmental degradation (with specific examples listed)\n3. Considering potential migration implications within these strategies\n4. Prioritizing adaptation efforts in countries of origin"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to paragraph 18(i) in the accepted evidence [b4ee8308-87af-4c96-bbd7-f80d5544aab4::chunk::33], States commit to:\n\n**Develop adaptation and resilience strategies to sudden-onset and slow-onset natural disasters, the adverse effects of climate change, and environmental degradation, such as desertification, land degradation, drought and sea level rise, taking into account the potential implications for migration, while recognizing that adaptation in the country of origin is a priority.**\n\nThe key commitments are:\n1. Develop strategies addressing both sudden-onset and slow-onset natural disasters\n2. Address the adverse effects of climate change and environmental degradation (with specific examples: desertification, land degradation, drought, and sea level rise)\n3. Take into account the potential implications for migration within these strategies\n4. Recognize that adaptation in the country of origin is a priority",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q07",
+  "category": "exact-identifier",
+  "question": "In the IPCC Working Group II Summary for Policymakers, what does statement C.2.12 say about increasing adaptive capacities and displacement?",
+  "expected_evidence": "`climate-migration__ipcc__ar6-wgii-summary-for-policymakers__2022.pdf` p.25 \u2014 C.2.12: increasing adaptive capacities \"minimises the negative impacts of climate-related displacement and involuntary migration\".",
+  "reference_answer": "C.2.12 says increasing adaptive capacities minimises the negative impacts of climate-related displacement and involuntary migration for migrants and for sending and receiving areas (high confidence), and improves the degree of choice under which migration decisions are made, ensuring safe and orderly movements within and between countries (high confidence).",
+  "governed_expectation": "Accept C.2.12 on p.25. Exclude B.1.7 (p.11) and B.4.7 (p.15), which concern observed and projected displacement rather than adaptive capacity.",
+  "decoy": "B.1.7 and B.4.7 use similar displacement/involuntary-migration wording with different findings.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain statement C.2.12 from the IPCC Working Group II Summary for Policymakers. \n\nThe passages include excerpts from IPCC documents, including some summary material, but they do not include the specific statement C.2.12 that you're asking about. To answer your question accurately, I would need access to that particular statement from the IPCC Working Group II Summary for Policymakers."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "I cannot answer this question because no evidence passages have been supplied. To provide an accurate answer about what IPCC Working Group II Summary for Policymakers statement C.2.12 says regarding adaptive capacities and displacement, I would need the relevant text from that document.\n\nIf you have access to that specific IPCC document or passage, please provide it and I'll be able to help you find the information you're looking for.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q08",
+  "category": "near-miss",
+  "question": "Which part of the Global Compact for Migration calls for \"planned relocation and visa options\" for people compelled to leave because of slow-onset disasters and the adverse effects of climate change?",
+  "expected_evidence": "`climate-migration__un-general-assembly__global-compact-for-safe-orderly-regular-migration-a-res-73-195__2018.pdf` p.13 \u2014 Objective 5 (para 21), action (h): solutions including \"planned relocation and visa options\" where adaptation or return is not possible.",
+  "reference_answer": "It is Objective 5 (enhance availability and flexibility of pathways for regular migration), para 21(h): States cooperate to identify, develop and strengthen solutions for migrants compelled to leave owing to slow-onset disasters, climate change effects and environmental degradation, including devising planned relocation and visa options where adaptation in or return to the country of origin is not possible.",
+  "governed_expectation": "Accept the Objective 5 / 21(h) passage (p.13). Exclude the Objective 2 section \"Natural disasters, the adverse effects of climate change, and environmental degradation\" (para 18(h)-(l), pp.9-10), Teitiota footnote 26, and Nansen planned-relocation passages.",
+  "decoy": "Objective 2 para 18 has a climate sub-heading with near-identical wording but no relocation/visa commitment; Teitiota cites 18(h), (i), (l).",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not identify any specific part of the Global Compact for Migration that calls for \"planned relocation and visa options\" for people compelled to leave because of slow-onset disasters and climate change.\n\nWhile the evidence does discuss planned relocation as a measure [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::16, chunk::32], and mentions visa options such as Australia's proposed 'climate refugee visa' [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::654], these discussions are not explicitly attributed to specific provisions of the Global Compact for Migration.\n\nThe evidence does reference \"the Agenda for the Protection of Cross-Border Displaced Persons in the Context of Disasters and Climate Change\" and \"the Platform on Disaster Displacement\" as relevant frameworks [b4ee8308-87af-4c96-bbd7-f80d5544aab4::chunk::32], but does not specify which sections of the Global Compact for Migration address planned relocation and visa options for slow-onset climate displacement.\n\nTo answer your question accurately, I would need evidence that explicitly cites the relevant section or objective of the Global Compact for Migration."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence provided, I cannot identify a single part of the Global Compact for Migration that explicitly calls for both \"planned relocation and visa options\" together for people compelled to leave because of slow-onset disasters and climate change effects.\n\nHowever, the evidence does show these concepts are addressed separately:\n\n**Visa options for slow-onset disasters:** The Global Compact passage [chunk 43] discusses developing \"humanitarian visas, private sponsorships, access to education for children, and temporary work permits\" for migrants compelled to leave due to \"slow-onset natural disasters, the adverse effects of climate change\" (though this passage is cut off mid-sentence).\n\n**Planned relocation:** The other evidence [chunks 96 and 16] discusses planned relocation as \"a preventative or responsive measure to disaster risk and displacement, including the adverse effects of climate change,\" but this appears to be from a different document (the Protection Agenda), not the Global Compact for Migration itself.\n\nThe evidence does not contain a passage from the Global Compact that explicitly combines both \"planned relocation\" and \"visa options\" as a unified commitment for slow-onset disasters and climate change impacts. If such a combined commitment exists in the Global Compact, it is not present in the evidence supplied.",
+   "passages_accepted": 3,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q09",
+  "category": "near-miss",
+  "question": "What does the IPCC Summary for Policymakers say will happen to displacement in the mid- to long-term as warming progresses?",
+  "expected_evidence": "`climate-migration__ipcc__ar6-wgii-summary-for-policymakers__2022.pdf` p.15 \u2014 B.4.7: \"In the mid- to long-term, displacement will increase\" with flooding, cyclones, drought and sea level rise.",
+  "reference_answer": "Statement B.4.7 says displacement will increase with intensification of heavy precipitation and flooding, tropical cyclones, drought and, increasingly, sea level rise (high confidence). At progressive levels of warming, involuntary migration from regions with high exposure and low adaptive capacity would occur (medium confidence).",
+  "governed_expectation": "Accept B.4.7 (p.15). Exclude B.1.7 (p.11, observed: displacement already increasingly driven by extremes in all regions) and B.3.1 (p.13, near-term migration driven more by socioeconomic conditions) as the answer to a projection question.",
+  "decoy": "Observed (B.1.7), near-term (B.3.1) and projected (B.4.7) statements share vocabulary but differ in time frame and confidence.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence provided, I cannot find a specific statement from the IPCC Summary for Policymakers that directly addresses what will happen to displacement in the mid- to long-term as warming progresses.\n\nThe evidence does cite the IPCC Summary for Policymakers in one instance [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::100], but that citation only discusses populations lacking resources for planned migration experiencing higher exposure to extreme weather events\u2014it does not address future displacement trends.\n\nAnother passage states more generally that \"there is high agreement among scientists that climate change, in combination with other factors, is projected to increase displacement in the future\" [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::24], but this is attributed to scientists generally rather than specifically to the IPCC Summary for Policymakers.\n\nTo answer your question accurately, I would need evidence that directly quotes or specifically attributes a statement about mid- to long-term displacement projections to the IPCC Summary for Policymakers document itself."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information from the IPCC Summary for Policymakers specifically. \n\nThe passages do reference IPCC reports and predictions about climate change impacts, including sea-level rise and displacement. For example, one passage notes that \"the IPCC's latest report recognizes the possibility of a larger ice sheet contribution to sea-level rise\" [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::85], and another states that \"there is high agreement among scientists that climate change, in combination with other factors, is projected to increase displacement in the future\" [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::24].\n\nHowever, these passages do not specifically attribute their statements to the IPCC Summary for Policymakers document itself. To answer your question accurately, I would need evidence that directly quotes or cites what the IPCC Summary for Policymakers specifically states about mid- to long-term displacement projections.",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q10",
+  "category": "near-miss",
+  "question": "When was the Nansen Initiative launched, as opposed to when the Protection Agenda that came out of it was endorsed?",
+  "expected_evidence": "`climate-migration__nansen-initiative__protection-agenda-cross-border-disaster-displacement-vol-1__2015.pdf` p.15 (launched October 2012) and p.7 (Agenda endorsed 12-13 October 2015 in Geneva).",
+  "reference_answer": "The Nansen Initiative was launched in October 2012 on a pledge by Switzerland and Norway. The Protection Agenda was endorsed later, by a global intergovernmental consultation on 12-13 October 2015 in Geneva.",
+  "governed_expectation": "Accept both passages (p.15 for the launch, p.7 for the endorsement). Exclude the 2011 Nansen Conference / Nansen Principles mention and the 2010 Cancun Agreement as the launch date.",
+  "decoy": "Several nearby years (2010 Cancun, 2011 Nansen Conference, 2012 launch, 2015 endorsement) appear in the same paragraphs.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the evidence:\n\nThe **Nansen Initiative was launched in October 2012** [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::26].\n\nThe **Agenda for the Protection of Cross-Border Displaced Persons in the Context of Disasters and Climate Change was endorsed on 12-13 October 2015 in Geneva, Switzerland** [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::26].\n\nSo there was approximately a 3-year gap between the launch of the Nansen Initiative and the endorsement of the Protection Agenda that consolidated its outcomes."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the evidence:\n\nThe **Nansen Initiative was launched in October 2012** [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::26].\n\nThe **Agenda for the Protection of Cross-Border Displaced Persons in the Context of Disasters and Climate Change** (the Protection Agenda that came out of the Nansen Initiative) **was endorsed on 12-13 October 2015 in Geneva, Switzerland** [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::26].\n\nSo the Nansen Initiative preceded the Protection Agenda by approximately three years.",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q11",
+  "category": "false-premise",
+  "question": "Why did the UN Human Rights Committee find that New Zealand violated Ioane Teitiota's right to life under article 6 by deporting him to Kiribati?",
+  "expected_evidence": "`climate-migration__un-human-rights-committee__teitiota-v-new-zealand-views-ccpr-c-127-d-2728-2016__2020.pdf` p.12 \u2014 para 9.14 and para 10: the Committee \"is not in a position to hold\" that article 6 was violated.",
+  "reference_answer": "The premise is wrong. The Committee found no violation: the facts did not permit it to conclude that Teitiota's removal to Kiribati in 2015 violated article 6(1) (paras 9.14 and 10). It did, however, say (para 9.11) that climate change effects in receiving States may in future trigger non-refoulement obligations.",
+  "governed_expectation": "Put paras 9.14/10 (p.12) in conflicting evidence and answer by correcting the premise; para 9.11 (p.11) can be given as context. Do not accept passages from Teitiota's claims as showing a finding.",
+  "decoy": "The Views contain strong language on climate harms and non-refoulement (9.11) that a careless reader or LLM may turn into a \"violation\" finding; two members dissented (annexed).",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided, the UN Human Rights Committee **did not** find that New Zealand violated Ioane Teitiota's right to life under article 6 of the Covenant.\n\nIn fact, the Committee reached the opposite conclusion. The Committee stated: \"The Human Rights Committee, acting under article 5 (4) of the Optional Protocol, is of the view that the facts before it do not permit it to conclude that the author's removal to Kiribati violated his rights under article 6 (1) of the Covenant.\" [chunk-44]\n\nThe Committee found that while the author \"sufficiently demonstrated, for the purpose of admissibility, that due to the impact of climate change and associated sea level rise on the habitability of Kiribati and on the security situation on the islands, he faced a real risk of impairment to his right to life,\" [chunk-27] this was not enough to establish a violation on the merits.\n\nThe Committee noted that New Zealand's authorities \"considered that the evidence he provided did not establish that he faced a risk of an imminent, or likely, risk of arbitrary deprivation of life upon return to Kiribati.\" [chunk-34]\n\nHowever, it is worth noting that Committee member Duncan Laki Muhumuza dissented, arguing that the case should have been found admissible and that a violation had occurred, citing the grave conditions resulting from climate change in Kiribati. [chunk-44]"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence does not support the premise of your question. The UN Human Rights Committee **did not** find that New Zealand violated Ioane Teitiota's right to life.\n\nThe accepted evidence shows the opposite conclusion:\n\n**The Committee's Finding:**\n\"The Human Rights Committee, acting under article 5 (4) of the Optional Protocol, is of the view that the facts before it do not permit it to conclude that the author's removal to Kiribati violated his rights under article 6 (1) of the Covenant.\" [chunk-44]\n\n**Why the Committee rejected the claim:**\nThe Committee found that while the author faced serious environmental conditions in Kiribati\u2014including sea level rise, scarcity of habitable space, violent land disputes, saltwater contamination of freshwater, and crop destruction [chunk-14]\u2014the domestic authorities had thoroughly examined his claim and found it credible. However, they concluded the evidence \"did not establish that he faced a risk of an imminent, or likely, risk of arbitrary deprivation of life upon return to Kiribati.\" [chunk-34]\n\nThe Committee also noted that Kiribati was taking adaptive measures to reduce vulnerabilities, and found the domestic authorities' assessment was not \"clearly arbitrary or erroneous\" [chunk-42].\n\n**Dissenting View:**\nCommittee member Duncan Laki Muhumuza disagreed and argued the author's case revealed a violation [chunk-44], but this was a minority position, not the Committee's official finding.",
+   "passages_accepted": 6,
+   "conflict_passages": 2
+  }
+ },
+ {
+  "qid": "03Q12",
+  "category": "false-premise",
+  "question": "What methodology did the Institute for Economics & Peace use to forecast that 1.2 billion people will become climate migrants by 2050?",
+  "expected_evidence": "`climate-migration__iep__ecological-threat-register__2020.pdf` p.11 (also p.10) \u2014 740 million in resource-scarcity countries plus about one billion in disaster-threat countries, combined and de-duplicated, gives 1.2 billion living in countries where societal resilience is unlikely to be sufficient.",
+  "reference_answer": "The premise is wrong: the 1.2 billion is not a forecast of climate migrants. It is IEP's estimate of people who could be living by 2050 in countries where societal resilience is unlikely to withstand ecological threats (\"at risk of displacement\"). It combines about 740 million in countries facing resource scarcity and about one billion in countries facing major natural-disaster threats, with duplicates dropped, and uses Positive Peace to classify low-resilience countries.",
+  "governed_expectation": "Accept p.10-11; flag that the \"climate migrants\" framing conflicts with the text and correct it. Foresight Box 1.2 (p.27), which criticises converting \"at risk\" counts into migrant forecasts, is useful supporting context.",
+  "decoy": "Headline wording on p.6 (\"at risk of displacement\") and p.72 invites the misreading.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain any information about the Institute for Economics & Peace or their methodology for forecasting 1.2 billion climate migrants by 2050.\n\nThe evidence discusses various estimates of environmental migrants ranging from 10 million to 1 billion people, with 200 million being the most widely cited estimate [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::5]. It also critiques the methodology used by Myers and Kent (1995) and Myers (2002) for their projections [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::57], but does not mention the Institute for Economics & Peace or a 1.2 billion figure.\n\nTo answer your question, I would need evidence that specifically addresses the Institute for Economics & Peace's forecasting methodology."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided, the Institute for Economics & Peace (IEP) used the following methodology to arrive at the 1.2 billion figure:\n\n1. **Identified ecological threats** in two categories [ca2b8fbe-3406-4f78-af20-bf01ba028966::chunk::24]:\n   - Resource risks (water, food, population) affecting 740 million people\n   - Natural disasters (floods, cyclones, droughts, temperature) affecting approximately 1 billion people\n\n2. **Assessed societal resilience** using the Positive Peace framework [ca2b8fbe-3406-4f78-af20-bf01ba028966::chunk::24]:\n   - Countries were classified as having low resilience if they had low or very low Positive Peace scores\n   - Only countries with both low resilience AND high level of threat were included\n\n3. **Combined the groups and removed duplicates** [ca2b8fbe-3406-4f78-af20-bf01ba028966::chunk::25]:\n   - This yielded the estimate of 1.2 billion people living in countries where societal resilience would be insufficient to withstand ecological impacts between now and 2050\n\nHowever, I should note that the evidence describes this as a forecast of people \"at risk of displacement\" or living in countries facing ecological threats with insufficient resilience, rather than explicitly labeling them as \"climate migrants.\" The evidence does not provide granular methodological details beyond this overview of the process.",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q13",
+  "category": "conflicting-sources",
+  "question": "How many people are projected to be displaced or migrate because of environmental or climate change by 2050, and how reliable are those figures?",
+  "expected_evidence": "`climate-migration__uk-govt-office-for-science__foresight-migration-and-global-environmental-change-final-report__2011.pdf` p.27 (Box 1.2/Fig 1.1: Myers 150-200 million; most estimates trace to one or two sources); `climate-migration__iom__migration-environment-and-climate-change-assessing-the-evidence__2009.pdf` p.7 (forecasts from 25 million to 1 billion, 200 million most cited); `climate-migration__iep__ecological-threat-register__2020.pdf` p.11 (1.2 billion in low-resilience countries).",
+  "reference_answer": "The corpus gives no single figure. IOM (2009) says forecasts range from 25 million to 1 billion with 200 million most cited; Foresight (2011) shows estimates such as 150-200 million by 2050 (Myers) resting on one or two early sources with a criticised methodology; IEP (2020) gives 1.2 billion by 2050, but as people in countries with insufficient resilience, not migrants. The figures are not comparable and Foresight and IOM caution about reliability.",
+  "governed_expectation": "Accept the three passages and report them as differing estimates and definitions, not a single value. Do not silently pick one number.",
+  "decoy": "A top-k retriever may return only one document's figure; the IEP number measures exposure, not migration.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Projections of Climate-Related Displacement by 2050\n\nThe evidence presents multiple estimates with significant variation and important caveats about their reliability:\n\n## Range of Estimates\n\nThe projections vary considerably:\n\n- **25 million to 1 billion people** with 200 million being the most widely cited estimate [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::5]\n- **150 to 300 million** environmental migrants in early estimates [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::478]\n- **86 million additional migrants in sub-Saharan Africa, 40 million in South Asia, and 17 million in Latin America** [ca2b8fbe-3406-4f78-af20-bf01ba028966::chunk::141]\n- **1.2 billion people at risk of displacement** [ca2b8fbe-3406-4f78-af20-bf01ba028966::chunk::11]\n\n## Reliability Concerns\n\nThe evidence is explicit about the unreliability of these figures:\n\n- Myers's projection of 200 million environmental refugees by 2050 **\"has been dismissed as apocalyptic and based on no more than anecdotal evidence and intuitive judgement\"** [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::523]\n- Early estimates **\"rely on assumptions which are not supported by the evidence\"** [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::478]\n- Experts have dismissed such figures as **\"at best, 'guesswork'\"** [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::9]\n- There is **\"no credible scientific methodology for assessing what proportion\"** of at-risk populations will actually migrate [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::57]\n\nThe evidence emphasizes that these figures represent populations \"at risk\" rather than confirmed migration projections."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Projections of Environmental and Climate-Related Displacement by 2050\n\n## Range of Estimates\n\nThe evidence presents widely varying projections:\n\n- **25 million to 1 billion people**, with **200 million being the most widely cited estimate** [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::5]\n- **1.2 billion people at risk of displacement** by 2050 from armed conflict and ecological threats combined [ca2b8fbe-3406-4f78-af20-bf01ba028966::chunk::188]\n- Regional breakdowns: **86 million additional migrants in sub-Saharan Africa, 40 million in South Asia, and 17 million in Latin America** [ca2b8fbe-3406-4f78-af20-bf01ba028966::chunk::141]\n\n## Reliability Concerns\n\nThe evidence explicitly identifies serious methodological problems with these projections:\n\nThe most widely cited predictions (Myers and Kent 1995; Myers 2002) rely on identifying populations \"at risk\" from environmental changes and then estimating what proportion will migrate. However, **\"beyond a small number of exceptional cases, where an environmental process makes a place uninhabitable, and there is no political, social or technical adaptation available that would restore habitability, there is no credible scientific methodology for assessing what this proportion is\"** [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::57].\n\nIn summary, while multiple projections exist, the evidence indicates these figures should be treated with considerable caution due to fundamental methodological limitations in determining what proportion of at-risk populations will actually migrate.",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q14",
+  "category": "conflicting-sources",
+  "question": "Is climate change the main driver of migration in the near term, or do other factors matter more?",
+  "expected_evidence": "`climate-migration__ipcc__ar6-wgii-summary-for-policymakers__2022.pdf` p.13 (B.3.1: near-term migration patterns driven more by socioeconomic conditions and governance than by climate change, medium confidence); `climate-migration__uk-govt-office-for-science__foresight-migration-and-global-environmental-change-final-report__2011.pdf` p.41-42 (environmental change acts through five drivers); `climate-migration__iep__ecological-threat-register__2020.pdf` p.11 (\"Lack of water and food are likely to be major factors causing large scale migration\").",
+  "reference_answer": "The IPCC SPM says near-term migration (and violent conflict) will be driven more by socioeconomic conditions and governance than by climate change (medium confidence). Foresight likewise says environmental change works through economic, political, social, demographic and environmental drivers. IEP, by contrast, treats water and food scarcity as likely major factors in large-scale migration. The sources differ in emphasis and the answer should state both.",
+  "governed_expectation": "Accept SPM B.3.1, Foresight pp.41-42 and the IEP passage; present the tension rather than a single verdict. Exclude SPM B.1.7/B.4.7 as primary evidence for this near-term framing.",
+  "decoy": "SPM B.1.7 and B.4.7 stress climate-driven displacement; used alone they would give the opposite impression.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided, **other factors matter more than climate change as drivers of migration in the near term**.\n\nThe evidence shows that economic factors are the primary drivers of migration decisions. According to survey data from eight low- to mid-income countries, \"economic drivers are often perceived as the most influential by individuals,\" with job availability emerging as particularly significant [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::92]. Economic factors account for 47% of stated motivations in the USA and 42% in the UK [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::92].\n\nMore broadly, the evidence identifies multiple key drivers of migration: \"push\" factors (political instability, lack of economic opportunities, lack of access to resources), \"pull\" factors (employment availability, higher wages, political stability), and intervening factors (transportation ease, social networks, government policies) [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::73].\n\nImportantly, while climate change will influence migration in the future, the evidence emphasizes that \"the extent to which the environment, including climate change, is the primary driver of migration remains debatable\" [8dac69e4-92af-48e9-8b4e-fee2c6dc8624::chunk::20]. The evidence also notes that \"powerful economic, political and social drivers mean that migration is likely to continue regardless of environmental change\" [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::5]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided, **other factors matter more than climate change as drivers of migration in the near term**.\n\nThe evidence makes several key points:\n\n1. **Economic drivers are foremost**: \"The powerful existing drivers of migration, with economic drivers foremost, will continue to be the most powerful in most situations\" [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::12]. Economic and social drivers are \"seen by respondents in national surveys as the most important\" [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::140].\n\n2. **Climate change is one factor among many**: \"Because disaster displacement is multi-causal, climate change will be an important but not the only contributing factor. Population growth, underdevelopment, weak governance, armed conflict and violence, as well as poor urban planning in rapidly expanding cities, are important drivers of displacement and migration\" [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::24].\n\n3. **Environmental change influences existing drivers**: \"Environmental change will affect migration now and in the future, specifically through its influence on a range of economic, social and political drivers which themselves affect migration\" [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::5]. The influence is \"most pronounced for economic, environmental and, to a lesser degree, political drivers\" [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::12].\n\nIn summary, while climate change will become increasingly important for migration in the future, economic, social, and political factors are currently the dominant drivers.",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q15",
+  "category": "unanswerable",
+  "question": "What mobility pathway does the 2023 Australia-Tuvalu Falepili Union treaty create for Tuvaluans, and how many visas does it allow each year?",
+  "expected_evidence": "None. Greps for \"Falepili\", \"Union Treaty\" and Australia-Tuvalu agreements across all 8 readable PDFs found nothing (Foresight p.175 only mentions Tuvaluan migration to Australia and New Zealand generally; IOM 2009 p.379 mentions New Zealand's Pacific Access Category).",
+  "reference_answer": "The corpus does not contain this information, so evidence is insufficient to answer.",
+  "governed_expectation": "Status insufficient_evidence; exclude all passages as non-answering (Pacific Access Category, Tuvalu/Australia mentions). Baseline will likely return those passages and may fabricate a visa quota.",
+  "decoy": "On-topic island-migration passages (Foresight p.175; IOM 2009 p.379) tempt a confident answer.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information about a 2023 Australia-Tuvalu Falepili Union treaty or its specific visa provisions.\n\nThe accepted evidence discusses Australia's historical position on environmental migration from Tuvalu. It states that \"Australia has refused to agree to accept people from Tuvalu who need to be resettled for purely environmental reasons\" [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::446]. However, this reflects past policy, not a 2023 treaty.\n\nThe evidence does describe New Zealand's Pacific Access Category, which allows \"75 people per year for the next 30 years\" from Tuvalu as part of a labour migration agreement [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::446], but this is New Zealand's program, not Australia's, and there is no reference to a 2023 Falepili Union treaty.\n\nTo answer your question about the specific mobility pathway and annual visa allocation under the 2023 Australia-Tuvalu Falepili Union treaty, I would need evidence that directly addresses that treaty."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "I cannot answer this question because no evidence passages have been supplied. The accepted evidence and conflicting evidence sections are both empty.\n\nTo answer your question about the mobility pathway and visa allocation in the 2023 Australia-Tuvalu Falepili Union treaty, I would need relevant passages about that treaty to be provided.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q16",
+  "category": "unanswerable",
+  "question": "What steps do Fiji's 2018 Planned Relocation Guidelines require before a village is relocated?",
+  "expected_evidence": "None. \"Planned Relocation Guidelines\" and \"relocation guidelines\" are absent from all readable PDFs; Fiji appears only in passing (e.g. IPCC Ch.7 p.78 relocation costs, Foresight p.80).",
+  "reference_answer": "The corpus does not contain this information, so evidence is insufficient to answer. (The notes.md file lists the Fiji guidelines as a known gap.)",
+  "governed_expectation": "Status insufficient_evidence; exclude generic planned-relocation passages from Nansen (p.9-10) and IPCC Ch.7 as non-answering.",
+  "decoy": "Nansen and IPCC discuss planned relocation generally, which may lead a baseline to answer from generic principles.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain specific information about Fiji's 2018 Planned Relocation Guidelines or what steps they require before a village is relocated.\n\nWhile the accepted evidence discusses general principles for effective planned relocation practices [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::79] and mentions that Fiji is one of several islands that could theoretically pursue internal relocation due to its terrain [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::447], it does not provide details about Fiji's specific 2018 guidelines or their procedural requirements.\n\nTo answer your question, I would need evidence that directly addresses Fiji's 2018 Planned Relocation Guidelines."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain information specific to Fiji's 2018 Planned Relocation Guidelines or the steps they require before a village is relocated.\n\nThe passages supplied describe general principles and background for planned relocation in the context of disasters and climate change [96], and outline best practices for implementing planned relocation that should take into account social, economic, cultural and demographic factors, engage communities in consultation, and ensure adequate livelihood opportunities [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::79]. However, these appear to be general guidelines rather than Fiji-specific requirements.\n\nTo answer your question about Fiji's specific 2018 requirements, I would need evidence that directly references Fiji's guidelines.",
+   "passages_accepted": 1,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q17",
+  "category": "synthesis",
+  "question": "What three priority areas for future action does the Protection Agenda identify for addressing cross-border disaster displacement?",
+  "expected_evidence": "`climate-migration__nansen-initiative__protection-agenda-cross-border-disaster-displacement-vol-1__2015.pdf` p.10 \u2014 three priority areas, the third with sub-points A to D.",
+  "reference_answer": "(1) Collecting data and enhancing knowledge on cross-border disaster displacement; (2) enhancing the use of humanitarian protection measures, including lasting solutions, for instance by harmonizing approaches regionally; (3) strengthening management of disaster displacement risk in the country of origin by integrating human mobility into DRR/adaptation strategies, facilitating migration with dignity, improving planned relocation, and addressing the needs of disaster-displaced IDPs in laws and policies.",
+  "governed_expectation": "Accept p.10 and the p.7 summary statement (\"three priority areas\"). Exclude the Global Compact Objective 2 actions and Foresight policy sections as non-matching.",
+  "decoy": "The Global Compact (Objective 2 and 5) lists overlapping actions but they are not the Agenda's priority areas.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the Protection Agenda, the three priority areas for future action to address cross-border disaster-displacement are [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::18]:\n\n1. **Collecting data and enhancing knowledge on cross-border disaster-displacement**\n\n2. **Enhancing the use of humanitarian protection measures for cross-border disaster-displaced persons**, including mechanisms for lasting solutions, for instance by harmonizing approaches at (sub-)regional levels\n\n3. **Strengthening the management of disaster displacement risk in the country of origin** by:\n   - Integrating human mobility within disaster risk reduction and climate change adaptation strategies, and other relevant development processes\n   - Facilitating migration with dignity as a potentially positive way to cope with the effects of natural hazards and climate change\n   - Improving the use of planned relocation as preventative or responsive measure to disaster risk and displacement\n   - Ensuring that the needs of IDPs displaced in disaster situations are specifically addressed by relevant laws and policies on disaster risk management or internal displacement"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the Protection Agenda, the three priority areas for future action to address cross-border disaster-displacement are [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::18]:\n\n1. **Collecting data and enhancing knowledge on cross-border disaster-displacement** [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::18]\n\n2. **Enhancing the use of humanitarian protection measures for cross-border disaster-displaced persons, including mechanisms for lasting solutions**, for instance by harmonizing approaches at (sub-)regional levels [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::18]\n\n3. **Strengthening the management of disaster displacement risk in the country of origin** by [398db655-629a-4af3-9fa8-131e7c232b6b::chunk::18]:\n   - Integrating human mobility within disaster risk reduction and climate change adaptation strategies, and other relevant development processes\n   - Facilitating migration with dignity as a potentially positive way to cope with the effects of natural hazards and climate change\n   - Improving the use of planned relocation as a preventative or responsive measure to disaster risk and displacement\n   - Ensuring that the needs of IDPs displaced in disaster situations are specifically addressed by relevant laws and policies on disaster risk management or internal displacement",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "03Q18",
+  "category": "synthesis",
+  "question": "What are the five drivers of migration through which environmental change affects migration, and how does each work?",
+  "expected_evidence": "`climate-migration__uk-govt-office-for-science__foresight-migration-and-global-environmental-change-final-report__2011.pdf` p.42 \u2014 section 2.2.1 describes economic, political, demographic, social and environmental drivers.",
+  "reference_answer": "Economic (employment opportunities and income differentials); political (conflict, security, discrimination, persecution, public/corporate policy such as land ownership or enforced relocation); demographic (population size and structure, disease prevalence); social (family/cultural expectations, education, inheritance or marriage practices); environmental (exposure to hazard and availability of ecosystem services). Environmental change influences migration by altering these five drivers.",
+  "governed_expectation": "Accept p.42 (with the lead-in on p.41). Exclude IPCC Ch.7 and IEP passages on drivers of displacement, which do not use this five-driver framework.",
+  "decoy": "IPCC Ch.7 p.39 distinguishes \"direct\" and \"indirect\" climate drivers, a different classification.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# The Five Drivers of Migration\n\nAccording to the evidence, the five drivers of migration through which environmental change affects migration are [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::87]:\n\n1. **Economic drivers**: Include employment opportunities and income differentials between places.\n\n2. **Political drivers**: Cover not only conflict, security, discrimination and persecution, but also the political drivers of public or corporate policy over, for example, land ownership or enforced relocation.\n\n3. **Demographic drivers**: Include the size and structure of populations in source areas, together with the prevalence of diseases that affect morbidity and mortality.\n\n4. **Social drivers**: Include familial or cultural expectations, the search for educational opportunities and cultural practices regarding, for example, inheritance or marriage.\n\n5. **Environmental drivers**: Include exposure to hazard and availability of ecosystem services.\n\n## How Environmental Change Affects These Drivers\n\nThe evidence indicates that [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::86] \"the many forms of environmental change in the future will generally act through these five drivers to affect levels and patterns of migration.\" More specifically, environmental change's influence is [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::11] \"most pronounced for economic, environmental and, to a lesser degree, political drivers.\"\n\nThe evidence also notes that [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::87] \"economic and social drivers are often cited as the most important by individuals\" in causing migration."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# The Five Drivers of Migration\n\nAccording to the evidence, the five drivers of migration are [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::87]:\n\n1. **Economic drivers**: Include employment opportunities and income differentials between places.\n\n2. **Political drivers**: Cover not only conflict, security, discrimination and persecution, but also the political drivers of public or corporate policy over, for example, land ownership or enforced relocation.\n\n3. **Demographic drivers**: Include the size and structure of populations in source areas, together with the prevalence of diseases that affect morbidity and mortality.\n\n4. **Social drivers**: Include familial or cultural expectations, the search for educational opportunities and cultural practices regarding, for example, inheritance or marriage.\n\n5. **Environmental drivers**: Include exposure to hazard and availability of ecosystem services.\n\n## How Environmental Change Affects These Drivers\n\nEnvironmental change influences migration outcomes through affecting existing drivers of migration [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::12]. This influence is most pronounced for **economic, environmental and, to a lesser degree, political drivers**. Specifically, environmental change affects these drivers by having impact on, for example, rural wages, agricultural prices, exposure to hazard and provisioning ecosystems [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::12].\n\nThe evidence notes that **economic and social drivers are often cited as the most important** by individuals in causing migration [9088d04a-ac79-4aa0-8c98-43ac06ccad45::chunk::87].",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "05Q03",
+  "category": "ordinary",
+  "question": "What was Unilever's underlying sales growth in 2025 and how did it split between volume and price?",
+  "expected_evidence": "`corporate-annual-reports__unilever__annual-report-and-accounts-2025__2026.pdf` p.15 \u2014 \"Underlying sales growth of 3.5% comprised 1.5% volume and 2.0% price.\"",
+  "reference_answer": "Underlying sales growth in 2025 was 3.5%, made up of 1.5% underlying volume growth and 2.0% underlying price growth (also shown on p.14 and p.17).",
+  "governed_expectation": "Accept the Group Financial Review / performance highlights passages; reject 2024 (USG 4.3%) and Business Group-level USG values.",
+  "decoy": "Decoy: 2024 column (4.3% USG, 3.1% UVG, 1.2% UPG) in the same tables; business-group USG values; `corporate-annual-reports__unilever__ten-year-financial-charts-2016-2025__2026.pdf` ten-year chart pack uses charts with ambiguous column text.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the accepted evidence, Unilever's underlying sales growth in 2025 was **3.5%**, which split as follows [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::28]:\n\n- **Underlying volume growth: 1.5%**\n- **Underlying price growth: 2.0%**\n\nThis composition is confirmed across multiple passages in the evidence [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::132] [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::36]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the evidence provided:\n\nIn 2025, Unilever's underlying sales growth (USG) was **3.5%** [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::28], which split as follows:\n\n- **Underlying volume growth (UVG): 1.5%** [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::28]\n- **Underlying price growth (UPG): 2.0%** [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::28]\n\nThis means that of the 3.5% underlying sales growth, approximately 43% came from volume increases and 57% came from price increases.",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "05Q06",
+  "category": "exact-identifier",
+  "question": "According to note 4A in Unilever's 2025 annual report, what was the average number of employees in 2025 for continuing operations, discontinued operations and in total?",
+  "expected_evidence": "`corporate-annual-reports__unilever__annual-report-and-accounts-2025__2026.pdf` p.143 \u2014 average number of employees table: continuing 100 thousand, discontinued 18 thousand, total 118 thousand for 2025.",
+  "reference_answer": "In 2025 the average was 100 thousand for continuing operations plus 18 thousand for discontinued operations, 118 thousand in total (2024: 105 + 20 = 125).",
+  "governed_expectation": "Accept the staff costs/employees note table; exclude 2024/2023 columns.",
+  "decoy": "Decoy: 2024 and 2023 columns on the same page; p.207 references note 4A again but gives no table.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to note 4A in Unilever's 2025 annual report, the average number of employees during 2025 was [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::527]:\n\n- **Continuing operations**: 100,000 employees\n- **Discontinued operations**: 18,000 employees\n- **Total**: 118,000 employees"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to note 4A in Unilever's 2025 annual report, the average number of employees during 2025 was [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::527]:\n\n- **Continuing operations**: 100,000 employees\n- **Discontinued operations**: 18,000 employees\n- **Total**: 118,000 employees",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "05Q15",
+  "category": "unanswerable",
+  "question": "What revenue growth guidance did Infosys give for fiscal year 2026-27?",
+  "expected_evidence": "None - no passage in the corpus gives Infosys FY2026-27 revenue growth guidance (grep for guidance/outlook returned no Infosys guidance).",
+  "reference_answer": "The corpus does not contain this; evidence is insufficient.",
+  "governed_expectation": "Status insufficient_evidence; all retrieved passages (e.g. FY26 results, CSR plans for 2026-27) should be excluded as not answering.",
+  "decoy": "Risk: baseline may hallucinate a guidance range from FY25/FY26 growth figures.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain any information about Infosys or revenue growth guidance for fiscal year 2026-27. The passages are all from Unilever's Annual Report and Accounts 2025, covering topics such as Unilever's remuneration policy, financial performance, and sustainability disclosures.\n\nTo answer your question about Infosys's revenue growth guidance, I would need evidence from Infosys's financial reports or guidance documents, which are not included in the supplied passages."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "The evidence is insufficient to answer this question. No accepted or conflicting evidence passages have been provided about Infosys's revenue growth guidance for fiscal year 2026-27.\n\nTo answer this question, I would need access to Infosys's official guidance statements, earnings reports, or investor communications that specifically address their FY 2026-27 revenue projections.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "05Q16",
+  "category": "unanswerable",
+  "question": "What were Apple's total net sales for the fourth quarter of fiscal 2026 (quarter ended September 2026)?",
+  "expected_evidence": "None - the latest Apple filing in the corpus is the 10-Q for the quarter ended June 27, 2026; no Q4 FY2026 data appears.",
+  "reference_answer": "The corpus does not contain this; evidence is insufficient.",
+  "governed_expectation": "Status insufficient_evidence; Q3 FY2026 ($109,417M) and FY2025 ($416,161M) passages should be excluded as wrong periods.",
+  "decoy": "Decoy: `corporate-annual-reports__apple__form-10-q-q3-fiscal-2026__2026.pdf` p.4 Q3 FY2026 net sales $109,417 million; `corporate-annual-reports__apple__form-10-k-fiscal-2025__2025.pdf` p.25 FY2025 total $416,161 million.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The evidence provided does not contain any information about Apple's financial results. The passages supplied are entirely from Unilever's financial statements and reports, covering their business segments (Beauty & Wellbeing, Personal Care, Home Care, Foods, and Ice Cream), turnover, operating profit, and other financial metrics for 2023-2025.\n\nTo answer your question about Apple's total net sales for the fourth quarter of fiscal 2026, I would need evidence from Apple's financial disclosures, which are not included in the materials provided."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "The evidence is insufficient to answer this question. No accepted or conflicting evidence passages have been provided, so I cannot determine Apple's total net sales for the fourth quarter of fiscal 2026 (quarter ended September 2026).\n\nTo answer this question, I would need access to Apple's financial statements or earnings reports for that period.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "05Q17",
+  "category": "synthesis",
+  "question": "Summarise Unilever's 2025 underlying sales growth and underlying operating margin for each of its four Business Groups.",
+  "expected_evidence": "`corporate-annual-reports__unilever__annual-report-and-accounts-2025__2026.pdf` p.17-18 \u2014 Business Group tables: Beauty & Wellbeing USG 4.3% / UOM 19.2%; Personal Care 4.7% / 22.6%; Home Care 2.6% / 14.9%; Foods 2.5% / 22.6%.",
+  "reference_answer": "Beauty & Wellbeing: USG 4.3%, UOM 19.2%. Personal Care: 4.7%, 22.6%. Home Care: 2.6%, 14.9%. Foods: 2.5%, 22.6%. (Group: USG 3.5%, UOM 20.0%.)",
+  "governed_expectation": "Accept the Business Group tables on both pages (p.17 and p.18) and combine them; exclude 2024/2023 columns.",
+  "decoy": "Risk: only one of the two pages retrieved gives an incomplete list (Home Care and Foods are on p.18).",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "# Unilever 2025 Performance by Business Group\n\n## Underlying Sales Growth\n\n[c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::37][c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::39]\n\n- **Beauty & Wellbeing**: 4.3%\n- **Personal Care**: 4.7%\n- **Home Care**: 2.6%\n- **Foods**: 2.5%\n\n## Underlying Operating Margin\n\n[c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::37][c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::39]\n\n- **Beauty & Wellbeing**: 19.2%\n- **Personal Care**: 22.6%\n- **Home Care**: 14.9%\n- **Foods**: 22.6%\n\nPersonal Care and Foods achieved the highest underlying operating margins at 22.6%, while Home Care had the lowest at 14.9%. In terms of sales growth, Personal Care led at 4.7%, while Foods and Home Care showed more modest growth at 2.5% and 2.6% respectively."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "# Unilever 2025 Performance Summary\n\nBased on the evidence provided, here is Unilever's 2025 underlying sales growth and underlying operating margin for each Business Group:\n\n## Beauty & Wellbeing\n- Underlying sales growth: 4.3% [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::37]\n- Underlying operating margin: 19.2% [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::37]\n\n## Personal Care\n- Underlying sales growth: 4.7% [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::37]\n- Underlying operating margin: 22.6% [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::37]\n\n## Home Care\n- Underlying sales growth: 2.6% [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::39]\n- Underlying operating margin: 14.9% [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::39]\n\n## Foods\n- Underlying sales growth: 2.5% [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::39]\n- Underlying operating margin: 22.6% [c8ad25ca-8fc6-4d9d-b797-647aa36821d4::chunk::39]\n\nPersonal Care and Foods achieved the highest underlying operating margins at 22.6%, while Personal Care recorded the strongest underlying sales growth at 4.7%.",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ }
+]

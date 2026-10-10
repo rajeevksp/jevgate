@@ -1,0 +1,477 @@
+[
+ {
+  "qid": "06Q01",
+  "category": "ordinary",
+  "question": "How fast is Shor's quantum factoring algorithm asymptotically, and how does that compare with the best classical factoring algorithm the paper cites?",
+  "expected_evidence": "`quantum-computing__arxiv-shor__polynomial-time-algorithms-prime-factorization-discrete-logarithms__1995.pdf` p.15 \u2014 quantum algorithm takes O((log n)^2 (log log n)(log log log n)) steps plus polynomial classical post-processing; the number field sieve is exp(c(log n)^(1/3)(log log n)^(2/3)).",
+  "reference_answer": "Shor's algorithm takes asymptotically O((log n)^2 (log log n)(log log log n)) steps on a quantum computer, plus polynomial classical post-processing. The best classical method (number field sieve) takes exp(c(log n)^(1/3)(log log n)^(2/3)), which the paper calls an exponential-time algorithm in the input length log n.",
+  "governed_expectation": "Accept the Section 5 passage on p.15; other pages of the same paper (modular exponentiation O(l^2 log l log log l), p.10) are only supporting.",
+  "decoy": "Montanaro's overview also mentions Shor's super-polynomial speedup but gives no running-time formula.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "chunk::3] or $\\exp(c(\\log n)^{1/3}(\\log \\log n)^{2/3})$ for some constant $c$ [9b1"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided passages, the asymptotic runtime of Shor\u2019s quantum factoring algorithm and its comparison to the best classical algorithms are described as follows:\n\n### Asymptotic Runtime of Shor's Quantum",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q02",
+  "category": "ordinary",
+  "question": "What speedup does Grover's algorithm give for unstructured search, and what does it imply for problems in NP with a certificate of length m?",
+  "expected_evidence": "`quantum-computing__arxiv-montanaro__quantum-algorithms-an-overview__2016.pdf` p.3-4 \u2014 unstructured search needs O(sqrt(N)) evaluations; for NP problems time O(2^(m/2) poly(m)) versus O(2^m poly(m)) classically.",
+  "reference_answer": "Grover's algorithm solves unstructured search with O(sqrt(N)) evaluations of f (N = 2^n) versus order N classically. Applied to an NP problem with certificate length m it gives time O(2^(m/2) poly(m)) instead of O(2^m poly(m)), a (nearly) quadratic speedup, less dramatic than Shor's super-polynomial speedup.",
+  "governed_expectation": "Accept the Section 3 / 3.1 passages (pp.3-4); no conflicts expected.",
+  "decoy": "Shor and de Wolf/Preskill material on Grover or search elsewhere may be retrieved but the question is answered fully in the survey.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence:\n\n* **Speedup for unstructured search:** Grover's algorithm provides a quadratic speedup [a3ff19fe-e360-4f27-9f25-0f5a834ad1fa::chunk::168], [19d4ae13-a0b6-4093-b7ed-f4b8fe86414d::chunk::118]. While classical algorithms require $N = 2^n$ evaluations in the worst case (or order $N$ / $\\Theta(N)$ queries for randomized search) [e843cc5c-6c9a-40fe-830b-ae86a0a74b91::chunk::6], [a3ff19fe-e360-4f27-9f25-0f5a834ad1fa::chunk::168], Grover's algorithm solves the problem using $O(\\sqrt{N})$ evaluations/queries [e843cc5c-6c9a-40fe-830b-ae86a0a74b91::chunk::6], [a3ff19fe-e360-4f27-9f25-0f5a834ad1fa::chunk::168].\n* **Implications for problems in NP with a certificate of length $m$:** By applying Grover\u2019s algorithm to the classical checking algorithm $A$ and searching over all possible certificates, the problem can be solved in $O(2^{m/2} \\text{poly}(m))$ time, compared to $O(2^m \\text{poly}(m))$ for classical exhaustive search [e843cc5c-6c9a-40fe-830b"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence:\n\n* **Speedup for unstructured search:** Grover's algorithm achieves a quadratic speedup over classical search [e843cc5c-6c9a-40fe-830b-ae86a0a74b91::chunk::7], solving the problem using $O(\\sqrt{N})$ evaluations of $f$ in the worst case, compared to the $N = 2^n$ evaluations (or order $N$) required by classical algorithms [e843cc5c-6c9a-40fe-830b-ae86a0a74b91::chunk::6].\n* **Implications for problems in NP with a certificate of length $m$:**\n  * By applying Grover\u2019s algorithm to the classical checking algorithm and searching over all possible certificates, the problem can be solved in $O(2^{m/2}\\text{poly}(m))$ time, compared to $O(2^m\\text{poly}(m))$ required by classical exhaustive search [e843cc5c-6c9a-40fe-830b-ae86a0a74b91::chunk::7].\n  * This nearly quadratic speedup means that if a quantum computer operates at approximately the same clock speed as a classical computer, problem instances of approximately twice the size can be solved in a comparable amount of time [e843cc5c-6c9a-40fe-830b-ae86a0a74b91::chunk::7].",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q04",
+  "category": "ordinary",
+  "question": "What does the term NISQ stand for in Preskill's 2018 paper, what qubit range does it cover, and why is 50 qubits called a milestone?",
+  "expected_evidence": "`quantum-computing__arxiv-preskill__quantum-computing-in-the-nisq-era-and-beyond__2018.pdf` p.4-5 \u2014 NISQ = Noisy Intermediate-Scale Quantum, 50 to a few hundred qubits; 50 qubits is beyond brute-force classical simulation on today's supercomputers.",
+  "reference_answer": "NISQ stands for Noisy Intermediate-Scale Quantum. 'Intermediate scale' means from about 50 to a few hundred qubits, and 50 qubits is a milestone because that is beyond what can be simulated by brute force with the most powerful existing supercomputers; 'noisy' reflects imperfect control of the qubits.",
+  "governed_expectation": "Accept the Section 4.1 passage across pp.4-5.",
+  "decoy": "The abstract (p.1) says 50-100 qubits, which is a related but not identical range statement.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on John Preskill's 2018 paper:\n\n* **Meaning of NISQ:** NISQ stands for **Noisy Intermediate-Scale Quantum** [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::9].\n* **Qubit range:** It refers to quantum computers with a number of qubits ranging from **50 to a few hundred** [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::9, 52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::10].\n* **Why 50 qubits is a milestone:** 50 qubits is considered a significant milestone because it goes beyond what can be simulated by brute force using the most powerful existing digital supercomputers [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::9, 52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::10]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on John Preskill's 2018 paper:\n\n* **Meaning of NISQ:** NISQ stands for **Noisy Intermediate-Scale Quantum** [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::9].\n* **Qubit range:** \"Intermediate scale\" refers to quantum computers with a number of qubits ranging from **50 to a few hundred** [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::9] (also described as 50\u2013100 qubits in the context of near-term devices [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::0], [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::19]).\n* **Why 50 qubits is a milestone:** It is a significant milestone because 50 qubits is beyond what can be simulated by brute force using the most powerful existing digital supercomputers [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::9], [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::10].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q05",
+  "category": "exact-identifier",
+  "question": "What are the sizes in bytes of the encapsulation key, decapsulation key, ciphertext and shared secret key for ML-KEM-768 in the standard's Table 3?",
+  "expected_evidence": "`quantum-computing__nist__fips-203-module-lattice-based-key-encapsulation-ml-kem__2024.pdf` p.48 \u2014 Table 3 lists ML-KEM-768 sizes 1184 / 2400 / 1088 / 32 bytes.",
+  "reference_answer": "For ML-KEM-768: encapsulation key 1184 bytes, decapsulation key 2400 bytes, ciphertext 1088 bytes, shared secret key 32 bytes.",
+  "governed_expectation": "Accept the Table 3 passage on p.48; exclude rows for ML-KEM-512 (800/1632/768) and ML-KEM-1024 (1568/3168/1568).",
+  "decoy": "Neighbouring rows of the same table and Table 2 (parameter sets k, eta, du, dv) look alike; IR 8547 Table 5 lists ML-KEM sets without byte sizes.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to Table 3 in the standard, the sizes in bytes for ML-KEM-768 are [32a24946-86c4-41db-955a-a82b703958ed::chunk::130]:\n\n* **Encapsulation key:** 1184 bytes\n* **Decapsulation key:** 2400 bytes\n* **Ciphertext:** 1088 bytes\n* **Shared secret key:** 32 bytes"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to Table 3 of the standard, the sizes (in bytes) for ML-KEM-768 are [32a24946-86c4-41db-955a-a82b703958ed::chunk::130]:\n\n* **Encapsulation key:** 1184 bytes\n* **Decapsulation key:** 2400 bytes\n* **Ciphertext:** 1088 bytes\n* **Shared secret key:** 32 bytes",
+   "passages_accepted": 4,
+   "conflict_passages": 1
+  }
+ },
+ {
+  "qid": "06Q06",
+  "category": "exact-identifier",
+  "question": "Under which section of the NQI Act is the annual National Quantum Initiative budget supplement required, and which numbered annual report is the FY 2025 supplement?",
+  "expected_evidence": "`quantum-computing__us-ostp-nqco__national-quantum-initiative-supplement-fy2025-budget__2024.pdf` p.6 \u2014 'fifth annual report on the NQI Program and budget, as required by Section 103(g)'.",
+  "reference_answer": "Section 103(g) of the National Quantum Initiative Act requires the report, and the FY 2025 supplement is the fifth annual report on the NQI Program and budget.",
+  "governed_expectation": "Accept the executive-summary passage on p.6.",
+  "decoy": "Other mentions of the NQI Act (e.g. Pub. L. 115-368 footnote on p.7) are about the Act's citation, not the reporting section.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, there is insufficient information to determine which section of the NQI Act requires the annual National Quantum Initiative budget supplement or which numbered annual report the FY 2025 supplement represents."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence:\n\n* The annual report on the NQI Program and budget is required under **Section 103(g)** of the NQI Act [0731cf69-ce22-4e65-810e-abd4813a52d5::chunk::13].\n* The report covering the FY 2025 budget request is the **fifth** annual report [0731cf69-ce22-4e65-810e-abd4813a52d5::chunk::13].",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q07",
+  "category": "exact-identifier",
+  "question": "In NIST's post-quantum security categories table, which attack and example primitive define Category 3?",
+  "expected_evidence": "`quantum-computing__nist__ir-8547-transition-to-post-quantum-cryptography-standards-draft__2024.pdf` p.19 \u2014 Table 1: Category 3 is key search on a block cipher with a 192-bit key, example AES-192.",
+  "reference_answer": "Category 3 is defined by key search on a block cipher with a 192-bit key, with AES-192 as the example (Category 1: AES-128 key search; 2: SHA-256 collision search; 4: SHA3-384 collision search; 5: AES-256).",
+  "governed_expectation": "Accept Table 1 on p.19; FIPS 203 only maps ML-KEM-768 to category 3 without defining the category.",
+  "decoy": "FIPS 203 p.49 states ML-KEM-768 is category 3 but does not give the table defining it.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "In NIST's post-quantum security categories table (Table 1), Category 3 is defined by [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::35]:\n\n* **Attack Type:** Key search on a block cipher with a 192-bit key [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::35]\n* **Example Primitive:** AES-192 [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::35]"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "In NIST's post-quantum security categories table, Category 3 is defined by the following:\n\n* **Attack Type:** Key search on a block cipher with a 192-bit key [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::35]\n* **Example Primitive:** AES-192 [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::35]",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q08",
+  "category": "near-miss",
+  "question": "How many physical qubits does India's National Quantum Mission target for its intermediate-scale quantum computers within five years?",
+  "expected_evidence": "`quantum-computing__pib-goi__national-quantum-mission-india-backgrounder__2025.pdf` p.2 \u2014 objectives: 20-50 physical qubits (3 years), 50-100 (5 years), 50-1000 (8 years).",
+  "reference_answer": "The mission targets 50-100 physical qubits within 5 years (versus 20-50 in 3 years and 50-1000 in 8 years), across platforms such as superconducting and photonic.",
+  "governed_expectation": "Accept only the PIB objectives bullet on p.2 with the 5-year figure; exclude Preskill's NISQ passages that also say 50-100 qubits.",
+  "decoy": "Preskill NISQ abstract (p.1) says 'Quantum computers with 50-100 qubits'; the 3-year and 8-year NQM ranges are adjacent distractors.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Under the National Quantum Mission, India targets developing intermediate-scale quantum computers with 50\u2013100 physical qubits within five years [cc7a9b9c-6a96-4655-873f-8e187828e0f5::chunk::0]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Within five years, India's National Quantum Mission targets developing intermediate-scale quantum computers with 50\u2013100 physical qubits [cc7a9b9c-6a96-4655-873f-8e187828e0f5::chunk::0].",
+   "passages_accepted": 1,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q10",
+  "category": "near-miss",
+  "question": "Which post-quantum signature scheme did NIST name as its primary recommendation in the third-round status report, and why was FALCON not the general-use pick?",
+  "expected_evidence": "`quantum-computing__nist__ir-8413-pqc-third-round-status-report__2022.pdf` p.28 \u2014 Dilithium chosen as primary; FALCON needs more gates/RAM for key and signature generation, so may suit constrained devices poorly.",
+  "reference_answer": "CRYSTALS-Dilithium was selected as the primary signature algorithm, because its simpler key/signature generation helps secure implementation, while FALCON needs more resources (gates and RAM) for key and signature generation and may be unsuitable for constrained devices needing side-channel protection. FALCON was still standardized because Dilithium's larger signatures may not fit in a single internet packet; SPHINCS+ is a non-lattice fallback.",
+  "governed_expectation": "Accept the report's selection discussion (p.28, summarised in abstract p.4); exclude the later IR 8547 draft that lists ML-DSA, a standardised name.",
+  "decoy": "NIST IR 8547 (Tables 2-3) discusses ML-DSA and FIPS 203 covers only the ML-KEM key-encapsulation scheme, so signature questions can pull wrong documents.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "In its third-round status report, NIST named **CRYSTALS\u2013Dilithium** as its primary recommended signature algorithm for general use and implementation [bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::5], [bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::53].\n\nFALCON was not chosen as the primary general-use pick for the following reasons:\n* **Resource requirements and constrained devices:** Key and signature generation for FALCON appears to require more resources (gates and RAM) than Dilithium, which may make FALCON unsuitable for implementation on constrained devices, particularly where protection against side-channel attacks is required [bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::53].\n* **Implementation security:** Dilithium features a simpler design for key and signature generation, which NIST recognized would help ensure secure implementations [bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::53]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "NIST named **CRYSTALS\u2013Dilithium** (Dilithium) as its primary signature algorithm recommendation for general use [bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::17, bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::53].\n\nFALCON was not chosen as the primary general-use pick because:\n- **Resource requirements:** Key and signature generation for FALCON appear to require more resources (gates and RAM) than Dilithium, potentially making FALCON unsuitable for implementation on constrained devices, particularly when protection against side-channel attacks is needed [bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::53, bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::54].\n- **Implementation complexity:** Dilithium has a simpler design for key and signature generation that helps ensure secure implementations [bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::53, bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::54], whereas FALCON's reliance on floating-point arithmetic and a more complex implementation raised concerns that errors could affect security [bf8b209a-0197-44d8-ae5c-3f6b999fdf6e::chunk::48].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q11",
+  "category": "false-premise",
+  "question": "Since NIST IR 8547 says RSA and ECDSA with 128-bit security or more are disallowed from 2030, how soon must agencies stop using them?",
+  "expected_evidence": "`quantum-computing__nist__ir-8547-transition-to-post-quantum-cryptography-standards-draft__2024.pdf` p.20 \u2014 Table 2: \u2265128-bit RSA/ECDSA 'Disallowed after 2035'; only 112-bit strength is deprecated after 2030.",
+  "reference_answer": "The premise is wrong: the draft does not disallow 128-bit-or-more RSA/ECDSA in 2030. It lists them as disallowed after 2035; only 112-bit-strength RSA/ECDSA are deprecated after 2030 (and disallowed after 2035). It is also an initial public draft, not final.",
+  "governed_expectation": "Put the Table 2 passage in the conflicting evidence and answer by correcting the premise; do not endorse 2030 as the disallow date for >=128-bit.",
+  "decoy": "The 2030 'disallowed' date does appear for 112-bit symmetric standards (p.22), which could cause a careless answer to accept the premise.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, the premise of the question is incorrect: NIST IR 8547 does not state that RSA and ECDSA with 128-bit security or more are disallowed from 2030. \n\nAccording to Table 3, digital signatures using ECDSA and RSA with **\u2265 128 bits of security strength** are **disallowed after 2035** [b4038940-7e59-47a5-b4c5-5175"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, the premise of the question is incorrect: NIST IR 8547 states that ECDSA and RSA with $\\ge 128$ bits of security strength are **Disallowed after 2035**, not from 2030 [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::37]. \n\nThe text does not specify any earlier deadline or additional timeline for when agencies must stop using them beyond noting that they are disallowed after 2035 [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::37].",
+   "passages_accepted": 0,
+   "conflict_passages": 2
+  }
+ },
+ {
+  "qid": "06Q12",
+  "category": "false-premise",
+  "question": "Preskill's NISQ paper argues that a 100-qubit quantum computer will change the world right away, right?",
+  "expected_evidence": "`quantum-computing__arxiv-preskill__quantum-computing-in-the-nisq-era-and-beyond__2018.pdf` p.1 \u2014 abstract states 'the 100-qubit quantum computer will not change the world right away'.",
+  "reference_answer": "No. The paper says the opposite: a 100-qubit device is a significant step but 'will not change the world right away', with noise limiting circuit size and transformative effects possibly decades away (p.5).",
+  "governed_expectation": "Surface the abstract (p.1) and p.5 passages as conflicting with the premise and correct it.",
+  "decoy": "The same abstract says 50-100 qubit devices may surpass classical computers on some tasks, which could be selectively quoted to support the premise.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "No, that is incorrect. Preskill states that \"the 100-qubit quantum computer will not change the world right away\" [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::0]. Instead, it should be viewed as a significant step toward developing more powerful quantum technologies in the future [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::0, 52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::10]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "No. According to Preskill's paper, \"the 100-qubit quantum computer will not change the world right away\" [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::0]. Instead, it should be regarded as a significant step toward more powerful future quantum technologies, as noise in quantum gates will still limit the size of reliably executed circuits [52fad556-f7a5-46e0-a9db-fd3b7dc304a0::chunk::0].",
+   "passages_accepted": 2,
+   "conflict_passages": 2
+  }
+ },
+ {
+  "qid": "06Q13",
+  "category": "conflicting-sources",
+  "question": "By what date does NIST plan to stop allowing 112-bit-security cryptography?",
+  "expected_evidence": "`quantum-computing__nist__ir-8547-transition-to-post-quantum-cryptography-standards-draft__2024.pdf` p.20 and p.22 \u2014 public-key 112-bit: deprecated after 2030, disallowed after 2035 (instead of the earlier projected Jan 1, 2031); 112-bit symmetric standards disallowed in 2030.",
+  "reference_answer": "It depends on the primitive. For classical public-key signatures (RSA, ECDSA) and key establishment, 112-bit strength is deprecated after 2030 and disallowed after 2035; the draft says NIST had projected disallowing 112-bit public-key schemes on January 1, 2031 but now intends only deprecation. NIST's few 112-bit symmetric standards will be disallowed in 2030. The document is an initial public draft.",
+  "governed_expectation": "Accept both the p.20 and p.22 passages and report both dates without collapsing them into one.",
+  "decoy": "Dates 2030/2031/2035 recur across tables; a retriever returning one chunk would give only one value.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, the planned date to stop allowing (disallow) 112-bit-security cryptography depends on the type of cryptography:\n\n* **Symmetric cryptography:** NIST\u2019s symmetric cryptography standards at the 112-bit security level will be disallowed in **2030** [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::42].\n* **Public-key / classical schemes:** \n  * Earlier guidelines in SP 800-57 Part 1 had projected that NIST would disallow public-key schemes providing 112 bits of security on **January 1, 2031** [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::37].\n  * Under the updated post-quantum transition plans, NIST instead intends to deprecate classical digital signatures and key-establishment schemes at the 112-bit level after 2030 and disallow them **after 2035** (e.g., 112-bit ECDSA and RSA) [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::37, b4038940-7e59-47a5-b4c5"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, the timeline depends on the specific type of cryptography:\n\n* **Symmetric cryptography:** NIST\u2019s standards at the 112-bit security level will be disallowed in **2030** [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::42].\n* **Public-key / classical digital signatures:** Earlier guidelines in SP 800-57 projected disallowing public-key schemes providing 112 bits of security on **January 1, 2031** [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::37]. However, NIST now plans to deprecate classical digital signatures (such as ECDSA and RSA) at the 112-bit security level after 2030 and fully disallow them **after 2035** [b4038940-7e59-47a5-b4c5-517523e6af11::chunk::37].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q15",
+  "category": "unanswerable",
+  "question": "What logical-qubit count does IBM's quantum roadmap target for 2029?",
+  "expected_evidence": "No PDF in the folder discusses IBM's roadmap; greps for IBM, roadmap, Quantinuum and Willow found nothing relevant.",
+  "reference_answer": "The corpus does not contain this information; the answer should be insufficient evidence.",
+  "governed_expectation": "Return insufficient_evidence; exclude passages that merely mention 'roadmap' or other qubit counts (NQM, Google).",
+  "decoy": "On-topic hits (NQM qubit targets, Google 105-qubit processor) may tempt a baseline to hallucinate an IBM number.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, there is no mention of IBM's quantum roadmap or its targeted logical-qubit count for 2029. Therefore, the evidence is insufficient to answer the question."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "The provided evidence does not contain information to answer this question. Therefore, the evidence is insufficient.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q16",
+  "category": "unanswerable",
+  "question": "What migration deadlines has the UK NCSC set for post-quantum cryptography?",
+  "expected_evidence": "No PDF in the folder covers UK NCSC guidance; greps for NCSC and UK PQC found nothing (the notes list it as a known gap).",
+  "reference_answer": "The corpus does not contain this information; the answer should be insufficient evidence.",
+  "governed_expectation": "Return insufficient_evidence; exclude NIST IR 8547 timelines (2030/2035) as they are US guidance, not UK.",
+  "decoy": "NIST IR 8547 dates are a plausible but wrong-jurisdiction substitute.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, there is no mention of the UK NCSC or any post-quantum cryptography migration deadlines set by it. Therefore, the evidence is insufficient to answer the question."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "The provided evidence contains no information to answer the question. Therefore, the evidence is insufficient.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q17",
+  "category": "synthesis",
+  "question": "List the main objectives India's National Quantum Mission has set out.",
+  "expected_evidence": "`quantum-computing__pib-goi__national-quantum-mission-india-backgrounder__2025.pdf` p.2-3 \u2014 six objective bullets from quantum computing evolution to quantum materials & devices.",
+  "reference_answer": "Objectives: (1) intermediate-scale quantum computers with 20-50 / 50-100 / 50-1000 physical qubits over 3 / 5 / 8 years; (2) satellite-based quantum-secured communication over 2000 km; (3) inter-city QKD over 2000 km using trusted nodes and WDM; (4) a multi-node quantum network (2-3 nodes); (5) advanced quantum sensing and clocks (e.g. atomic clocks at 10^-19 fractional instability); (6) quantum materials and devices. The mission has a budget of Rs 6,003.65 crore for 2023-24 to 2030-31 (p.1).",
+  "governed_expectation": "Accept the objectives list across pp.2-3; the budget on p.1 is optional context.",
+  "decoy": "The objectives span a page break (p.2-3), so a top-k retriever may return only part of the list.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, the National Quantum Mission (NQM) has the broader aim of harnessing quantum technologies in India to bolster sectors such as communication, cryptography, and computing, and to position India as a global leader in quantum technology [cc7a9b9c-6a96-4655-873f-8e187828e0f5::chunk::0, cc7a9b9c-6a96-4655-873"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided text, the main objectives and aims outlined for India's National Quantum Mission include:\n\n* **Broader Objective:** Harness quantum technologies in India to advance capabilities and bolster sectors such as communication, cryptography, and computing [cc7a9b9",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "06Q18",
+  "category": "synthesis",
+  "question": "According to Montanaro's overview, which problem classes get quantum speedups and how big are the speedups?",
+  "expected_evidence": "`quantum-computing__arxiv-montanaro__quantum-algorithms-an-overview__2016.pdf` p.2-9 \u2014 hidden subgroup problem/cryptography (super-polynomial), search and optimisation (quadratic), simulation, quantum walks, linear equations (HHL).",
+  "reference_answer": "The survey covers the hidden subgroup problem and cryptography (Shor's super-polynomial speedup), search and optimisation including Grover/amplitude amplification (quadratic speedup), quantum simulation, quantum walks, and solving linear equations (HHL), plus few-qubit experimental implementations and zero-qubit applications.",
+  "governed_expectation": "Accept section-level passages from pp.2-9 and state the speedup type per class; avoid inventing speedup sizes not given.",
+  "decoy": "Information is spread across many pages; a single chunk gives only a partial answer.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, Montanaro\u2019s text ([e843cc5c-6c9a-40fe-830b-ae86"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "The provided evidence is insufficient to answer the question, as none of the passages mention or contain Montanaro's overview.",
+   "passages_accepted": 6,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "07Q01",
+  "category": "ordinary",
+  "question": "What is the difference between social isolation and loneliness?",
+  "expected_evidence": "`human-psychology__us-surgeon-general-hhs__our-epidemic-of-loneliness-and-isolation-advisory__2023.pdf` p.8 \u2014 defines social isolation as objectively having few relationships and infrequent interaction, and loneliness as a subjective internal state.",
+  "reference_answer": "Social isolation is an objective condition of having few social relationships, roles, group memberships and infrequent social interaction. Loneliness is a subjective, distressing internal state arising from perceived isolation or an unmet gap between preferred and actual social experience. The two are related but not the same.",
+  "governed_expectation": "Accept the Chapter 1 overview passage defining both terms; other passages that merely use the words can be excluded as not answer-bearing.",
+  "decoy": "Many other passages in the advisory and the WHO report mention loneliness/isolation without defining them; textbook social-psychology passages could also appear.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The provided evidence is insufficient to explain the conceptual difference between social isolation and loneliness, as the passages do not define or directly contrast the two terms. \n\nThe text only notes differences in their demographic prevalence and specific health statistics:\n* Older adults have the highest rates of social isolation, whereas young adults are almost twice as likely to report feeling lonely compared to those over 65 [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::33].\n* Loneliness increases the risk for premature death by 26%, while social isolation increases the risk by 29% [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::14]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, the difference between social isolation and loneliness is:\n\n* **Social isolation** is objective: it refers to having few social relationships, social roles, group memberships, and infrequent social interactions [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::13].\n* **Loneliness** is a subjective internal state: it is the distressing experience that stems from perceived isolation or an unmet need between a person's preferred and actual experience [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::13].",
+   "passages_accepted": 3,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "07Q02",
+  "category": "ordinary",
+  "question": "How many people worldwide were living with anxiety disorders and with depressive disorders in 2019, before the pandemic?",
+  "expected_evidence": "`human-psychology__who__world-mental-health-report-transforming-mental-health-for-all__2022.pdf` p.62 \u2014 301 million with anxiety disorders and 280 million with depressive disorders in 2019.",
+  "reference_answer": "In 2019 an estimated 301 million people had anxiety disorders and 280 million had depressive disorders (major depressive disorder plus dysthymia). Across all mental disorders the same chapter gives about 970 million people in 2019.",
+  "governed_expectation": "Accept the Chapter 3 prevalence passage (p.62); the pandemic-year increase passage (p.8, 'more than 25%') is related but does not give the 2019 counts.",
+  "decoy": "Foreword/COVID passages give a percentage increase, not the 2019 counts; p.61 gives the 970 million all-disorder total.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "In 2019, an estimated 301 million people globally were living with anxiety disorders, and 280 million were living with depressive disorders (including both major depressive disorder and dysthymia) [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::113]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "In 2019, an estimated **301 million people** globally were living with anxiety disorders, and **280 million people** were living with depressive disorders (including both major depressive disorder and dysthymia) [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::113], [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::117].",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "07Q03",
+  "category": "exact-identifier",
+  "question": "What do the Swiss green-default studies in Box 1.1 of the EAST report show about uptake of renewable energy for households and businesses?",
+  "expected_evidence": "`human-psychology__behavioural-insights-team__east-four-simple-ways-to-apply-behavioural-insights__2014.pdf` p.12 \u2014 Box 1.1: take-up rose from about 3% to around 83% (households) and 75% (businesses).",
+  "reference_answer": "Box 1.1 reports that before the default change renewable energy use was about 3% of energy. After the green default, take-up rose to around 83% for households and 75% for businesses. This happened despite renewable prices being 4-8% higher for households and 6-14% higher for businesses.",
+  "governed_expectation": "Accept the Box 1.1 passage on p.12. The executive-summary mention (p.4, '3% to 80%') is a rounded summary and should be treated as supporting, not as the exact source of the household/business split.",
+  "decoy": "Executive summary p.4 gives a rounded 80% figure without the household/business split; p.11 discusses defaults generally.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to Box 1.1 of the EAST report, two large-scale studies in Switzerland showed that presenting renewable energy packages as the standard default option is highly effective at encouraging both household and business customers to switch to and remain with green energy [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14]:\n\n* **Prior to the default change:** Renewable energy use was low for both households and businesses, accounting for approximately 3% of energy [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14].\n* **Immediate uptake:** Following the introduction of the green default, take-up of the renewable energy package rose to around 83% for households and 75% for businesses [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14, 72bbecfd-2fb4-47b4-8ad1-8aa19"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to Box 1.1 of the report, two large-scale studies in Switzerland show that presenting renewable energy as the standard default option is highly effective at getting both households and businesses to switch to and stick with green energy [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14]:\n\n* **Prior to the default change:** Renewable energy use was low for both households and businesses, accounting for approximately 3% of energy [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14].\n* **Immediate uptake:** Following the introduction of the green default, uptake of the renewable energy package increased to around 83% for households and 75% for businesses [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14, 72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::15].\n* **Long-term persistence:** After six years, 80% of households and 71% of businesses persisted with renewable energy [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14, 72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::15].\n* **Price difference:** These effects occurred even though renewable energy prices were 4%\u20138% higher for households and 6%\u201314% higher for businesses [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::15]. \n\nSimilar green default effects were observed in the second study [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14, 72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "07Q04",
+  "category": "exact-identifier",
+  "question": "What does Box 4.1 of the EAST report say happened to the finding that asking people to sign at the top of a form increases honesty?",
+  "expected_evidence": "`human-psychology__behavioural-insights-team__east-four-simple-ways-to-apply-behavioural-insights__2014.pdf` p.44 \u2014 Box 4.1: the 2014 study failed to replicate and was retracted after data manipulation was uncovered.",
+  "reference_answer": "Box 4.1 says the large field experiment in the 2014 first edition (signature boxes at the start of a car-insurance form) failed to replicate and was retracted after evidence of data manipulation. BIT now considers that changing the location of a signature is not a reliable way to increase honesty, though a megastudy found half of 20 honesty prompts worked.",
+  "governed_expectation": "Accept Box 4.1 (p.44); the introduction's brief mention of 'signing at the top' (p.8) is supporting context only.",
+  "decoy": "p.8 only mentions that the idea has not been replicated; the full explanation is in Box 4.1.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to Box 4.1 of the EAST report, the finding did not hold up:\n\n* The original study failed to replicate and has since been retracted after evidence of data manipulation was uncovered [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::66].\n* When the Behavioural Insights Team (BIT) applied the tactic in real-world studies within analogous settings, they did not find similar results, which served as one of the catalysts triggering a formal re-examination of the study [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::66].\n* Consequently, they now consider changing the location of a signature to not be a reliable way to increase honesty [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::66]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to Box 4.1 of the report, the following occurred regarding that finding:\n\n* The original field experiment **failed to replicate** and was subsequently **retracted** after evidence of data manipulation was uncovered [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::66].\n* A formal re-examination of the study was partly catalyzed by the Behavioural Insights Team (BIT), who failed to find similar results when applying the tactic to real-world studies in analogous settings [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::66].\n* BIT now considers changing the location of a signature to not be a reliable way to increase honesty [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::66].",
+   "passages_accepted": 2,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "07Q05",
+  "category": "near-miss",
+  "question": "By how much does social isolation increase the risk of premature death, according to the Surgeon General's advisory?",
+  "expected_evidence": "`human-psychology__us-surgeon-general-hhs__our-epidemic-of-loneliness-and-isolation-advisory__2023.pdf` p.8 \u2014 'Loneliness and social isolation increase the risk for premature death by 26% and 29% respectively.'",
+  "reference_answer": "Social isolation is associated with a 29% increased risk of premature death (loneliness with 26%). The figure is given in the Chapter 1 overview.",
+  "governed_expectation": "Accept the p.8 passage; exclude the cardiovascular passage (p.26: 29% higher risk of heart disease, 32% higher risk of stroke) as a look-alike number for a different outcome.",
+  "decoy": "Same document repeats '29%' for heart-disease risk (p.8 and p.26) and '15 cigarettes' mortality comparison (p.4, p.8, p.25); a careless retriever may answer 26%, 32% or the cigarette comparison.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the Surgeon General's advisory, social isolation increases the risk for premature death by 29% (while loneliness increases it by 26%) [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::14]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the Surgeon General's advisory, social isolation increases the risk for premature death by 29% (while loneliness increases it by 26%) [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::13], [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::14].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "07Q06",
+  "category": "false-premise",
+  "question": "The World Mental Health Report says about one in four people worldwide live with a mental disorder. What is the current number of people affected?",
+  "expected_evidence": "`human-psychology__who__world-mental-health-report-transforming-mental-health-for-all__2022.pdf` p.17 \u2014 'About one in eight people in the world live with a mental disorder.' (p.61: 970 million in 2019.)",
+  "reference_answer": "The premise is wrong: the report says about one in eight people (not one in four) live with a mental disorder. The prevalence chapter estimates roughly 970 million people in 2019, rising after the first pandemic year.",
+  "governed_expectation": "The p.17 and p.61 passages contradict the premise and should appear in conflicting evidence; the answer should correct 'one in four' to 'one in eight'.",
+  "decoy": "Other 'one in ...' statistics (one in six YLDs; 1 in 200 schizophrenia; one in every 100 deaths) are nearby look-alikes.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the provided report, it is estimated that **one in eight** people globally (around 13%), rather than one in four, were living with a mental disorder [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::106], [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::111]. \n\nThe report states that in 2019 (pre-pandemic), an estimated **970 million people** in the world were living with a mental disorder [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::111], [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::112]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, the report states that **nearly a billion people** around the world live with a diagnosable mental disorder [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::42], [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::5]. \n\nSpecifically:\n* In 2019 (pre-pandemic), an estimated **970 million people** (or about 13% of the global population, rather than one in four) were living with a mental disorder [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::118], [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::111].\n* In the first year of the COVID-19 pandemic, rates of depression and anxiety rose by more than 25%, adding to the nearly one billion people already living with a mental disorder [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::5], [6295495a-91e5-41e9-9eee-be8070cf110e::chunk::113]. An updated, exact total figure",
+   "passages_accepted": 4,
+   "conflict_passages": 1
+  }
+ },
+ {
+  "qid": "07Q07",
+  "category": "conflicting-sources",
+  "question": "For how long did the effect of the Swiss renewable-energy default persist, according to the EAST report?",
+  "expected_evidence": "`human-psychology__behavioural-insights-team__east-four-simple-ways-to-apply-behavioural-insights__2014.pdf` p.11 and p.12 \u2014 text says changes were stable 'over at least four years'; Box 1.1 says 'After six years, 80% of households ... persisted'.",
+  "reference_answer": "The report gives two timeframes in different places: the main text on p.11 says consumption changes were stable over at least four years, whereas Box 1.1 on p.12 reports that after six years 80% of households and 71% of businesses still used renewable energy (the executive summary just says it persisted 'years later'). A good answer reports both and notes that six years is the longer follow-up.",
+  "governed_expectation": "Accept both p.11 and p.12 passages and present the two durations without silently choosing one; ideally the answer notes they are consistent in direction (effect persisted).",
+  "decoy": "Risk of answering only 'four years' from the body text or only 'six years' from the box; p.4 summary is vague.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "According to the EAST report, the effects persisted as follows:\n\n* The text notes that presenting renewable energy as the default led to changes in consumption that were stable over **at least four years** [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::13].\n* In the specific case study on Switzerland (Box 1.1), the effect persisted after **six years**, at which point 80% of households and 71% of businesses continued with renewable energy [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14, 72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::15]."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "According to the report, the effects of the renewable-energy default in Switzerland persisted over the following reported timeframes:\n\n* Changes in consumption were stable over **at least four years** [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::13].\n* Specifically, after **six years**, 80% of households and 71% of businesses persisted with renewable energy [72bbecfd-2fb4-47b4-8ad1-8aa1907eff0a::chunk::14].",
+   "passages_accepted": 5,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "07Q08",
+  "category": "synthesis",
+  "question": "What are the six pillars the Surgeon General proposes in the national strategy to advance social connection?",
+  "expected_evidence": "`human-psychology__us-surgeon-general-hhs__our-epidemic-of-loneliness-and-isolation-advisory__2023.pdf` p.3 (contents) and pp.47-53 \u2014 Pillars 1-6, e.g. 'Pillar 1: Strengthen Social Infrastructure in Local Communities'.",
+  "reference_answer": "The six pillars are: (1) strengthen social infrastructure in local communities; (2) enact pro-connection public policies; (3) mobilize the health sector; (4) reform digital environments; (5) deepen our knowledge; and (6) cultivate a culture of connection.",
+  "governed_expectation": "Accept the contents list (p.3), the Figure 6 page (p.47) and the individual pillar pages (pp.48-53); exclude individual-health chapter passages as not answer-bearing.",
+  "decoy": "Passages from earlier chapters on health outcomes mention 'strategy' only loosely; the EAST four-principle framework could be confused as another list.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided text, the six pillars proposed to advance social connection are:\n\n1. **Pillar 1:** Strengthen Social Infrastructure in Local Communities [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::2, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n2. **Pillar 2:** Enact Pro-Connection Public Policies [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::2, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n3. **Pillar 3:** Mobilize the Health Sector [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::2, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n4. **Pillar 4:** Reform Digital Environments [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::2, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n5. **Pillar 5:** Deepen our Knowledge [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::2, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n6. **Pillar 6:** Cultivate a Culture of Connection [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::2, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]"
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, the six pillars to advance social connection are:\n\n1. **Pillar 1:** Strengthen Social Infrastructure in Local Communities [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n2. **Pillar 2:** Enact Pro-Connection Public Policies [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n3. **Pillar 3:** Mobilize the Health Sector [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n4. **Pillar 4:** Reform Digital Environments [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n5. **Pillar 5:** Deepen our Knowledge [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]\n6. **Pillar 6:** Cultivate a Culture of Connection [ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::1, ab0f208e-0aab-481d-b62e-a195a89b72d0::chunk::3]",
+   "passages_accepted": 4,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "07Q09",
+  "category": "unanswerable",
+  "question": "What do the National Mental Health Survey of India 2015-16 findings say about the lifetime prevalence of mental morbidity among Indian adults?",
+  "expected_evidence": "No supporting passage in any PDF of the folder (searched for 'National Mental Health Survey', 'NIMHANS', 'NMHS'; only an incidental NIMHANS mention in a textbook history timeline and a yoga study mention).",
+  "reference_answer": "The corpus does not contain this survey (it was listed as inaccessible in the manifest), so the evidence is insufficient to give prevalence figures for India.",
+  "governed_expectation": "Status should be insufficient_evidence; the WHO report's global prevalence figures (p.61-62) and the Surgeon General's US data should be excluded as not about India.",
+  "decoy": "Global WHO prevalence numbers are tempting substitutes; the survey itself is absent.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "The provided evidence does not contain information about the National Mental Health Survey of India 2015\u201316 or the lifetime prevalence of mental morbidity among Indian adults; therefore, the evidence is insufficient to answer the question."
+  },
+  "governed": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, there is no mention of the National Mental Health Survey of India 2015-16 or the lifetime prevalence of mental morbidity among Indian adults. Therefore, the evidence is insufficient to answer the question.",
+   "passages_accepted": 1,
+   "conflict_passages": 0
+  }
+ },
+ {
+  "qid": "07Q10",
+  "category": "unanswerable",
+  "question": "Which specific social media platform does the Surgeon General's advisory identify as most strongly linked to loneliness among teenagers?",
+  "expected_evidence": "No supporting passage; the advisory discusses social media in general (e.g. p.20, the 'more than two hours a day' study) but names no platform (searched TikTok/Instagram/WhatsApp: zero hits in the advisory).",
+  "reference_answer": "The advisory does not single out any particular platform; the evidence is insufficient to answer which platform is most strongly linked. It only reports that using social media more than two hours a day was associated with about double the odds of perceived isolation versus under 30 minutes.",
+  "governed_expectation": "Status should be insufficient_evidence; the generic social-media passages should be excluded or at most reported as partial context, not accepted as answering a platform-specific question.",
+  "decoy": "On-topic social media passages could lead a baseline to invent a platform answer.",
+  "baseline": {
+   "bundle_status": "ok",
+   "answer": "Based on the provided evidence, there is no mention of a specific social media platform identified as most strongly linked to loneliness among teenagers. Therefore, the evidence is insufficient to answer the question."
+  },
+  "governed": {
+   "bundle_status": "insufficient_evidence",
+   "answer": "The provided evidence is insufficient to answer the question, as no evidence passages were provided.",
+   "passages_accepted": 0,
+   "conflict_passages": 0
+  }
+ }
+]
