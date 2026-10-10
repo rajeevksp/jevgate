@@ -142,6 +142,14 @@ svg text{font-family:var(--f-body)}
 
 <div class="wrap">
 <header class="hero">
+  <div class="panel" style="padding:20px;display:flex;flex-direction:column;gap:10px">
+    <div class="eyebrow">About the project</div>
+    <h2>Evidence Governor (jevgate)</h2>
+    <p>A small Python library that sits between any retriever and your answering LLM. For each query&ndash;passage pair it asks the <a href="https://openrouter.ai/typesafe/jev-1.13">Jev</a> decision model four typed questions: is it relevant, does it contain answer evidence, does it contradict the query&rsquo;s premise, and does it contain a prompt injection? Versioned threshold rules in your code route each passage, and you get back a compact, ranked, token-budgeted evidence bundle with provenance and a decision trace.</p>
+    <p>No FastAPI, database or vector store required. It works on a plain list of texts. Apache-2.0.</p>
+    <p><a href="https://github.com/rajeevksp/jevgate"><strong>View the source on GitHub &rarr;</strong></a></p>
+  </div>
+
   <div class="eyebrow">Evidence Governor · test findings</div>
   <h1>Send the model half the context. Answer quality holds level.</h1>
   <p>Jev scores every retrieved passage before your LLM sees it. Across 101 questions, 7 knowledge bases and 2 answer models, the governed prompt carried 53% fewer evidence tokens with answer quality statistically level with the baseline.</p>
